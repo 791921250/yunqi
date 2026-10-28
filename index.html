@@ -1,0 +1,4321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="孕期小惊喜">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#1c070d">
+<title>孕期小惊喜 · 四十周寻一个人</title>
+<style>
+/* =========================================================
+   孕期小惊喜 · A Nine-Month Search
+   视觉：梅红 / 暗红 / 香槟金 / 宣纸米白
+   ========================================================= */
+:root{
+  --bg:#19060c;
+  --bg2:#260912;
+  --wine:#4a1020;
+  --wine-2:#6b1a2c;
+  --plum:#8f2740;
+  --rose:#c05468;
+  --red:#e0475c;
+  --gold:#d6ac7c;
+  --gold-2:#f0d6af;
+  --cream:#f4e8da;
+  --paper:#efe1d2;
+  --muted:#b4949a;
+  --dim:#80656c;
+  --line:rgba(214,172,124,.22);
+  --line-2:rgba(214,172,124,.42);
+  --panel:rgba(46,12,22,.62);
+  --panel-2:rgba(30,7,13,.88);
+  --serif:"Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun",serif;
+  --sans:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{height:100%;-webkit-text-size-adjust:100%}
+body{
+  min-height:100%;background:var(--bg);color:var(--cream);
+  font-family:var(--sans);font-size:15px;line-height:1.7;
+  overflow:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(1100px 700px at 78% 8%,rgba(120,28,47,.38),transparent 65%),
+    radial-gradient(900px 800px at 8% 96%,rgba(74,16,32,.5),transparent 70%),
+    linear-gradient(160deg,#1a060c 0%,#230811 45%,#16050a 100%);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.055;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+button{font-family:inherit;color:inherit;background:none;border:none;cursor:pointer}
+::selection{background:rgba(214,172,124,.28);color:#fff}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-thumb{background:rgba(214,172,124,.22);border-radius:6px}
+::-webkit-scrollbar-track{background:transparent}
+
+/* ---------------- Boot ---------------- */
+.boot{position:fixed;inset:0;z-index:30;display:flex;overflow:hidden;background:#170509}
+.boot-art{
+  position:absolute;inset:0;
+  background-image:var(--boot);
+  background-size:cover;background-position:center right;
+  transform:scale(1.02);
+  animation:bootBreath 18s ease-in-out infinite alternate;
+}
+@keyframes bootBreath{from{transform:scale(1.02)}to{transform:scale(1.075)}}
+.boot-shade{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(18,4,9,.97) 0%,rgba(20,5,10,.9) 34%,rgba(25,6,12,.45) 62%,rgba(25,6,12,.18) 100%),
+    linear-gradient(0deg,rgba(14,3,7,.9),transparent 45%),
+    radial-gradient(700px 500px at 30% 55%,rgba(120,28,47,.18),transparent 70%);
+}
+.boot-inner{
+  position:relative;z-index:2;width:min(720px,58vw);min-width:430px;
+  padding:clamp(28px,7vh,76px) 0 clamp(24px,6vh,64px) clamp(26px,7vw,96px);
+  display:flex;flex-direction:column;justify-content:center;
+}
+.boot-meta{
+  display:flex;align-items:center;gap:14px;
+  font-size:10px;letter-spacing:.42em;color:var(--gold);text-transform:uppercase;
+  animation:rise .9s .1s both;
+}
+.boot-meta::before{content:"";width:44px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.boot-title{
+  font-family:var(--serif);font-weight:500;font-size:clamp(52px,7.6vw,94px);
+  line-height:1.08;letter-spacing:.16em;margin:20px 0 4px;color:#fbeee0;
+  text-shadow:0 2px 30px rgba(130,32,52,.55),0 1px 0 rgba(255,255,255,.08);
+  animation:rise 1s .22s both;
+}
+.boot-en{
+  font-size:10px;letter-spacing:.52em;color:rgba(240,214,175,.62);text-transform:uppercase;
+  margin-bottom:26px;animation:rise 1s .32s both;
+}
+.boot-quote{
+  font-family:var(--serif);font-size:clamp(16px,1.45vw,20px);line-height:2;
+  letter-spacing:.13em;color:#e6cfc0;border-left:1px solid rgba(214,172,124,.45);
+  padding-left:20px;margin:2px 0 34px;animation:rise 1s .42s both;
+}
+.boot-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;animation:rise 1s .55s both}
+.boot-foot{
+  margin-top:clamp(26px,6vh,60px);font-size:11px;line-height:2;letter-spacing:.1em;
+  color:rgba(180,148,154,.72);animation:rise 1s .7s both;
+}
+.boot-side{
+  position:absolute;right:clamp(16px,3vw,40px);top:50%;z-index:3;transform:translateY(-50%);
+  writing-mode:vertical-rl;font-family:var(--serif);font-size:12px;letter-spacing:.5em;
+  color:rgba(244,232,218,.55);
+}
+.boot-side::before,.boot-side::after{content:"";display:block;width:1px;height:56px;background:linear-gradient(var(--gold),transparent);margin:16px auto}
+.boot-side::after{background:linear-gradient(transparent,var(--gold))}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+#petals{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+#petals i,#bootPetals i{position:absolute;top:-6vh;display:block;background:linear-gradient(135deg,rgba(255,210,214,.45),rgba(143,39,64,.1));border-radius:80% 0 80% 0;opacity:.5;animation:fall linear infinite;filter:blur(.2px)}
+#bootPetals{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.boot{transition:opacity .75s ease}
+.boot.off{opacity:0;pointer-events:none}
+@keyframes fall{
+  0%{transform:translate3d(0,-8vh,0) rotate(0deg)}
+  45%{transform:translate3d(7vw,46vh,0) rotate(180deg)}
+  100%{transform:translate3d(-3vw,110vh,0) rotate(400deg)}
+}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:50px;padding:0 26px;border:1px solid var(--line-2);
+  font-size:13px;letter-spacing:.22em;transition:.25s;white-space:nowrap;
+}
+.btn.gold{
+  background:linear-gradient(135deg,#e2bd8d,#c99a68);border-color:transparent;color:#2a0a12;
+  font-weight:600;box-shadow:0 6px 26px rgba(201,154,104,.22);
+}
+.btn.gold:hover{filter:brightness(1.08);transform:translateY(-1px);box-shadow:0 10px 34px rgba(201,154,104,.32)}
+.btn.ghost{background:rgba(244,232,218,.03);color:var(--cream)}
+.btn.ghost:hover{background:rgba(244,232,218,.09);border-color:var(--gold)}
+.btn.text{border-color:transparent;color:var(--muted);padding:0 10px;letter-spacing:.18em}
+.btn.text:hover{color:var(--gold)}
+.btn.small{min-height:38px;padding:0 18px;font-size:12px;letter-spacing:.12em}
+
+/* ---------------- Game shell ---------------- */
+.game{position:relative;z-index:2;display:flex;flex-direction:column;height:100dvh;overflow:hidden}
+.topbar{
+  flex:0 0 auto;display:flex;align-items:center;gap:16px;
+  padding:12px clamp(14px,2.2vw,28px);
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(26,6,12,.9),rgba(26,6,12,.55));
+  backdrop-filter:blur(14px);position:relative;z-index:5;
+}
+.brand{display:flex;align-items:center;gap:11px;flex-shrink:0}
+.mark{width:30px;height:30px;border:1px solid var(--line-2);position:relative;transform:rotate(45deg)}
+.mark::before{content:"";position:absolute;inset:6px;border:1px solid rgba(214,172,124,.5)}
+.mark::after{content:"";position:absolute;left:50%;top:50%;width:3px;height:3px;background:var(--gold);transform:translate(-50%,-50%)}
+.brand-title{font-family:var(--serif);font-size:17px;letter-spacing:.24em;line-height:1.3}
+.brand-sub{font-size:8px;letter-spacing:.36em;color:var(--dim);margin-top:2px}
+.week-tag{
+  font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--gold-2);
+  border:1px solid var(--line);padding:3px 10px;white-space:nowrap;
+}
+.chips{display:flex;flex-wrap:wrap;gap:6px;flex:1;min-width:0}
+.chip{
+  display:flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid rgba(214,172,124,.14);
+  background:rgba(244,232,218,.025);font-size:12px;color:var(--muted);white-space:nowrap;
+}
+.chip b{font-weight:600;color:var(--cream);font-size:13px;font-variant-numeric:tabular-nums}
+.chip .c{color:var(--dim);font-size:10px;letter-spacing:.12em}
+.chip.warn b{color:var(--red)}
+.chip.good b{color:#9ec4a0}
+.top-actions{display:flex;gap:6px;margin-left:auto}
+.icon-btn{
+  min-width:38px;height:34px;padding:0 11px;border:1px solid var(--line);
+  font-size:11px;letter-spacing:.14em;color:var(--muted);transition:.2s;
+}
+.icon-btn:hover{border-color:var(--gold);color:var(--cream);background:rgba(214,172,124,.06)}
+
+.grid{
+  flex:1;min-height:0;display:grid;
+  grid-template-columns:288px minmax(0,1fr) 318px;
+  gap:12px;padding:12px clamp(14px,2.2vw,28px);
+}
+.col{min-height:0;display:flex;flex-direction:column;gap:12px}
+.col.left,.col.right{overflow-y:auto;padding-right:2px}
+.col.center{min-height:0}
+.panel{
+  position:relative;border:1px solid var(--line);
+  background:linear-gradient(155deg,rgba(58,15,26,.62),rgba(28,7,13,.82));
+  backdrop-filter:blur(10px);
+  box-shadow:inset 0 1px 0 rgba(255,230,200,.045),0 10px 34px rgba(0,0,0,.18);
+}
+.panel::before{
+  content:"";position:absolute;left:6px;top:6px;width:14px;height:14px;pointer-events:none;
+  border-left:1px solid rgba(214,172,124,.38);border-top:1px solid rgba(214,172,124,.38);
+}
+.panel::after{
+  content:"";position:absolute;right:6px;bottom:6px;width:14px;height:14px;pointer-events:none;
+  border-right:1px solid rgba(214,172,124,.22);border-bottom:1px solid rgba(214,172,124,.22);
+}
+.panel-head{
+  display:flex;justify-content:space-between;align-items:center;gap:8px;
+  padding:12px 14px 8px;border-bottom:1px solid rgba(214,172,124,.12);
+  font-family:var(--serif);font-size:12px;letter-spacing:.28em;color:var(--gold);
+}
+.panel-head em{font-style:normal;font-family:var(--sans);font-size:9px;letter-spacing:.24em;color:var(--dim)}
+
+/* Profile */
+.profile{padding:14px 15px 13px;flex-shrink:0}
+.p-name{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:8px;
+  padding-bottom:10px;border-bottom:1px solid rgba(214,172,124,.12);
+}
+.p-name h3{font-family:var(--serif);font-size:24px;font-weight:500;letter-spacing:.16em;line-height:1.2}
+.p-name .job{font-size:11px;color:var(--muted);letter-spacing:.1em;margin-top:5px}
+.p-name .seal{
+  width:36px;height:36px;flex-shrink:0;border:1px solid rgba(192,84,104,.52);color:var(--rose);
+  font-family:var(--serif);font-size:11px;line-height:1.15;text-align:center;
+  display:flex;align-items:center;justify-content:center;transform:rotate(3deg);
+}
+.week-ring{display:flex;align-items:center;gap:14px;margin:13px 0 8px}
+.ring{position:relative;width:86px;height:86px;flex-shrink:0}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring .track{fill:none;stroke:rgba(214,172,124,.12);stroke-width:3}
+.ring .prog{fill:none;stroke:url(#ringGrad);stroke-width:3;stroke-linecap:round;transition:stroke-dashoffset .7s ease}
+.ring .txt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring .txt b{font-family:var(--serif);font-size:27px;font-weight:500;line-height:1;color:var(--gold-2)}
+.ring .txt span{font-size:9px;letter-spacing:.2em;color:var(--dim);margin-top:4px}
+.ring-meta{flex:1;min-width:0}
+.ring-meta .k{font-size:9px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase}
+.ring-meta .v{font-size:13px;color:var(--cream);margin:2px 0 8px;line-height:1.5}
+.ring-meta .trimester{
+  display:inline-block;font-size:10px;letter-spacing:.14em;padding:2px 8px;
+  border:1px solid rgba(214,172,124,.22);color:var(--gold);
+}
+.bars{display:flex;flex-direction:column;gap:9px;margin-top:10px}
+.stat{display:grid;grid-template-columns:34px 1fr 36px;align-items:center;gap:8px;font-size:11px;color:var(--muted)}
+.stat .bar{height:4px;background:rgba(244,232,218,.08);position:relative;overflow:hidden}
+.stat .bar i{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,#8e5661,#d6ac7c);transition:width .5s}
+.stat .bar i.red{background:linear-gradient(90deg,#7c2537,#e0475c)}
+.stat .bar i.green{background:linear-gradient(90deg,#5c7a62,#a9c8a4)}
+.stat b{text-align:right;font-weight:500;color:var(--cream);font-variant-numeric:tabular-nums}
+.week-dots{display:flex;align-items:center;gap:7px;margin-top:12px;padding-top:10px;border-top:1px solid rgba(214,172,124,.1)}
+.week-dots .lbl{font-size:9px;letter-spacing:.18em;color:var(--dim);margin-right:auto}
+.week-dots i{width:8px;height:8px;border:1px solid rgba(214,172,124,.32);border-radius:50%;display:block}
+.week-dots i.on{background:var(--gold);border-color:var(--gold);box-shadow:0 0 8px rgba(214,172,124,.5)}
+.money-line{display:flex;justify-content:space-between;align-items:baseline;margin-top:10px;padding-top:9px;border-top:1px solid rgba(214,172,124,.1)}
+.money-line span{font-size:10px;letter-spacing:.16em;color:var(--dim)}
+.money-line b{font-family:var(--serif);font-size:20px;font-weight:500;color:var(--gold-2);letter-spacing:.04em}
+.money-line b.low{color:var(--red)}
+.baby-mini{margin-top:10px;padding-top:10px;border-top:1px solid rgba(214,172,124,.12);display:none}
+.baby-mini.show{display:block}
+.baby-mini h4{font-family:var(--serif);font-size:14px;font-weight:500;letter-spacing:.1em;color:var(--cream);margin-bottom:4px}
+.baby-mini .sub{font-size:10px;color:var(--dim);margin-bottom:6px}
+
+/* Clue panel */
+.cluepanel{flex:1;min-height:180px;overflow:hidden;display:flex;flex-direction:column}
+.clue-list{flex:1;overflow-y:auto;padding:6px 10px 10px}
+.clue{
+  display:grid;grid-template-columns:22px 1fr;gap:8px;padding:8px 2px;
+  border-bottom:1px dotted rgba(214,172,124,.12);cursor:pointer;
+}
+.clue:last-child{border-bottom:none}
+.clue .no{
+  font-family:var(--serif);font-size:10px;color:var(--dim);border:1px solid rgba(214,172,124,.18);
+  width:22px;height:22px;display:flex;align-items:center;justify-content:center;
+}
+.clue .tt{font-size:12px;line-height:1.5;color:var(--cream)}
+.clue .ss{font-size:10px;color:var(--dim);margin-top:2px;letter-spacing:.04em}
+.clue .ss .known{color:var(--gold)}
+.clue .ss .unk{color:var(--rose)}
+.clue.unknown .tt{color:var(--dim)}
+.clue:hover .tt{color:var(--gold-2)}
+.clue-empty{padding:14px 12px;font-size:11px;line-height:1.9;color:var(--dim)}
+
+/* Scene */
+.scene{flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+.scene-head{padding:16px 18px 12px;border-bottom:1px solid rgba(214,172,124,.14);flex-shrink:0}
+.scene-kicker{display:flex;align-items:center;gap:10px;font-size:9px;letter-spacing:.3em;color:var(--dim);text-transform:uppercase}
+.scene-kicker::before{content:"";width:22px;height:1px;background:var(--line-2)}
+.scene-title{
+  font-family:var(--serif);font-size:clamp(23px,2vw,30px);font-weight:500;
+  letter-spacing:.2em;margin:5px 0 3px;display:flex;align-items:center;gap:12px;
+}
+.scene-title .glyph{
+  width:34px;height:34px;border:1px solid rgba(214,172,124,.4);color:var(--gold);
+  font-size:15px;letter-spacing:0;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transform:rotate(-2deg);
+}
+.scene-sub{font-size:11.5px;color:var(--muted);letter-spacing:.08em;line-height:1.6}
+.scene-hint{
+  margin-top:9px;padding:6px 9px;border-left:2px solid rgba(192,84,104,.5);
+  background:rgba(192,84,104,.06);font-size:11px;line-height:1.7;color:#d7b6b6;
+}
+.acts{
+  flex:1;min-height:0;overflow-y:auto;padding:12px 14px 14px;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;align-content:start;
+}
+.act{
+  position:relative;display:grid;grid-template-columns:36px 1fr;gap:10px;
+  padding:11px 12px 12px;border:1px solid rgba(214,172,124,.14);
+  background:linear-gradient(150deg,rgba(244,232,218,.035),rgba(244,232,218,.008));
+  text-align:left;transition:.2s;min-height:78px;
+}
+.act:hover{border-color:rgba(214,172,124,.5);background:rgba(214,172,124,.055);transform:translateY(-1px)}
+.act:active{transform:scale(.985)}
+.act .glyph{
+  width:36px;height:36px;border:1px solid rgba(214,172,124,.28);
+  font-family:var(--serif);font-size:15px;color:var(--gold);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.act .body{min-width:0}
+.act .t{font-size:14.5px;letter-spacing:.06em;line-height:1.45;color:var(--cream)}
+.act .d{font-size:10.5px;line-height:1.55;color:var(--dim);margin-top:3px}
+.act .e{font-size:10px;line-height:1.5;color:rgba(214,172,124,.78);margin-top:5px;letter-spacing:.02em}
+.act.locked{opacity:.42}
+.act.locked:hover{transform:none;border-color:rgba(214,172,124,.14);background:transparent}
+.act .lock{display:block;text-align:right;margin-top:6px;font-size:9px;color:var(--dim);letter-spacing:.08em}
+.act.special{border-color:rgba(192,84,104,.42);background:linear-gradient(150deg,rgba(192,84,104,.1),rgba(192,84,104,.02))}
+.act.special .glyph{border-color:rgba(192,84,104,.45);color:#e6a0aa}
+
+/* Log */
+.logpanel{flex:0 0 184px;display:flex;flex-direction:column;overflow:hidden}
+.log{flex:1;overflow-y:auto;padding:8px 14px 12px;font-size:11.5px;line-height:1.85;color:#cbb2b4}
+.log .entry{padding:5px 0;border-bottom:1px dotted rgba(214,172,124,.08);display:flex;gap:8px}
+.log .entry:last-child{border-bottom:none}
+.log .w{flex-shrink:0;font-size:9px;color:var(--dim);letter-spacing:.06em;padding-top:2px}
+.log .tx{flex:1;min-width:0}
+.log .gold{color:var(--gold-2)}
+.log .rose{color:#e0919e}
+.log .good{color:#a6c9a8}
+.log .bad{color:#e0475c}
+.log .quiet{color:#a98f94;font-style:italic}
+.log-empty{padding:16px 2px;font-size:11px;color:var(--dim);line-height:1.9}
+
+/* Leads */
+.leads-panel{flex-shrink:0;overflow:hidden}
+.leads{padding:8px 10px 10px;display:flex;flex-direction:column;gap:7px}
+.lead{
+  position:relative;display:grid;grid-template-columns:54px 1fr;gap:10px;
+  padding:7px;border:1px solid rgba(214,172,124,.13);
+  background:linear-gradient(120deg,rgba(244,232,218,.03),transparent);
+  text-align:left;transition:.22s;overflow:hidden;
+}
+.lead:hover{border-color:rgba(214,172,124,.4);background:rgba(214,172,124,.045)}
+.lead .ph{width:54px;height:66px;object-fit:cover;object-position:center 22%;filter:saturate(.7) contrast(1.04) brightness(.9)}
+.lead .info{min-width:0;display:flex;flex-direction:column;justify-content:center;gap:3px}
+.lead .row1{display:flex;align-items:baseline;justify-content:space-between;gap:6px}
+.lead .nm{font-family:var(--serif);font-size:16px;letter-spacing:.1em;color:var(--cream)}
+.lead .tag{font-size:9px;letter-spacing:.14em;color:var(--dim);white-space:nowrap}
+.lead .sub{font-size:9px;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lead .meters{display:flex;flex-direction:column;gap:3px;margin-top:2px}
+.lead .meter{display:grid;grid-template-columns:24px 1fr 22px;align-items:center;gap:5px;font-size:9px;color:var(--dim)}
+.lead .meter .tr{height:3px;background:rgba(244,232,218,.08);position:relative;overflow:hidden}
+.lead .meter .tr i{position:absolute;inset:0 auto 0 0;transition:width .45s}
+.lead .meter.fav .tr i{background:linear-gradient(90deg,#8a6a59,#d6ac7c)}
+.lead .meter.dark .tr i{background:linear-gradient(90deg,#6b1a2c,#e0475c)}
+.lead .meter .num{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+.lead .state{
+  position:absolute;right:7px;top:6px;font-size:9px;letter-spacing:.1em;
+  color:var(--dim);opacity:0;transition:.2s;
+}
+.lead:hover .state{opacity:1;color:var(--gold)}
+.lead .danger{color:var(--red);text-shadow:0 0 10px rgba(224,71,92,.4)}
+.lead.unmet .ph{filter:grayscale(.75) brightness(.55) contrast(1.1)}
+.lead.unmet .nm{color:#a98f94}
+.lead.unmet::after{
+  content:"?";position:absolute;left:7px;top:7px;width:54px;height:66px;
+  display:flex;align-items:center;justify-content:center;font-family:var(--serif);
+  font-size:20px;color:rgba(244,232,218,.42);
+}
+.side-note{padding:12px 14px;font-size:10.5px;line-height:1.9;color:var(--muted);flex-shrink:0}
+.side-note b{color:var(--gold);font-weight:500}
+.side-note .rule{height:1px;background:rgba(214,172,124,.12);margin:8px 0}
+.side-note .quote{font-family:var(--serif);font-size:12px;line-height:1.85;color:#d8c0b6;letter-spacing:.06em}
+
+/* Dock */
+.dock{
+  flex:0 0 auto;display:flex;align-items:center;gap:12px;
+  padding:9px clamp(14px,2.2vw,28px) 12px;
+  border-top:1px solid var(--line);
+  background:linear-gradient(0deg,rgba(22,5,10,.97),rgba(26,6,12,.72));
+  backdrop-filter:blur(16px);position:relative;z-index:8;
+}
+.nav{display:flex;gap:5px;flex:1;min-width:0;overflow-x:auto;padding-bottom:2px}
+.nav::-webkit-scrollbar{height:0}
+.nav button{
+  display:flex;align-items:center;gap:6px;flex:0 0 auto;height:40px;padding:0 12px;
+  border:1px solid rgba(214,172,124,.13);font-size:11px;letter-spacing:.1em;color:var(--muted);transition:.2s;
+}
+.nav button .ng{font-family:var(--serif);font-size:13px;color:var(--dim)}
+.nav button:hover{border-color:rgba(214,172,124,.4);color:var(--cream)}
+.nav button.on{border-color:rgba(214,172,124,.6);background:rgba(214,172,124,.1);color:var(--gold-2)}
+.nav button.on .ng{color:var(--gold)}
+.nav button.locked{opacity:.32}
+.nav button.locked:hover{border-color:var(--line);color:var(--muted)}
+.dock-actions{display:flex;gap:7px;flex-shrink:0}
+.dock .btn{min-height:40px;padding:0 16px;font-size:11.5px;letter-spacing:.12em}
+.dock .btn.gold{min-width:132px}
+
+/* ---------------- Modal ---------------- */
+.layer{
+  position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;
+  padding:22px;background:rgba(10,3,6,.74);backdrop-filter:blur(9px);
+}
+.layer.show{display:flex}
+.modal{
+  position:relative;width:min(760px,100%);max-height:90dvh;overflow-y:auto;
+  padding:10px;background:linear-gradient(165deg,#2b0a14,#1d070d 70%);
+  border:1px solid rgba(214,172,124,.32);
+  box-shadow:0 24px 90px rgba(0,0,0,.55),inset 0 0 60px rgba(120,28,47,.16);
+  animation:modalIn .32s cubic-bezier(.22,.8,.3,1);
+}
+@keyframes modalIn{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+.modal-inner{border:1px solid rgba(214,172,124,.12);padding:22px 24px 24px}
+.modal-close{
+  position:absolute;right:10px;top:10px;z-index:2;width:32px;height:32px;
+  border:1px solid rgba(214,172,124,.2);color:var(--muted);font-size:13px;transition:.2s;
+}
+.modal-close:hover{color:var(--cream);border-color:var(--gold)}
+.kicker{font-size:9px;letter-spacing:.34em;color:var(--gold);text-transform:uppercase}
+.modal-title{
+  font-family:var(--serif);font-size:27px;font-weight:500;letter-spacing:.14em;
+  line-height:1.35;margin:6px 0 14px;padding-right:40px;
+}
+.modal-sub{font-size:11px;color:var(--muted);letter-spacing:.08em;margin:-8px 0 15px}
+.story{font-size:13.5px;line-height:2;color:#ddc9bf}
+.story p{margin-bottom:10px}
+.story p:last-child{margin-bottom:0}
+.story .hl{color:var(--gold-2)}
+.story .whisper{
+  font-family:var(--serif);font-size:14px;letter-spacing:.1em;color:#e9acb4;
+  border-left:1px solid rgba(224,71,92,.35);padding-left:12px;margin:12px 0;
+}
+.story .system{font-size:11px;color:var(--dim);letter-spacing:.06em}
+.story .quote-line{
+  font-family:var(--serif);font-size:15px;letter-spacing:.1em;color:#f0d6af;
+  text-align:center;margin:16px 0;
+}
+.choices{margin-top:18px;display:flex;flex-direction:column;gap:8px}
+.choice{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:12px 14px;border:1px solid rgba(214,172,124,.18);
+  background:rgba(244,232,218,.025);text-align:left;transition:.2s;
+  min-width:0;
+}
+.choice:hover{border-color:rgba(214,172,124,.55);background:rgba(214,172,124,.07);padding-left:18px}
+.choice .cl{font-size:13px;line-height:1.5;color:var(--cream);min-width:0;overflow-wrap:anywhere}
+.choice .ch{font-size:9.5px;color:var(--dim);white-space:normal;letter-spacing:.04em;line-height:1.6;overflow-wrap:anywhere;text-align:right;flex-shrink:1}
+.choice.risky{border-color:rgba(192,84,104,.28)}
+.choice.risky .cl{color:#e7b4bb}
+.choice.gold{border-color:rgba(214,172,124,.42)}
+.choice:disabled{opacity:.38;pointer-events:none}
+.modal-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.modal-actions .btn{flex:1 1 150px;min-width:0;white-space:normal;line-height:1.55;padding:8px 14px;text-align:center;height:auto}
+.scene-portrait{display:grid;grid-template-columns:124px 1fr;gap:16px;align-items:start;margin-bottom:16px}
+.scene-portrait img{
+  width:124px;height:156px;object-fit:cover;object-position:center 20%;
+  filter:saturate(.75) contrast(1.05);border:1px solid rgba(214,172,124,.25);
+}
+.scene-portrait .pinfo{min-width:0;padding-top:4px}
+.scene-portrait .pname{font-family:var(--serif);font-size:30px;letter-spacing:.16em;line-height:1.2}
+.scene-portrait .ptitle{font-size:10px;letter-spacing:.16em;color:var(--dim);margin-top:5px}
+.scene-portrait .pquote{font-family:var(--serif);font-size:12.5px;line-height:1.9;color:#dcb7b7;margin-top:12px;border-left:1px solid rgba(192,84,104,.4);padding-left:10px}
+.scene-portrait .pmetrics{display:flex;gap:14px;margin-top:12px}
+.scene-portrait .pmetric{font-size:9px;letter-spacing:.12em;color:var(--dim)}
+.scene-portrait .pmetric b{display:block;font-family:var(--serif);font-size:17px;font-weight:500;color:var(--cream);margin-top:2px}
+.scene-portrait .pmetric.dark b{color:var(--red)}
+.topic-list{display:flex;flex-direction:column;gap:7px;margin-top:6px}
+.topic{
+  display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;
+  padding:11px 12px;border:1px solid rgba(214,172,124,.15);text-align:left;transition:.2s;
+}
+.topic:hover{border-color:rgba(214,172,124,.48);background:rgba(214,172,124,.06)}
+.topic .g{width:30px;height:30px;border:1px solid rgba(214,172,124,.24);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:12px;color:var(--gold)}
+.topic .q{font-size:13px;color:var(--cream)}
+.topic .cost{font-size:9px;color:var(--dim);letter-spacing:.06em}
+.topic:disabled{opacity:.4;pointer-events:none}
+.talk-gauges{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0 4px;padding:11px 12px;border:1px solid rgba(214,172,124,.14);background:rgba(0,0,0,.14)}
+.talk-gauge .l{display:flex;justify-content:space-between;font-size:9px;letter-spacing:.12em;color:var(--dim);margin-bottom:5px}
+.talk-gauge .l b{font-weight:500;color:var(--cream);font-size:11px}
+.talk-gauge .l b.dark{color:var(--red)}
+.talk-gauge .bar{height:3px;background:rgba(244,232,218,.1)}
+.talk-gauge .bar i{display:block;height:100%;background:linear-gradient(90deg,#8a6a59,#d6ac7c)}
+.talk-gauge.dark .bar i{background:linear-gradient(90deg,#6b1a2c,#e0475c)}
+.effect-chip{
+  display:inline-block;padding:2px 8px;margin:4px 4px 0 0;font-size:10px;
+  border:1px solid rgba(214,172,124,.2);color:var(--gold);
+}
+.effect-chip.bad{border-color:rgba(224,71,92,.28);color:#ec8a96}
+.effect-chip.good{border-color:rgba(158,196,160,.25);color:#a6c9a8}
+.field{
+  width:100%;margin-top:8px;padding:11px 12px;background:rgba(0,0,0,.22);
+  border:1px solid rgba(214,172,124,.24);color:var(--cream);font-family:inherit;font-size:14px;
+}
+.field:focus{outline:none;border-color:var(--gold)}
+.field::placeholder{color:var(--dim)}
+.howto{font-size:12px;line-height:2;color:#cdb6b6}
+.howto b{color:var(--gold-2);font-weight:500}
+.howto .li{display:flex;gap:10px;padding:8px 0;border-bottom:1px dotted rgba(214,172,124,.1)}
+.howto .li em{font-style:normal;font-family:var(--serif);color:var(--gold);flex-shrink:0}
+.howto .li span{flex:1}
+.end-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}
+.end-summary div{border:1px solid rgba(214,172,124,.15);padding:8px 6px;text-align:center}
+.end-summary span{display:block;font-size:9px;letter-spacing:.12em;color:var(--dim);margin-bottom:3px}
+.end-summary b{font-family:var(--serif);font-size:15px;font-weight:500;color:var(--gold-2)}
+.reveal{
+  border:1px solid rgba(192,84,104,.3);background:rgba(192,84,104,.07);
+  padding:10px 12px;margin-top:14px;font-size:11.5px;line-height:1.85;color:#e3bfc4;
+}
+.reveal b{color:#f0b3bc;font-weight:500}
+
+/* Toast */
+.toast{
+  position:fixed;left:50%;bottom:86px;z-index:90;transform:translate(-50%,16px);
+  padding:9px 18px;border:1px solid rgba(214,172,124,.34);
+  background:rgba(29,7,13,.94);backdrop-filter:blur(10px);
+  font-size:11.5px;letter-spacing:.08em;color:var(--cream);
+  opacity:0;pointer-events:none;transition:.3s;max-width:82vw;text-align:center;
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* Ending */
+.ending{
+  position:fixed;inset:0;z-index:80;overflow-y:auto;
+  background:
+    radial-gradient(900px 600px at 70% 10%,rgba(143,39,64,.28),transparent 65%),
+    linear-gradient(160deg,#1b060c,#250812 55%,#130409);
+}
+.ending.show{display:block}
+.ending-wrap{max-width:760px;margin:0 auto;padding:clamp(36px,8vh,90px) 24px 60px}
+.ending-meta{display:flex;align-items:center;gap:14px;font-size:9px;letter-spacing:.4em;color:var(--gold)}
+.ending-meta::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(214,172,124,.5),transparent)}
+.ending h1{
+  font-family:var(--serif);font-weight:500;font-size:clamp(36px,5vw,58px);
+  letter-spacing:.12em;line-height:1.3;margin:18px 0 8px;color:#f8e8d9;
+}
+.ending .sub{font-size:11px;letter-spacing:.24em;color:var(--muted);margin-bottom:22px}
+.ending .epilogue{font-family:var(--serif);font-size:14.5px;line-height:2.15;color:#ddc9bf;letter-spacing:.04em}
+.ending .epilogue p{margin-bottom:14px}
+.ending .epilogue .hl{color:var(--gold-2)}
+.ending .epilogue .whisper{color:#e9acb4;border-left:1px solid rgba(224,71,92,.35);padding-left:12px}
+.ending .stats{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 18px}
+.ending .stat-chip{border:1px solid rgba(214,172,124,.2);padding:7px 12px;font-size:10px;color:var(--muted);letter-spacing:.06em}
+.ending .stat-chip b{color:var(--gold-2);font-weight:500;margin-left:6px}
+.ending-cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.ending-note{font-size:10px;color:var(--dim);line-height:1.9;margin-top:18px}
+
+/* Unknown lead silhouette helper */
+.silhouette{background:radial-gradient(circle at 50% 30%,#5a1d2c,#230812 70%);}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width:1200px){
+  .grid{grid-template-columns:252px minmax(0,1fr) 288px;gap:10px}
+  .lead{grid-template-columns:46px 1fr;gap:8px}
+  .lead .ph{width:46px;height:60px}
+  .lead.unmet::after{width:46px;height:60px}
+  .brand-sub{display:none}
+}
+@media (max-width:1020px){
+  body{overflow:auto}
+  .game{height:auto;min-height:100dvh;overflow:visible}
+  .topbar{position:sticky;top:0;flex-wrap:wrap;gap:9px;padding:9px 13px}
+  .brand-title{font-size:15px}
+  .mark{width:24px;height:24px}
+  .chips{order:3;flex-basis:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px}
+  .chip{flex:0 0 auto}
+  .week-tag{margin-left:auto}
+  .top-actions .icon-btn{font-size:10px}
+  .grid{grid-template-columns:1fr;padding:10px 12px 96px;gap:10px;overflow:visible}
+  .col{overflow:visible}
+  .col.center{order:1}
+  .col.right{order:2}
+  .col.left{order:3;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .col.left .profile{grid-column:1/-1}
+  .col.left .cluepanel{min-height:150px}
+  .scene{max-height:none}
+  .acts{overflow:visible;padding:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .logpanel{height:180px}
+  .leads{flex-direction:row;overflow-x:auto;gap:8px;padding:8px}
+  .lead{flex:0 0 208px;grid-template-columns:48px 1fr}
+  .lead .ph{width:48px;height:62px}
+  .lead.unmet::after{width:48px;height:62px}
+  .side-note{display:none}
+  .dock{position:fixed;left:0;right:0;bottom:0;padding:7px 10px 9px;gap:8px}
+  .nav{flex:1}
+  .nav button{height:37px;padding:0 9px;font-size:10px}
+  .dock-actions{gap:5px}
+  .dock .btn{min-height:37px;padding:0 11px;font-size:10.5px}
+  .dock .btn.gold{min-width:104px}
+  .toast{bottom:74px}
+}
+@media (max-width:620px){
+  .boot-inner{width:100%;min-width:0;padding:34px 22px 30px;justify-content:flex-end}
+  .boot-art{background-position:62% center;opacity:.85}
+  .boot-shade{background:linear-gradient(0deg,rgba(16,4,8,.98) 12%,rgba(18,4,9,.85) 55%,rgba(20,5,10,.35) 100%)}
+  .boot-title{font-size:clamp(46px,13vw,64px);margin-top:14px}
+  .boot-en{font-size:8px;letter-spacing:.36em;margin-bottom:18px}
+  .boot-quote{font-size:14px;line-height:1.95;margin-bottom:24px}
+  .boot-actions .btn{min-height:46px;font-size:12px;padding:0 20px}
+  .boot-foot{font-size:9.5px;margin-top:22px}
+  .boot-side{display:none}
+  .brand-sub{display:none}
+  .grid{padding:9px 10px 124px}
+  .col.left{grid-template-columns:1fr}
+  .scene-head{padding:12px 13px 10px}
+  .scene-title{font-size:21px;letter-spacing:.13em;gap:9px}
+  .scene-title .glyph{width:28px;height:28px;font-size:12px}
+  .scene-sub{font-size:10.5px}
+  .acts{grid-template-columns:1fr;gap:7px;padding:9px}
+  .act{grid-template-columns:30px 1fr;gap:9px;padding:10px;min-height:0}
+  .act .glyph{width:30px;height:30px;font-size:13px}
+  .act .t{font-size:13px}
+  .act .d{font-size:10.5px}
+  .act .e{font-size:9.5px}
+  .dock{flex-direction:column;align-items:stretch;gap:6px;padding:6px 8px calc(8px + env(safe-area-inset-bottom))}
+  .nav{overflow:visible;justify-content:space-between;width:100%;padding-bottom:0}
+  .nav button{flex:1 1 auto;justify-content:center;height:34px;padding:0 4px;font-size:10.5px}
+  .nav button .nl{display:none}
+  .dock-actions{justify-content:flex-end}
+  .dock .btn{min-height:36px}
+  .toast{bottom:108px}
+  .modal{padding:6px}
+  .modal-inner{padding:18px 16px 20px}
+  .modal-title{font-size:22px}
+  .story{font-size:12.5px;line-height:1.95}
+  .choice{flex-direction:column;align-items:flex-start;gap:4px}
+  .choice:hover{padding-left:14px}
+  .choice .ch{text-align:left;font-size:10px;line-height:1.65}
+  .modal-actions{flex-direction:column}
+  .modal-actions .btn{width:100%;flex:1 1 auto}
+  .scene-portrait{grid-template-columns:94px 1fr;gap:11px}
+  .scene-portrait img{width:94px;height:120px}
+  .scene-portrait .pname{font-size:23px}
+  .talk-gauges{grid-template-columns:1fr}
+  .ending-wrap{padding:40px 20px 48px}
+  .end-summary{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:1021px){
+  .acts,.clue-list{
+    -webkit-mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 18px),transparent 100%);
+    mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 18px),transparent 100%);
+  }
+}
+@media (max-height:780px) and (min-width:1021px){
+  .topbar{padding:7px clamp(14px,2.2vw,28px)}
+  .brand-title{font-size:15px}
+  .week-tag{padding:2px 9px}
+  .grid{padding:8px clamp(12px,2vw,22px);gap:9px;grid-template-columns:268px minmax(0,1fr) 294px}
+  .col{gap:9px}
+  .profile{padding:10px 12px}
+  .p-name{padding-bottom:7px}
+  .p-name h3{font-size:21px}
+  .p-name .job{font-size:10px;margin-top:3px}
+  .p-name .seal{width:30px;height:30px;font-size:9.5px}
+  .week-ring{margin:8px 0 5px;gap:10px}
+  .ring{width:68px;height:68px}
+  .ring .txt b{font-size:21px}
+  .bars{gap:5px;margin-top:6px}
+  .stat{font-size:10px}
+  .week-dots{margin-top:6px;padding-top:6px}
+  .money-line{margin-top:6px;padding-top:6px}
+  .money-line b{font-size:17px}
+  .cluepanel{min-height:110px}
+  .clue-list{padding:4px 10px 8px}
+  .clue{padding:6px 2px}
+  .scene-head{padding:10px 14px 8px}
+  .scene-title{font-size:22px;margin:3px 0 2px}
+  .scene-hint{margin-top:6px;padding:4px 8px;font-size:10px;line-height:1.55}
+  .acts{padding:9px;gap:7px}
+  .act{min-height:68px;padding:9px 10px 10px}
+  .logpanel{flex:0 0 136px}
+  .log{font-size:10.5px;line-height:1.7;padding:6px 12px 8px}
+  .leads{padding:6px 8px 8px;gap:5px}
+  .lead{grid-template-columns:44px 1fr;gap:8px;padding:5px 6px}
+  .lead .ph{width:44px;height:56px}
+  .lead.unmet::after{width:44px;height:56px}
+  .lead .nm{font-size:14px}
+  .side-note{padding:9px 12px;font-size:9.5px}
+  .side-note .quote{font-size:11px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<div id="petals"></div>
+
+<!-- ============ 开局 ============ -->
+<div id="boot" class="boot">
+  <div class="boot-art" id="bootArt"></div>
+  <div class="boot-shade"></div>
+  <div id="bootPetals"></div>
+  <div class="boot-inner">
+    <div class="boot-meta">A Nine-Month Search · 2026</div>
+    <h1 class="boot-title">孕期小惊喜</h1>
+    <div class="boot-en">Interactive Noir Romance</div>
+    <p class="boot-quote">他们都说，孩子会像父亲。<br>可我还不知道，父亲是谁。</p>
+    <div class="boot-actions">
+      <button class="btn gold" id="btnStart">开 始 这 一 局</button>
+      <button class="btn ghost" id="btnContinue" hidden>继 续 上 次</button>
+      <button class="btn text" id="btnHow">玩 法</button>
+    </div>
+    <div class="boot-foot">
+      虚构作品 · 含情感操控、悬疑与黑化描写<br>
+      四十周。去找一个人，或者不找。
+    </div>
+  </div>
+  <div class="boot-side">四十周 · 寻一个人</div>
+</div>
+
+<!-- ============ 游戏 ============ -->
+<div id="game" class="game" hidden>
+  <header class="topbar">
+    <div class="brand">
+      <span class="mark"></span>
+      <div>
+        <div class="brand-title">孕期小惊喜</div>
+        <div class="brand-sub">A NINE-MONTH SEARCH</div>
+      </div>
+    </div>
+    <div class="week-tag" id="weekTag">W06</div>
+    <div class="chips" id="chips"></div>
+    <div class="top-actions">
+      <button class="icon-btn" id="btnArchive">档 案</button>
+      <button class="icon-btn" id="btnMenu">菜 单</button>
+    </div>
+  </header>
+  <main class="grid">
+    <aside class="col left">
+      <section class="panel profile" id="profile"></section>
+      <section class="panel cluepanel">
+        <div class="panel-head"><span>线 索 墙</span><em>EVIDENCE</em></div>
+        <div class="clue-list" id="clues"></div>
+      </section>
+    </aside>
+    <section class="col center">
+      <section class="panel scene">
+        <div class="scene-head" id="sceneHead"></div>
+        <div class="acts" id="acts"></div>
+      </section>
+      <section class="panel logpanel">
+        <div class="panel-head"><span>夜 记</span><em id="logCount"></em></div>
+        <div class="log" id="log"></div>
+      </section>
+    </section>
+    <aside class="col right">
+      <section class="panel leads-panel">
+        <div class="panel-head"><span>嫌 疑 人</span><em>SUSPECTS</em></div>
+        <div class="leads" id="leads"></div>
+      </section>
+      <section class="panel side-note" id="sideNote"></section>
+    </aside>
+  </main>
+  <footer class="dock">
+    <nav class="nav" id="nav"></nav>
+    <div class="dock-actions">
+      <button class="btn ghost" id="btnSkip">静养一周</button>
+      <button class="btn gold" id="btnNext">进入下一周</button>
+    </div>
+  </footer>
+</div>
+
+<!-- ============ 弹窗 ============ -->
+<div id="layer" class="layer">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">×</button>
+    <div class="modal-inner">
+      <div id="modalHead"></div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+<div id="ending" class="ending" hidden></div>
+
+<script>
+/* =========================================================
+   孕期小惊喜 · 游戏脚本
+   ========================================================= */
+'use strict';
+
+/* ---------------- 基础工具 ---------------- */
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+const rand = (a,b) => Math.floor(Math.random()*(b-a+1))+a;
+const pick = a => a[Math.floor(Math.random()*a.length)];
+const clamp = (v,a,b) => Math.max(a,Math.min(b,v));
+const fmt = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,',');
+const sum = a => a.reduce((x,y)=>x+y,0);
+const shuffle = a => { a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; };
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const roman = n => ['','一','二','三','四','五','六','七','八','九','十'][n]||n;
+const periodKey = () => G.phase === 'baby' ? 'M' + G.baby.month : 'W' + G.week;
+
+/* ---------------- 图片 ---------------- */
+const IMG = {
+  boot:'img/01.jpg',
+  pei:'img/02.jpg',
+  shen:'img/03.jpg',
+  lu:'img/04.jpg',
+  gu:'img/05.jpg'
+};
+
+/* ---------------- 四位男主 ---------------- */
+const LEADS = {
+  pei:{
+    id:'pei', name:'裴烬', en:'PEI JIN', title:'裴氏资本 · 掌权人', age:33,
+    img:IMG.pei, glyph:'烬', accent:'#c9a26b',
+    quote:'“开个价。孩子，或者你。”',
+    intro:'你在财经杂志上见过他：裴氏最年轻的家主，手腕上永远是一枚金袖扣。那晚之后，你把黑卡寄回裴氏大楼，第三天，整层顶层公寓的灯亮了。',
+    traits:['沉香','腕骨旧疤','黑卡 0713','金袖扣'],
+    darkNotes:['他把情绪折进袖口。','他开始过问你的行程。','你的手机里多了一个定位。','门锁换了，只有他的指纹。'],
+    first:'裴烬没有请你坐。他站在落地窗前，指间夹着一支没点的烟。<br>“黑卡为什么退回来？”<br>“我不卖东西。”你说。<br>他看了你很久，忽然笑了一下：“那你来卖什么？”',
+    firstAsk:'<p>裴烬没有立刻回答。他把杯子放下，杯底和桌面碰出一声轻响。</p>' +
+      '<p>“你为什么觉得，那晚会和我有关？”</p>' +
+      '<p>“因为我记得你的味道。”你说。</p>' +
+      '<p>他看了你很久，忽然笑了一下，那笑意没有到眼睛里。</p>' +
+      '<p>“记性这么好，”他说，“不该来问我。”</p>',
+    firstWatch:'<p>你什么都没问。他也没有解释。</p>' +
+      '<p>他坐在对面，袖口扣得很整齐，只有左手腕内侧露出一小截旧疤。</p>' +
+      '<p>你想起黑暗里摸到的那道凸起。</p>' +
+      '<p>他注意到你的视线，慢慢把袖口拉了下去。</p>',
+    topics:{
+      night:{q:'那一夜，你在哪？', line:'“那晚？”他把烟按进烟灰缸，“我从不解释酒后的决定。”',
+        after:'他没有否认。也没有承认。<br>你注意到他左手腕内侧，有一道很浅的旧疤，在灯下泛着白。'},
+      baby:{q:'如果孩子是你的', line:'“生下来。”他说，“姓裴。别的不用你操心。”',
+        after:'“如果我不同意呢？”<br>他抬眼看你，像在评估一份不肯签字的合同。<br>“你会同意的。”'},
+      bestie:{q:'你认识林栀？', line:'“林栀？”他重复了一遍这个名字，“她递给我的酒，我没喝。”',
+        after:'“她递给你什么，你喝了？”<br>“这重要吗。”他把袖扣转正，“重要的是，你现在坐在我面前。”'},
+      quiet:{q:'陪我坐一会儿', line:'他没有说话，只是把窗开了一条缝。夜风灌进来，沉香味淡了些。',
+        after:'你们隔着半张桌子坐着。钟走了很久。<br>他忽然问：“你一个人，怕不怕？”<br>你没有回答。'}
+    },
+    gift:{name:'一枚金袖扣', line:'他收下了，却没有戴。“我不缺这个。”<br>“那你缺什么？”<br>“缺一个肯收我东西的人。”'},
+    rivalry:'“她的事，什么时候轮到你来过问。”'
+  },
+  shen:{
+    id:'shen', name:'沈砚白', en:'SHEN YANBAI', title:'仁和医院 · 产科副主任', age:33,
+    img:IMG.shen, glyph:'白', accent:'#c7b9ad',
+    quote:'“别怕。我在。”',
+    intro:'第一次产检，他戴着银边听诊器，问你“孩子父亲的血型”时，笔尖停了半秒。你抬头，他已经低下头去，像什么都没发生。',
+    traits:['消毒水','无名指戒痕','白大褂纽扣','一板叶酸'],
+    darkNotes:['他记得你每一次复诊。','你的档案只在他一个人的柜子里。','他给你开的药，只有他能配。','你转院的手续，总是差一个章。'],
+    first:'沈砚白把B超单推到你面前，指尖在“单活胎”三个字上停了一下。<br>“父亲的血型，还是不知道？”<br>“不知道。”<br>他沉默片刻，把单子收回去：“那就先按我的方案来。”',
+    firstAsk:'<p>沈砚白把水杯往你面前推了推，自己没有喝。</p>' +
+      '<p>“那晚我在医院。”他说，“值班记录可以查。”</p>' +
+      '<p>“我没问你在不在医院。”</p>' +
+      '<p>他停了一下。指尖在杯沿上摩挲，指节有淡淡的消毒水味。</p>' +
+      '<p>“那你问的是哪一晚？”</p>',
+    firstWatch:'<p>你什么都没问。他也没有催。</p>' +
+      '<p>他脱了白大褂，里面是深色衬衫。无名指上有一圈很浅的戒痕。</p>' +
+      '<p>他察觉到你在看，把手收进桌下。</p>' +
+      '<p>“水凉了。”他说，“我再给你倒一杯。”</p>',
+    topics:{
+      night:{q:'那一夜，你在哪？', line:'“那晚我不在医院。”他看着你，一字一句，“你为什么会这么问？”',
+        after:'你看见他无名指上有一圈浅浅的戒痕。<br>他顺着你的目光看下去，把手收进了白大褂口袋。'},
+      baby:{q:'如果孩子是你的', line:'“你的骨盆条件很好。”他说，“别怕。”',
+        after:'这句话太像医生，又太不像。<br>“沈医生，”你问，“你是在安慰我，还是在安慰你自己？”<br>他没有回答，只是把胎心音量调大了一点。'},
+      bestie:{q:'你认识林栀？', line:'“林栀的产检记录，不在我院。”他说，“但她来问过你的事。”',
+        after:'“问什么？”<br>“问你有没有流产的打算。”<br>他抬起眼：“我告诉她，没有。”'},
+      quiet:{q:'陪我坐一会儿', line:'他替你听胎心，听了很久。仪器里那匹小马跑得很急。',
+        after:'“一百四十二。”他说。<br>“正常吗？”<br>“很正常。”他放下听诊器，“就是跑得太快了。像你。”'}
+    },
+    gift:{name:'一盒薄荷糖', line:'他值夜班，口袋里总有一盒。<br>“你怎么知道？”他问。<br>“你身上有薄荷味。”<br>他低头笑了一下，很轻。'},
+    rivalry:'“我是她的医生。请你出去。”'
+  },
+  lu:{
+    id:'lu', name:'陆时野', en:'LU SHIYE', title:'演员 · 三届影帝', age:31,
+    img:IMG.lu, glyph:'野', accent:'#c05468',
+    quote:'“全世界都可以知道。”',
+    intro:'你在商场大屏上看见他，后颈那点纹身在灯下闪了一下。他正对着镜头笑，眼睛却像越过屏幕，落在你身上。',
+    traits:['后颈纹身','薄荷烟','银色耳钉','上挑的签名'],
+    darkNotes:['他在采访里说，最近睡得很好。','你的小区出现在他的vlog背景里。','他在直播里叫你“小朋友”。','热搜第一：#陆时野隐婚#。'],
+    first:'陆时野把帽檐压低，坐在咖啡馆最角落。<br>“你比电视上瘦。”他说。<br>“你比电视上吵。”<br>他笑出声，露出一颗很尖的虎牙：“行，那我小点声。”',
+    firstAsk:'<p>陆时野把帽檐往上抬了一点，露出眼睛。</p>' +
+      '<p>“那天我戴了帽子口罩。”他说，“你认出我了？”</p>' +
+      '<p>“我记得你的味道。”</p>' +
+      '<p>他愣了一秒，然后笑起来，虎牙很尖：“完了。”</p>' +
+      '<p>“什么完了？”</p>' +
+      '<p>“我本来还想抵赖。”</p>',
+    firstWatch:'<p>你什么都没问。他也不催，只把咖啡搅得很慢。</p>' +
+      '<p>他后颈的纹身从衣领里露出来一点，像半句没写完的乐谱。</p>' +
+      '<p>你移开视线。他看见了，笑意更深，故意把领口又拉开一点。</p>' +
+      '<p>“看够了吗？”他问。</p>',
+    topics:{
+      night:{q:'那一夜，你在哪？', line:'“那天我戴了帽子口罩。”他搅着咖啡，“你认出我了？”',
+        after:'他后颈的纹身从衣领里露出来一点，像半句没写完的乐谱。<br>你把视线移开。他看见了，笑意更深。'},
+      baby:{q:'如果孩子是你的', line:'“生下来吧。我养。”他说得像在念台词，可指尖在抖。',
+        after:'“你养？”<br>“我养。”他重复了一遍，声音低下去，“我说真的。”<br>窗外有闪光灯亮了一下。他侧身挡住你，动作快得像本能。'},
+      bestie:{q:'你认识林栀？', line:'“林栀啊。”他想了想，“以前在我剧组做过造型。”',
+        after:'“她手不干净。”他补了一句，“我辞了她。”<br>“为什么？”<br>“因为她动了我的东西。”他看着你，“现在想想，可能不止。”'},
+      quiet:{q:'陪我坐一会儿', line:'他把外套盖在你腿上，自己坐到台阶上抽烟。薄荷味被风吹散。',
+        after:'有粉丝认出他，远远地举手机。<br>他站起来，很自然地把帽檐压到你头上。<br>“别拍她。”他说。'}
+    },
+    gift:{name:'一张黑胶唱片', line:'封面上是个背对镜头的男人。<br>“像不像我？”他问。<br>“不像。”<br>“哪里不像？”<br>“他没有你那么怕被忘记。”'},
+    rivalry:'“镜头在拍。你确定要站在他那边？”'
+  },
+  gu:{
+    id:'gu', name:'顾停云', en:'GU TINGYUN', title:'衡正律所 · 合伙人', age:34,
+    img:IMG.gu, glyph:'云', accent:'#a98f6b',
+    quote:'“我从不做亏本的买卖。”',
+    intro:'林栀的律师函先到，他的名片后到。名片背面用钢笔写着一行字：这件事，我替你打。',
+    traits:['檀香','金边眼镜','钢笔字','一枚素帕'],
+    darkNotes:['他替你算清了每一笔账。','你的通话记录出现在他的证据目录里。','他替你签了和解，也签了监护权。','你的名字，出现在他的“资产”一栏。'],
+    first:'顾停云把一份文件推过来，金边眼镜后的眼睛没有笑。<br>“林栀的账户，三个月前收过一笔钱。”<br>“谁给的？”<br>“我还在查。”他顿了顿，“但你可以先欠我一个人情。”',
+    firstAsk:'<p>顾停云把文件合上，钢笔帽扣好。</p>' +
+      '<p>“那晚我在场。”他说，“但我没上楼。”</p>' +
+      '<p>“为什么告诉我？”</p>' +
+      '<p>“因为你会问。”他推了推眼镜，“也因为，我不想你从别人嘴里听见。”</p>' +
+      '<p>你看着他。他的表情很平，像在陈述一条证据。</p>',
+    firstWatch:'<p>你什么都没问。他也不催，只把文件一页一页收好。</p>' +
+      '<p>你注意到他的钢笔字，收笔像刀；袖扣是素银的，左手无名指上没有戒指。</p>' +
+      '<p>“看够了？”他忽然问。</p>' +
+      '<p>“没有。”</p>' +
+      '<p>他停下手里的动作，第一次真正抬眼看你。</p>',
+    topics:{
+      night:{q:'那一夜，你在哪？', line:'“那晚我在场。”他推了推眼镜，“但我没上楼。”',
+        after:'“为什么告诉我？”<br>“因为你会问。”他把钢笔帽扣上，“也因为，我不想你从别人嘴里听见。”'},
+      baby:{q:'如果孩子是你的', line:'“单亲妈妈很难。”他说，“除非，有人替你分担。”',
+        after:'“分担，还是接管？”<br>他笑了一下，终于有了点温度：“你可以自己选。”<br>“合同呢？”<br>“先谈感情。”他说，“合同，最后签。”'},
+      bestie:{q:'你认识林栀？', line:'“认识。”他翻出一张转账截图，“她收钱的时候，备注写的是‘房费’。”',
+        after:'“哪个房间？”<br>“云顶，顶层。”他把截图推近，“那一晚，她原本想送进去的人，不是你。”'},
+      quiet:{q:'陪我坐一会儿', line:'他把外套搭在椅背上，替你挡住空调风。檀香味很淡。',
+        after:'“你为什么不问我，为什么帮你？”<br>“你会说吗？”<br>“不会。”他合上电脑，“但你可以慢慢猜。”'}
+    },
+    gift:{name:'一支钢笔', line:'他拔开笔帽，在纸上写了一个“意”字。<br>“你的名字。”他说。<br>“写得很好看。”<br>“我只写赢的案子。”'},
+    rivalry:'“需要我提醒你，你现在站的地方归谁管吗？”'
+  }
+};
+const LEAD_IDS = ['pei','shen','lu','gu'];
+
+/* ---------------- 线索库 ---------------- */
+const CLUE_POOL = {
+  pei:[
+    {key:'chen', name:'一缕沉香', desc:'那件衬衫的领口有极淡的沉香，不像香水，像从木头里慢慢渗出来的。'},
+    {key:'scar', name:'腕骨上的旧疤', desc:'黑暗里，你摸到他左手腕内侧有一道凸起的旧疤，像是很多年前留下的。'},
+    {key:'card', name:'黑卡 0713', desc:'床头留下一张黑卡，尾号 0713，没有签名，也没有密码。'},
+    {key:'cuff', name:'一枚金袖扣', desc:'地毯缝里卡着一枚金袖扣，内侧刻着一个极小的字母。'}
+  ],
+  shen:[
+    {key:'disinfect', name:'消毒水的气味', desc:'他的指节有消毒水的气味，像洗过很多遍，还是留着。'},
+    {key:'ringmark', name:'无名指戒痕', desc:'他无名指上有一圈浅浅的戒痕，戒指已经不在了。'},
+    {key:'button', name:'白大褂纽扣', desc:'你手心里攥着一颗白色纽扣，像从某种制服上扯下来的。'},
+    {key:'folate', name:'一板叶酸', desc:'你包里多了一板叶酸，锡纸背面用铅笔写着：每天一片。'}
+  ],
+  lu:[
+    {key:'tattoo', name:'后颈的纹身', desc:'他后颈有一小片纹身，摸上去像半句没写完的乐谱。'},
+    {key:'mint', name:'薄荷烟蒂', desc:'阳台的烟灰缸里，有一枚沾着薄荷味的烟蒂。'},
+    {key:'earring', name:'银色耳钉', desc:'枕边落了一枚银色耳钉，很轻，像一枚小小的月亮。'},
+    {key:'sign', name:'半截签名', desc:'便签上有个只写了一半的签名，最后一笔习惯性上挑。'}
+  ],
+  gu:[
+    {key:'sandal', name:'檀香', desc:'空气里有很淡的檀香味，像一间很久没开窗的书房。'},
+    {key:'glasses', name:'金边眼镜', desc:'浴室镜台上，留着一副忘记带走的金边眼镜。'},
+    {key:'pen', name:'钢笔字', desc:'便签上写着一个地址，钢笔字锋利，收笔像刀。'},
+    {key:'hanky', name:'一枚素帕', desc:'枕下压着一枚素色手帕，角上绣着一个几乎看不见的字母。'}
+  ]
+};
+const CLUE_SOURCES = [
+  {key:'hotel', name:'云顶套房', hint:'回到那间房，也许还留着什么。'},
+  {key:'camera', name:'监控录像', hint:'那一晚，走廊的摄像头记得所有人的脸。'},
+  {key:'bestie', name:'林栀的嘴', hint:'她喝多了，总会漏出一点真话。'},
+  {key:'phone', name:'旧手机', hint:'那晚的聊天记录，也许还没删干净。'},
+  {key:'perfume', name:'香水柜台', hint:'有些味道，比脸更不容易忘记。'}
+];
+const SOURCE_LABEL = {};
+CLUE_SOURCES.forEach(s => SOURCE_LABEL[s.key] = s.name);
+
+/* ---------------- 职业 ---------------- */
+const JOBS = {
+  designer:{key:'designer', name:'独立设计师', sub:'有一间自己的小工作室', money:12000, rep:54, health:62, mood:58,
+    income:1500, perk:'接私活收入 +30%', perkId:'private'},
+  reporter:{key:'reporter', name:'财经记者', sub:'习惯追问，也习惯被讨厌', money:8200, rep:63, health:64, mood:60,
+    income:1350, perk:'调查类花费 -30%', perkId:'invest'},
+  lawyer:{key:'lawyer', name:'律师助理', sub:'懂规则，也懂规则外的缝隙', money:10000, rep:56, health:60, mood:56,
+    income:1400, perk:'交谈时更容易讨人喜欢', perkId:'talk'},
+  streamer:{key:'streamer', name:'生活方式主播', sub:'镜头前热闹，镜头后一个人', money:15000, rep:68, health:52, mood:52,
+    income:1800, perk:'收入更高，但名声更脆', perkId:'fame'}
+};
+
+/* ---------------- 地点 ---------------- */
+const PLACES = {
+  home:{name:'家', en:'HER APARTMENT', glyph:'家', sub:'窗帘总拉着一半，光落在没收拾的茶几上。',
+    hint:'家是唯一不用演的地方。休息、接活、整理线索，或者给家里打个电话。'},
+  studio:{name:'工作室', en:'THE STUDIO', glyph:'室', sub:'桌上堆着没做完的方案，和一张被压皱的产检单。',
+    hint:'钱不会自己长出来。父母不会兜底，能靠的只有这双手。'},
+  hospital:{name:'仁和医院', en:'RENHE HOSPITAL', glyph:'医', sub:'消毒水、叫号声，和一条永远坐满人的走廊。',
+    hint:'按时产检。孩子的心跳，是你现在唯一确定的事。'},
+  hotel:{name:'云顶会所', en:'CLOUD TOP CLUB', glyph:'顶', sub:'顶层电梯需要刷脸，大堂的香氛还是那晚的味道。',
+    hint:'那晚的现场不会自己开口。套房、监控、前台，都值得再走一遍。'},
+  cafe:{name:'浮白咖啡', en:'FUBai COFFEE', glyph:'啡', sub:'角落里有一张靠窗的桌子，能看见整条街。',
+    hint:'约人，或者只是坐着。有些话，要在人少的地方说。'},
+  mall:{name:'万象商场', en:'MIXC MALL', glyph:'场', sub:'婴儿用品在四楼，香水柜台在一楼。',
+    hint:'营养品、待产包、婴儿用品。钱要花在刀刃上。'},
+  bestie:{name:'林栀的公寓', en:'LIN ZHI\'S FLAT', glyph:'栀', sub:'门禁密码还是你生日。她大概忘了改。',
+    hint:'她是你十年的朋友。也是那晚，最后一个碰过你酒杯的人。'},
+  people:{name:'人物', en:'PEOPLE', glyph:'人', sub:'有些人你见过，有些人你只是听说过。',
+    hint:'点开一个人，可以交谈、试探，或者送他一件东西。每次交谈消耗一点行动。'}
+};
+const NAV_IDS = ['home','studio','hospital','hotel','cafe','mall','bestie','people'];
+
+/* ---------------- 关键剧情周 ---------------- */
+const CHECK_WEEKS = [12,16,20,24,28,32,36];
+const MILESTONES = {
+  12:{tag:'NT 检查', note:'第一次看清他的轮廓。'},
+  16:{tag:'唐筛', note:'抽血，等一周结果。'},
+  20:{tag:'大排畸', note:'医生会告诉你，孩子的性别。'},
+  24:{tag:'糖耐', note:'空腹喝下一杯糖水，甜得发苦。'},
+  28:{tag:'孕晚期', note:'从这周起，你可以决定要不要指认他。'},
+  32:{tag:'胎心监护', note:'每周一次，像一场小小的考试。'},
+  36:{tag:'待产', note:'随时可能发动。'},
+  40:{tag:'预产期', note:'该做决定了。'}
+};
+const TRIMESTER = w => w < 13 ? '孕早期' : w < 28 ? '孕中期' : '孕晚期';
+
+/* =========================================================
+   状态 / 开局 / 渲染 / 存档
+   ========================================================= */
+const SAVE_KEY = 'yq_save_v1';
+let G = null;
+let MODAL_ONCLOSE = null;
+let TOAST_TIMER = null;
+let LAST_LOG_LEN = -1;
+let SCENE_DEPTH = 0;
+
+function newGame(hero, jobKey){
+  const job = JOBS[jobKey] || JOBS.designer;
+  const father = pick(LEAD_IDS);
+  const fatherClues = shuffle(CLUE_POOL[father]).slice(0,3).map(c => ({...c, owner:father}));
+  const decoyOwners = shuffle(LEAD_IDS.filter(id => id !== father)).slice(0,2);
+  const decoyClues = decoyOwners.map(id => ({...pick(CLUE_POOL[id]), owner:id}));
+  const rawClues = shuffle([...fatherClues, ...decoyClues]);
+  const sources = shuffle(CLUE_SOURCES.map(s => s.key));
+  const clues = rawClues.map((c,i) => ({
+    id:'clue'+i, key:c.key, name:c.name, desc:c.desc, owner:c.owner,
+    source:sources[i], found:false, known:false
+  }));
+  const leads = {};
+  LEAD_IDS.forEach(id => {
+    leads[id] = {fav:0, dark:0, met:false, used:{}, giftWeek:-9, eventWeek:-9, visits:0, seen:0};
+  });
+  const sex = Math.random() < 0.5 ? '女孩' : '男孩';
+  G = {
+    v:1, hero:hero, job:jobKey, phase:'preg',
+    week:6, ap:4,
+    money:job.money, mood:job.mood, health:job.health, rep:job.rep, fetal:72,
+    place:'home',
+    father:father,
+    accused:null, wrong:false,
+    clues:clues, leads:leads,
+    bestie:{wary:0, exposed:false, gift:0, soup:false, confronted:false},
+    baby:{name:'', sex:sex, health:76, bond:30, talent:50, month:0, stock:0, nicu:false, born:false},
+    flags:{tutorial:false, headstart:false, bag:false, knowSex:false, bagQuality:0, hired:false,
+      nights:{}, nightPartners:{}, affairCount:0, againAsked:false, secondBaby:false, secondFather:null,
+      truthRival:false, nightRival:false, managed:false, familyTension:false, familyPlan:null, certMan:null, coParents:[]},
+    beats:{},
+    logs:[], ended:false, ending:null,
+    startedAt:Date.now(), savedAt:Date.now()
+  };
+  pushLog('第 6 周。验孕棒上的两道杠还没有褪色。', 'rose');
+  pushLog('你给自己煮了一碗面，最后没吃几口。', 'quiet');
+  pushLog('从今天起，你只有自己。', '');
+}
+
+/* ---------------- 日志 / 数值 ---------------- */
+function pushLog(text, cls){
+  if(!G) return;
+  const tag = G.phase === 'baby' ? ('M' + String(G.baby.month).padStart(2,'0')) : ('W' + String(G.week).padStart(2,'0'));
+  G.logs.push({tag, text, cls:cls || ''});
+  if(G.logs.length > 90) G.logs = G.logs.slice(-90);
+}
+function statChange(key, delta){
+  if(!G) return;
+  const before = G[key];
+  G[key] = clamp(G[key] + delta, 0, 100);
+  return G[key] - before;
+}
+function moneyChange(delta){
+  G.money += delta;
+}
+function effectText(e){
+  const out = [];
+  if(e.money) out.push((e.money > 0 ? '+' : '') + fmt(e.money) + ' 存款');
+  if(e.mood) out.push((e.mood > 0 ? '+' : '') + e.mood + ' 心绪');
+  if(e.health) out.push((e.health > 0 ? '+' : '') + e.health + ' 体质');
+  if(e.rep) out.push((e.rep > 0 ? '+' : '') + e.rep + ' 名声');
+  if(e.fetal) out.push((e.fetal > 0 ? '+' : '') + e.fetal + ' 胎宝');
+  if(e.fav) out.push((e.fav > 0 ? '+' : '') + e.fav + ' 好感');
+  if(e.dark) out.push((e.dark > 0 ? '+' : '') + e.dark + ' 黑化');
+  return out;
+}
+function applyEffect(e, leadId, opts){
+  if(e.money) moneyChange(e.money);
+  if(e.mood) statChange('mood', e.mood);
+  if(e.health) statChange('health', e.health);
+  if(e.rep) statChange('rep', e.rep);
+  if(e.fetal) statChange('fetal', e.fetal);
+  if(leadId && G.leads[leadId]){
+    if(e.fav) G.leads[leadId].fav = clamp(G.leads[leadId].fav + e.fav, 0, 100);
+    if(e.dark) G.leads[leadId].dark = clamp(G.leads[leadId].dark + e.dark, 0, 100);
+    if(e.dark && G.leads[leadId].dark >= 95 && !G.leads[leadId].broke){
+      G.leads[leadId].broke = true;
+      pushLog(LEADS[leadId].name + '的黑化像一根绷到极限的弦。', 'bad');
+    }
+  }
+  const chips = effectText(e);
+  if(chips.length && !(opts && opts.silent)) toast(chips.join(' · '));
+  return chips;
+}
+function effectsHTML(e){
+  const chips = effectText(e);
+  return chips.map(x => '<span class="effect-chip ' + (x.indexOf('黑化') >= 0 ? 'bad' : (x.indexOf('胎宝') >= 0 || x.indexOf('体质') >= 0 ? 'good' : '')) + '">' + x + '</span>').join('');
+}
+
+/* ---------------- 弹窗 ---------------- */
+function openModal(headHTML, bodyHTML, onClose){
+  $('#modalHead').innerHTML = headHTML || '';
+  $('#modalBody').innerHTML = bodyHTML || '';
+  $('#layer').classList.add('show');
+  MODAL_ONCLOSE = onClose || null;
+  SCENE_DEPTH = 0;
+  const modal = $('#layer .modal');
+  modal.scrollTop = 0;
+}
+function closeModal(force){
+  if(!$('#layer').classList.contains('show')) return;
+  $('#layer').classList.remove('show');
+  const cb = force ? null : MODAL_ONCLOSE;
+  MODAL_ONCLOSE = null;
+  if(cb) setTimeout(cb, 60);
+}
+function toast(msg){
+  const t = $('#toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(TOAST_TIMER);
+  TOAST_TIMER = setTimeout(() => t.classList.remove('show'), 2200);
+}
+function confirmBox(title, text, onYes, yesLabel){
+  openModal(
+    '<div class="kicker">CONFIRM</div><div class="modal-title">' + title + '</div>',
+    '<div class="story"><p>' + text + '</p></div>' +
+    '<div class="modal-actions"><button class="btn ghost" id="cfNo">再想想</button>' +
+    '<button class="btn gold" id="cfYes">' + (yesLabel || '确认') + '</button></div>'
+  );
+  $('#cfNo').onclick = () => closeModal();
+  $('#cfYes').onclick = () => { closeModal(); onYes(); };
+}
+
+/* ---------------- 场景模板 ---------------- */
+function openScene(o){
+  const kicker = o.kicker ? '<div class="kicker">' + o.kicker + '</div>' : '';
+  let head = kicker;
+  if(o.portrait){
+    const L = LEADS[o.portrait];
+    const st = G.leads[o.portrait];
+    head += '<div class="scene-portrait">' +
+      '<img loading="lazy" decoding="async" src="' + L.img + '" alt="' + L.name + '">' +
+      '<div class="pinfo"><div class="pname">' + L.name + '</div>' +
+      '<div class="ptitle">' + L.title + '</div>' +
+      '<div class="pquote">' + L.quote + '</div>' +
+      '<div class="pmetrics"><div class="pmetric">好感<b>' + st.fav + '</b></div>' +
+      '<div class="pmetric dark">黑化<b>' + st.dark + '</b></div></div></div></div>';
+    if(o.title) head += '<div class="modal-title" style="margin-top:2px">' + o.title + '</div>';
+  } else {
+    head += '<div class="modal-title">' + (o.title || '') + '</div>';
+    if(o.sub) head += '<div class="modal-sub">' + o.sub + '</div>';
+  }
+  let body = '<div class="story">' + (o.story || '') + '</div>';
+  if(o.effects) body += '<div style="margin-top:12px">' + effectsHTML(o.effects) + '</div>';
+  if(o.extra) body += o.extra;
+  if(o.choices && o.choices.length){
+    body += '<div class="choices">';
+    o.choices.forEach((c,i) => {
+      body += '<button class="choice ' + (c.risky ? 'risky ' : '') + (c.gold ? 'gold ' : '') + '" data-ch="' + i + '"' + (c.disabled ? ' disabled' : '') + '>' +
+        '<span class="cl">' + c.label + '</span>' + (c.hint ? '<span class="ch">' + c.hint + '</span>' : '') + '</button>';
+    });
+    body += '</div>';
+  } else if(o.next !== false){
+    body += '<div class="modal-actions"><button class="btn ghost" id="sceneNext">' + (o.nextLabel || '继续') + '</button></div>';
+  }
+  openModal(head, body);
+  if(o.choices && o.choices.length){
+    $$('#modalBody .choice').forEach(btn => {
+      btn.onclick = () => {
+        const i = parseInt(btn.getAttribute('data-ch'), 10);
+        const c = o.choices[i];
+        closeModal();
+        setTimeout(() => { if(c && c.onPick) c.onPick(); }, 80);
+      };
+    });
+  } else {
+    const nx = $('#sceneNext');
+    if(nx) nx.onclick = () => { closeModal(); if(o.onNext) setTimeout(o.onNext, 80); };
+  }
+}
+
+/* ---------------- 渲染 ---------------- */
+function pad2(n){ return String(n).padStart(2,'0'); }
+function render(){
+  if(!G) return;
+  renderTop();
+  renderProfile();
+  renderClues();
+  renderSceneHead();
+  renderActions();
+  renderLeads();
+  renderSideNote();
+  renderLog();
+  renderNav();
+  updateDock();
+  LAST_LOG_LEN = G.logs.length;
+  autoSave();
+}
+function renderTop(){
+  $('#weekTag').textContent = G.phase === 'baby' ? ('M' + pad2(G.baby.month)) : ('W' + pad2(G.week));
+  const babyHealth = G.phase === 'baby' ? G.baby.health : G.fetal;
+  const chips = [
+    ['款', fmt(G.money), G.money < 0 ? 'warn' : ''],
+    ['绪', G.mood, G.mood < 30 ? 'warn' : (G.mood >= 70 ? 'good' : '')],
+    ['体', G.health, G.health < 35 ? 'warn' : ''],
+    ['名', G.rep, G.rep < 30 ? 'warn' : ''],
+    [G.phase === 'baby' ? '宝' : '胎', babyHealth, babyHealth < 40 ? 'warn' : (babyHealth >= 75 ? 'good' : '')]
+  ];
+  $('#chips').innerHTML = chips.map(c =>
+    '<div class="chip ' + c[2] + '"><span class="c">' + c[0] + '</span><b>' + c[1] + '</b></div>'
+  ).join('');
+}
+function renderProfile(){
+  const job = JOBS[G.job];
+  const ringR = 37, circ = 2 * Math.PI * ringR;
+  const progress = G.phase === 'baby' ? (G.baby.month / 6) : (G.week / 40);
+  const offset = circ * (1 - clamp(progress,0,1));
+  let h = '<div class="p-name"><div><h3>' + G.hero + '</h3><div class="job">' + job.name + ' · ' + (G.phase === 'baby' ? '育儿第 ' + G.baby.month + ' 个月' : '第 ' + G.week + ' 周') + '</div></div>' +
+    '<div class="seal">' + (G.phase === 'baby' ? '育<br>' + Math.max(G.baby.month,1) : '孕<br>' + G.week) + '</div></div>';
+  h += '<div class="week-ring"><div class="ring"><svg viewBox="0 0 86 86">' +
+    '<defs><linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8f2740"/><stop offset="1" stop-color="#e6c79e"/></linearGradient></defs>' +
+    '<circle class="track" cx="43" cy="43" r="' + ringR + '"/>' +
+    '<circle class="prog" cx="43" cy="43" r="' + ringR + '" stroke-dasharray="' + circ.toFixed(1) + '" stroke-dashoffset="' + offset.toFixed(1) + '"/></svg>' +
+    '<div class="txt"><b>' + (G.phase === 'baby' ? G.baby.month : pad2(G.week)) + '</b><span>' + (G.phase === 'baby' ? 'MONTH' : 'WEEK') + '</span></div></div>' +
+    '<div class="ring-meta"><div class="k">' + (G.phase === 'baby' ? '距离本局结束' : '距离预产期') + '</div>' +
+    '<div class="v">' + (G.phase === 'baby' ? '还有 ' + Math.max(0, 6 - G.baby.month) + ' 个月' : '还有 ' + Math.max(0, 40 - G.week) + ' 周') + '</div>' +
+    '<span class="trimester">' + (G.phase === 'baby' ? '育儿期' : TRIMESTER(G.week)) + '</span></div></div>';
+  const bars = [
+    ['心绪', G.mood, '', ''],
+    ['体质', G.health, '', ''],
+    ['名声', G.rep, '', ''],
+    [G.phase === 'baby' ? '宝宝' : '胎宝', G.phase === 'baby' ? G.baby.health : G.fetal, G.phase === 'baby' ? 'green' : '', '']
+  ];
+  h += '<div class="bars">';
+  bars.forEach(b => {
+    h += '<div class="stat"><span>' + b[0] + '</span><div class="bar"><i class="' + b[2] + '" style="width:' + b[1] + '%"></i></div><b>' + b[1] + '</b></div>';
+  });
+  h += '</div>';
+  let dots = '';
+  const apMax = (G.phase === 'baby' && G.flags.hired) ? 5 : 4;
+  for(let i=0;i<apMax;i++) dots += '<i class="' + (i < G.ap ? 'on' : '') + '"></i>';
+  h += '<div class="week-dots"><span class="lbl">' + (G.phase === 'baby' ? '本月行动' : '本周行动') + '</span>' + dots + '<span style="font-size:10px;color:var(--muted)">' + G.ap + '/' + apMax + '</span></div>';
+  h += '<div class="money-line"><span>存 款</span><b class="' + (G.money < 0 ? 'low' : '') + '">¥' + fmt(G.money) + '</b></div>';
+  if(G.phase === 'baby'){
+    h += '<div class="baby-mini show"><h4>' + (G.baby.name || '宝宝') + ' · ' + G.baby.sex + '</h4>' +
+      '<div class="sub">健康 ' + G.baby.health + ' · 亲密 ' + G.baby.bond + ' · 天赋 ' + G.baby.talent + '</div>' +
+      '<div class="sub">奶粉储备 ' + G.baby.stock + ' 份</div></div>';
+  }
+  $('#profile').innerHTML = h;
+}
+function clueOwnerName(c){ return c.known ? LEADS[c.owner].name : '指向不明'; }
+function renderClues(){
+  const box = $('#clues');
+  if(!box) return;
+  let h = '';
+  G.clues.forEach((c,i) => {
+    if(c.found){
+      h += '<div class="clue" data-clue="' + i + '"><div class="no">' + pad2(i+1) + '</div><div><div class="tt">' + c.name + '</div>' +
+        '<div class="ss">' + (c.known ? '<span class="known">已确认 · ' + LEADS[c.owner].name + '</span>' : '<span class="unk">待确认</span>') + '</div></div></div>';
+    } else {
+      h += '<div class="clue unknown"><div class="no">' + pad2(i+1) + '</div><div><div class="tt">未发现的物证</div><div class="ss">去那晚留下的地方找找</div></div></div>';
+    }
+  });
+  const found = G.clues.filter(c => c.found).length;
+  const known = G.clues.filter(c => c.known).length;
+  h += '<div class="clue-empty">已找到 ' + found + ' / 5 · 已确认 ' + known + ' / 5<br>确认三条以上，才好在夜里开口。</div>';
+  box.innerHTML = h;
+  $$('#clues .clue[data-clue]').forEach(el => {
+    el.onclick = () => {
+      const c = G.clues[parseInt(el.getAttribute('data-clue'),10)];
+      openClueDetail(c);
+    };
+  });
+}
+function openClueDetail(c){
+  openModal(
+    '<div class="kicker">EVIDENCE · ' + (SOURCE_LABEL[c.source] || '') + '</div><div class="modal-title">' + c.name + '</div>',
+    '<div class="story"><p>' + c.desc + '</p>' +
+    (c.known
+      ? '<p class="hl">指向：' + LEADS[c.owner].name + '。' + LEADS[c.owner].traits.join('、') + '。</p>'
+      : '<p class="system">这条线索还没有被确认。回家「把线索摊开」，或者当面试探那个人。</p>') +
+    '</div><div class="modal-actions"><button class="btn ghost" id="clueClose">收起</button></div>'
+  );
+  $('#clueClose').onclick = () => closeModal();
+}
+function renderSceneHead(){
+  const p = PLACES[G.phase === 'baby' ? (PLACES[G.place] ? G.place : 'home') : G.place] || PLACES.home;
+  const ms = G.phase === 'preg' ? MILESTONES[G.week] : null;
+  let h = '<div class="scene-kicker">' + p.en + (ms ? ' · ' + ms.tag : '') + '</div>';
+  h += '<div class="scene-title"><span class="glyph">' + p.glyph + '</span>' + p.name + '</div>';
+  h += '<div class="scene-sub">' + p.sub + '</div>';
+  if(ms) h += '<div class="scene-hint">' + ms.note + '</div>';
+  else if(G.phase === 'baby') h += '<div class="scene-hint">' + (G.flags.hired ? '月嫂在家。你可以出门两小时，不用一路小跑。' : '推车、奶瓶、备用尿布。出一次门，像搬一次家。') + '</div>';
+  else h += '<div class="scene-hint">' + p.hint + '</div>';
+  $('#sceneHead').innerHTML = h;
+}
+function renderActions(){
+  const list = getActions();
+  const box = $('#acts');
+  if(!list.length){
+    box.innerHTML = '<div class="clue-empty">此处暂无可为。</div>';
+    return;
+  }
+  box.innerHTML = list.map((a,i) => {
+    const locked = a.cond && !a.cond();
+    return '<button class="act ' + (locked ? 'locked ' : '') + (a.special ? 'special ' : '') + '" data-act="' + i + '">' +
+      '<span class="glyph">' + a.glyph + '</span><span class="body">' +
+      '<span class="t">' + a.name + '</span>' +
+      '<span class="d">' + a.desc + '</span>' +
+      (a.tag ? '<span class="e">' + a.tag + '</span>' : '') +
+      (locked ? '<span class="lock">' + (a.lock || '条件不足') + '</span>' : '') +
+      '</span></button>';
+  }).join('');
+  $$('#acts .act').forEach(btn => {
+    btn.onclick = () => {
+      const a = list[parseInt(btn.getAttribute('data-act'),10)];
+      if(a.cond && !a.cond()){ toast(a.lock || '现在还做不了'); return; }
+      if(G.ap < (a.ap === undefined ? 1 : a.ap)){ toast('这周的行动点用完了。'); return; }
+      if(a.ap !== 0) G.ap -= (a.ap === undefined ? 1 : a.ap);
+      pushLog('你' + a.doneText + '。', a.logCls || '');
+      const r = a.run && a.run();
+      if(r !== false){ render(); }
+    };
+  });
+}
+function leadState(id){
+  const d = G.leads[id];
+  if(d.dark >= 80) return {label:'失控', cls:'danger'};
+  if(d.dark >= 60) return {label:'危险', cls:'danger'};
+  if(d.dark >= 30) return {label:'暗涌', cls:''};
+  return {label:'平静', cls:''};
+}
+function suspCount(id){
+  return G.clues.filter(c => c.known && c.owner === id).length;
+}
+function renderLeads(){
+  const box = $('#leads');
+  let h = '';
+  LEAD_IDS.forEach(id => {
+    const L = LEADS[id], s = G.leads[id], st = leadState(id);
+    h += '<button class="lead ' + (s.met ? '' : 'unmet') + '" data-lead="' + id + '">' +
+      '<img loading="lazy" decoding="async" class="ph" src="' + L.img + '" alt="' + L.name + '">' +
+      '<div class="info"><div class="row1"><span class="nm">' + L.name + '</span><span class="tag ' + st.cls + '">' + (s.met ? st.label : '未见') + '</span></div>' +
+      '<div class="sub">' + L.title + (suspCount(id) ? ' · 疑点 ' + suspCount(id) : '') + '</div>' +
+      '<div class="meters"><div class="meter fav"><span>好感</span><div class="tr"><i style="width:' + s.fav + '%"></i></div><span class="num">' + s.fav + '</span></div>' +
+      '<div class="meter dark"><span>黑化</span><div class="tr"><i style="width:' + s.dark + '%"></i></div><span class="num">' + s.dark + '</span></div></div></div>' +
+      '<span class="state">查看</span></button>';
+  });
+  box.innerHTML = h;
+  $$('#leads .lead').forEach(el => {
+    el.onclick = () => openLead(el.getAttribute('data-lead'));
+  });
+}
+function renderSideNote(){
+  const found = G.clues.filter(c => c.found).length;
+  const known = G.clues.filter(c => c.known).length;
+  const risky = LEAD_IDS.filter(id => G.leads[id].met && G.leads[id].dark >= 60);
+  const quotes = [
+    '“孩子会像谁，要生下来才知道。”',
+    '“有些门，推开一次就关不上了。”',
+    '“你以为你在找父亲，其实你在选往后的日子。”',
+    '“父母的电话，不接也是可以的。”',
+    '“别把救命的人，当成救赎。”'
+  ];
+  let h = '<div class="quote">' + quotes[(G.week + G.baby.month) % quotes.length] + '</div><div class="rule"></div>';
+  h += '线索 ' + found + '/5 · 确认 ' + known + '/5<br>';
+  if(G.bestie.exposed) h += '林栀：<b>已撕破脸</b><br>';
+  else h += '林栀警觉：<b>' + G.bestie.wary + '/3</b><br>';
+  if(risky.length) h += '<span style="color:var(--red)">⚠ ' + risky.map(id => LEADS[id].name).join('、') + ' 黑化过高</span><br>';
+  if(G.accused) h += '生父指认：<b>' + (G.accused === 'none' ? '放弃' : LEADS[G.accused].name) + '</b><br>';
+  else if(G.week >= 26) h += '生父指认：<b>可进行</b><br>';
+  h += '<div class="rule"></div><span style="font-size:9.5px;color:var(--dim)">点击人物可交谈。每次交谈消耗 1 点行动。</span>';
+  $('#sideNote').innerHTML = h;
+}
+function renderLog(){
+  const box = $('#log');
+  const items = G.logs.slice(-50);
+  box.innerHTML = items.length ? items.map(l =>
+    '<div class="entry"><span class="w">' + l.tag + '</span><span class="tx ' + l.cls + '">' + l.text + '</span></div>'
+  ).join('') : '<div class="log-empty">还没有发生什么。<br>先过完这一周。</div>';
+  $('#logCount').textContent = G.logs.length + ' 则';
+  if(G.logs.length !== LAST_LOG_LEN) box.scrollTop = box.scrollHeight;
+}
+function renderNav(){
+  const nav = $('#nav');
+  const babyNav = ['home','mall','hospital','cafe','people','hotel'];
+  nav.innerHTML = NAV_IDS.map(id => {
+    const p = PLACES[id];
+    const locked = G.phase === 'baby' && (!babyNav.includes(id) || (id === 'hotel' && !G.flags.hired));
+    return '<button data-nav="' + id + '" class="' + (G.place === id ? 'on ' : '') + (locked ? 'locked' : '') + '"><span class="ng">' + p.glyph + '</span><span class="nl">' + p.name + '</span></button>';
+  }).join('');
+  $$('#nav button').forEach(b => {
+    b.onclick = () => {
+      const id = b.getAttribute('data-nav');
+      if(G.phase === 'baby' && id === 'hotel' && !G.flags.hired){
+        toast('孩子还在家。请月嫂后，你才走得开。');
+        return;
+      }
+      if(G.phase === 'baby' && !babyNav.includes(id)){
+        toast('带着孩子，这里不方便去。');
+        return;
+      }
+      G.place = id;
+      render();
+    };
+  });
+}
+function updateDock(){
+  $('#btnNext').textContent = G.phase === 'baby' ? '进入下个月' : (G.week >= 39 ? '去 医 院' : '进入下一周');
+  $('#btnSkip').textContent = G.phase === 'baby' ? '静养一月' : '静养一周';
+}
+
+/* ---------------- 存档 ---------------- */
+function autoSave(){
+  if(!G) return;
+  clearTimeout(autoSave._t);
+  autoSave._t = setTimeout(() => {
+    try{
+      G.savedAt = Date.now();
+      localStorage.setItem(SAVE_KEY, JSON.stringify({v:1, G:G}));
+    }catch(e){}
+  }, 350);
+}
+function save(manual){
+  if(!G) return;
+  try{
+    G.savedAt = Date.now();
+    localStorage.setItem(SAVE_KEY, JSON.stringify({v:1, G:G}));
+    if(manual) toast('已存档 · 第 ' + G.week + ' 周');
+  }catch(e){ if(manual) toast('浏览器不让写存档。'); }
+}
+function hydrate(raw){
+  if(!raw || !raw.G) throw new Error('bad save');
+  const s = raw.G;
+  if(!s.hero || !s.clues || !s.leads) throw new Error('bad save');
+  s.phase = s.phase || 'preg';
+  s.flags = s.flags || {};
+  s.flags.nights = s.flags.nights || {};
+  s.flags.nightPartners = s.flags.nightPartners || {};
+  s.flags.affairCount = s.flags.affairCount || 0;
+  s.flags.secondBaby = !!s.flags.secondBaby;
+  s.flags.againAsked = !!s.flags.againAsked;
+  s.flags.truthRival = !!s.flags.truthRival;
+  s.flags.nightRival = !!s.flags.nightRival;
+  s.flags.managed = !!s.flags.managed;
+  s.flags.familyTension = !!s.flags.familyTension;
+  s.flags.familyPlan = s.flags.familyPlan || null;
+  s.flags.certMan = s.flags.certMan || null;
+  s.flags.coParents = s.flags.coParents || [];
+  s.flags.secondFather = s.flags.secondFather || null;
+  s.bestie = s.bestie || {wary:0, exposed:false, gift:0, soup:false, confronted:false};
+  s.baby = s.baby || {name:'', sex:'女孩', health:76, bond:30, talent:50, month:0, stock:0, nicu:false, born:false};
+  s.beats = s.beats || {};
+  s.logs = s.logs || [];
+  s.ap = s.ap === undefined ? 4 : s.ap;
+  s.accused = s.accused || null;
+  LEAD_IDS.forEach(id => {
+    if(!s.leads[id]) s.leads[id] = {fav:0,dark:0,met:false,used:{},giftWeek:-9,eventWeek:-9,visits:0,seen:0};
+    if(!s.leads[id].used) s.leads[id].used = {};
+  });
+  return s;
+}
+function loadGame(){
+  try{
+    const raw = JSON.parse(localStorage.getItem(SAVE_KEY));
+    G = hydrate(raw);
+    bootOff();
+    render();
+    if(G.ended){
+      finishGame();
+    } else if(!G.flags.tutorial){
+      setTimeout(showHowto, 500);
+    }
+    toast('回到第 ' + (G.phase === 'baby' ? '育儿第 ' + G.baby.month + ' 个月' : G.week + ' 周'));
+  }catch(e){
+    toast('没有找到可用的存档。');
+  }
+}
+function hasSave(){
+  try{
+    const raw = JSON.parse(localStorage.getItem(SAVE_KEY));
+    return !!(raw && raw.G);
+  }catch(e){ return false; }
+}
+function exportSave(){
+  if(!G){ toast('还没有开始。'); return; }
+  const blob = new Blob([JSON.stringify({v:1, G:G}, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = '孕期小惊喜-第' + G.week + '周-存档.json';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  toast('存档已导出。');
+}
+function importSave(){
+  const old = document.getElementById('importFile');
+  if(old) old.remove();
+  const input = document.createElement('input');
+  input.type = 'file'; input.accept = '.json,application/json'; input.id = 'importFile';
+  input.style.display = 'none';
+  document.body.appendChild(input);
+  input.onchange = () => {
+    const f = input.files[0];
+    if(!f) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try{
+        G = hydrate(JSON.parse(reader.result));
+        bootOff(); render();
+        if(G.ended) finishGame();
+        toast('导入成功。');
+      }catch(e){ toast('存档内容不完整。'); }
+    };
+    reader.readAsText(f);
+  };
+  input.click();
+}
+
+/* ---------------- 菜单 / 档案 / 玩法 ---------------- */
+function showMenu(){
+  openModal(
+    '<div class="kicker">MENU</div><div class="modal-title">暂 停</div>',
+    '<div class="story"><p class="system">第 ' + (G.phase === 'baby' ? '育儿 ' + G.baby.month + ' 个月' : G.week + ' 周') + ' · ' + G.hero + '</p></div>' +
+    '<div class="modal-actions">' +
+    '<button class="btn ghost" id="mSave">存 档</button>' +
+    '<button class="btn ghost" id="mExport">导出存档</button>' +
+    '<button class="btn ghost" id="mImport">导入存档</button>' +
+    '<button class="btn ghost" id="mHow">玩 法</button>' +
+    '<button class="btn ghost" id="mRestart">重 新 开 始</button>' +
+    '<button class="btn gold" id="mClose">回 到 游 戏</button>' +
+    '</div>'
+  );
+  $('#mSave').onclick = () => save(true);
+  $('#mExport').onclick = () => exportSave();
+  $('#mImport').onclick = () => importSave();
+  $('#mHow').onclick = () => showHowto();
+  $('#mRestart').onclick = () => confirmBox('重新开始？', '这一局的周数、线索和所有人，都会归零。', () => {
+    try{ localStorage.removeItem(SAVE_KEY); }catch(e){}
+    location.reload();
+  }, '重 开');
+  $('#mClose').onclick = () => closeModal();
+}
+function showArchive(){
+  const found = G.clues.filter(c => c.found);
+  let clueHTML = found.length ? found.map(c =>
+    '<p><span class="hl">' + c.name + '</span> — ' + (c.known ? '指向 ' + LEADS[c.owner].name : '尚未确认') + '<br><span class="system">' + c.desc + '</span></p>'
+  ).join('') : '<p class="system">还没有找到任何物证。</p>';
+  let leadHTML = LEAD_IDS.map(id => {
+    const s = G.leads[id], L = LEADS[id];
+    return '<p>' + L.name + '　<span class="system">' + (s.met ? '已接触' : '未接触') + ' · 好感 ' + s.fav + ' · 黑化 ' + s.dark + ' · 疑点 ' + suspCount(id) + '</span></p>';
+  }).join('');
+  openModal(
+    '<div class="kicker">ARCHIVE</div><div class="modal-title">她 的 档 案</div><div class="modal-sub">第 ' + G.week + ' 周 · ' + TRIMESTER(G.week) + '</div>',
+    '<div class="story"><p class="hl">物 证</p>' + clueHTML + '<p class="hl" style="margin-top:14px">人 物</p>' + leadHTML +
+    '<p class="hl" style="margin-top:14px">林 栀</p><p>' + (G.bestie.exposed ? '已经撕破脸。她不再装，也不再回消息。' : '她还在给你发消息，语气一如既往地甜。警觉 ' + G.bestie.wary + '/3。') + '</p>' +
+    '<p class="hl" style="margin-top:14px">父 母</p><p>“你自己的事，自己处理。”这句话你记得很清楚。</p>' +
+    '</div><div class="modal-actions"><button class="btn ghost" id="arcClose">收起</button></div>'
+  );
+  $('#arcClose').onclick = () => closeModal();
+}
+function showHowto(fromGame){
+  const html = '<div class="howto">' +
+    '<div class="li"><em>一</em><span><b>一周四点行动。</b>休息、工作、产检、调查、交谈，都要花点数。点数用完就进入下一周。</span></div>' +
+    '<div class="li"><em>二</em><span><b>你只有自己。</b>存款、体质、心绪、名声、胎宝，五项都会影响结局。父母不会兜底，别指望。</span></div>' +
+    '<div class="li"><em>三</em><span><b>找到五件物证。</b>在云顶套房、监控、林栀嘴里、旧手机、香水柜台各有一件。回家整理，或当面试探，才能确认它们指向谁。</span></div>' +
+    '<div class="li"><em>四</em><span><b>好感与黑化是两条线。</b>好感让他在产房外等你；黑化让他想把门锁上。两条都高时，最容易出修罗场。</span></div>' +
+    '<div class="li"><em>五</em><span><b>第 26 周起可以指认生父。</b>认对，走进他的结局；认错，真正的父亲会记住这笔账。也可以不指认，自己养。</span></div>' +
+    '<div class="li"><em>六</em><span><b>第 37 周后可以入院生产。</b>生产方式、医院、存款、体质都会影响你和孩子。生完还有六个月育儿期。</span></div>' +
+    '</div><div class="modal-actions"><button class="btn gold" id="howClose">' + (fromGame ? '知道了' : '开 始 这 一 局') + '</button></div>';
+  openModal('<div class="kicker">HOW TO PLAY</div><div class="modal-title">四十周，怎么活</div>', html);
+  $('#howClose').onclick = () => {
+    closeModal();
+    if(!fromGame){ if(G){ render(); } else { startFlow(); } }
+    else if(G){ G.flags.tutorial = true; }
+  };
+  if(fromGame && G) G.flags.tutorial = true;
+}
+
+/* =========================================================
+   行动 / 线索 / 交谈 / 时间推进
+   ========================================================= */
+function incomeOf(mult){
+  const base = JOBS[G.job].income * (mult || 1);
+  return Math.round(base * (0.92 + Math.random() * 0.16));
+}
+function perk(id){ return JOBS[G.job].perkId === id; }
+function investCost(n){ return perk('invest') ? Math.round(n * 0.7) : n; }
+function talkFavBonus(){ return perk('talk') ? 1 : 0; }
+
+function hasClueSource(source){
+  return G.clues.some(c => c.source === source && !c.found);
+}
+function findClue(source){
+  const c = G.clues.find(x => x.source === source && !x.found);
+  if(!c) return null;
+  c.found = true;
+  pushLog('你找到了「' + c.name + '」。', 'gold');
+  toast('发现物证：' + c.name);
+  return c;
+}
+function identifyClue(c, silent){
+  if(!c || c.known) return false;
+  c.known = true;
+  if(!silent) pushLog('物证「' + c.name + '」指向 ' + LEADS[c.owner].name + '。', 'gold');
+  return true;
+}
+function foundClueScene(source, title, intro){
+  if(!hasClueSource(source)) return false;
+  const c = findClue(source);
+  openScene({
+    kicker:'EVIDENCE · ' + SOURCE_LABEL[source],
+    title:title,
+    story:intro + '<p class="hl">' + c.name + '</p><p>' + c.desc + '</p>' +
+      '<p class="system">它现在只是一件东西。回家「把线索摊开」，或者在见面时试探那个人，才能确认它指向谁。</p>'
+  });
+  return true;
+}
+function unknownClue(id){
+  return G.clues.find(c => c.found && !c.known && c.owner === id);
+}
+
+/* ---------------- 地点行动 ---------------- */
+function getActions(){
+  if(G.phase === 'baby') return babyActions();
+  switch(G.place){
+    case 'home': return homeActions();
+    case 'studio': return studioActions();
+    case 'hospital': return hospitalActions();
+    case 'hotel': return hotelActions();
+    case 'cafe': return cafeActions();
+    case 'mall': return mallActions();
+    case 'bestie': return bestieActions();
+    case 'people': return peopleActions();
+    default: return homeActions();
+  }
+}
+function A(glyph, name, desc, tag, doneText, run, extra){
+  return Object.assign({glyph, name, desc, tag, doneText, run, ap:1}, extra || {});
+}
+function homeActions(){
+  const list = [
+    A('息','闭眼小睡','把手机扣在桌上，睡二十分钟。','心绪 +8~12 · 体质 +3','睡了一会儿',
+      () => { applyEffect({mood:rand(8,12), health:3}); pushLog('梦里有人敲门。你醒来，门是关着的。','quiet'); }),
+    A('稿','接一单私活','客户催得急，但钱也到得快。','存款 +' + Math.round(JOBS[G.job].income * (perk('private') ? 0.85 : 0.65)) + ' 左右 · 体质 -4',
+      '在电脑前坐到腰酸', () => {
+        const m = incomeOf(0.65 * (perk('private') ? 1.3 : 1));
+        applyEffect({money:m, health:-4, mood:-2});
+        pushLog('你交完稿，窗外已经黑了。到账 ¥' + fmt(m) + '。','gold');
+      }),
+    A('证','把线索摊开','五件物证，总要一件一件对齐。','确认一件物证指向','把线索摊了满桌',
+      () => {
+        const c = G.clues.find(x => x.found && !x.known);
+        if(c){
+          identifyClue(c);
+          toast('确认：' + c.name + ' → ' + LEADS[c.owner].name);
+          pushLog('你对着灯看那件东西，忽然想起来：那天，他身上的味道/习惯/痕迹，对上了。','quiet');
+        } else if(G.clues.some(x => x.found)){
+          pushLog('线索都确认过了。现在缺的，是一个当面对质的时机。','');
+          statChange('mood', 2);
+        } else {
+          pushLog('桌上只有一张产检单。你还没找到任何物证。','quiet');
+          statChange('mood', -1);
+        }
+      }),
+    A('机','翻那晚的旧手机','聊天记录、打车记录、照片。也许还有没删干净的东西。','可能发现物证','翻到手机发烫',
+      () => {
+        if(foundClueScene('phone','凌晨三点的聊天记录','你给旧手机充上电，屏幕亮起来的时候，先跳出来的是林栀的消息。')){
+          pushLog('旧手机里还留着那晚的定位。','');
+        } else {
+          applyEffect({mood:rand(-2,5)});
+          pushLog('聊天记录被清得很干净，只剩一条打车短信：云顶会所，凌晨四点十七分。','quiet');
+        }
+      }),
+    A('家','给家里打个电话','你知道会听见什么。但有时候，人还是想听一遍。','可能心绪波动','按下了拨号键',
+      () => callParents(), {cond:() => G.week - (G.flags.lastFamily || 0) >= 4, lock:'上周刚打过'}),
+    A('教','和他说说话','把手放在肚子上，念一段今天发生的事。','胎宝 +4 · 心绪 +3','对着肚子说了很久',
+      () => {
+        applyEffect({fetal:4, mood:3});
+        const kick = Math.random() < 0.5;
+        pushLog(kick ? '他踢了你一下，很轻。像在回答。' : '没有回应。但你还是说完了。','rose');
+      }, {cond:() => G.week >= 16, lock:'第 16 周后'}),
+    A('包','收拾待产包','证件、产褥垫、孩子的小衣服。钱要花，心才定。','存款 -1,200 · 生产更稳','把箱子拉上了',
+      () => {
+        applyEffect({money:-1200, mood:3});
+        G.flags.bag = true; G.flags.bagQuality = 1;
+        pushLog('你把小衣服叠了三遍，最后还是放回最上面。','rose');
+      }, {cond:() => G.week >= 30 && !G.flags.bag, lock:'已备好 / 第30周'}),
+    A('认','指认生父','把物证摆在他面前，问他：是不是你。','进入指认 · 仅一次','把物证收进包里',
+      () => openAccuse(), {cond:() => G.week >= 26 && G.week < 40 && !G.accused, lock:'第26周后 / 已指认', special:true}),
+    A('生','入院待产','宫缩、备皮、签字。没有人能替你疼。','进入生产流程 · 不耗行动点','拎起待产包出门',
+      () => startBirth(), {cond:() => G.week >= 37, lock:'第37周后', special:true, ap:0})
+  ];
+  if(G.week >= 37 && !G.flags.bag){
+    list.push(A('医','直接去医院','待产包可以路上买。孩子不等你。','跳过准备 · 生产风险略增 · 不耗行动点','拦了一辆车',
+      () => startBirth(true), {special:true, ap:0}));
+  }
+  return list;
+}
+function studioActions(){
+  const list = [
+    A('班','去上班','把怀孕这件事藏在宽松的西装下面。','存款 +' + JOBS[G.job].income + ' · 体质 -4 · 名声 +1','在工位上坐了一天',
+      () => {
+        const m = incomeOf(1);
+        applyEffect({money:m, health:-4, mood:-2, rep:1});
+        pushLog('同事问你最近怎么不喝咖啡。你说在戒。','');
+      }),
+    A('假','请假保胎','少赚一点，先把自己和孩子稳住。','体质 +5 · 心绪 +3 · 名声 -2','请了一天假',
+      () => {
+        applyEffect({health:5, mood:3, rep:-2});
+        pushLog('领导回了一个“好”，后面跟着一个很长的省略号。','quiet');
+      }),
+    A('言','处理流言','茶水间的眼神像针。你不能装看不见。','名声 +4 · 心绪 -2','在群里发了一段话',
+      () => {
+        if(G.flags.sabotage){
+          applyEffect({rep:5, mood:-2});
+          pushLog('你把产检单拍在群里，说：孩子是我的，工作也是我的。','good');
+          G.flags.sabotage = false;
+        } else {
+          applyEffect({rep:2, mood:1});
+          pushLog('没人接话。但至少，今天没人再问。','');
+        }
+      })
+  ];
+  return list;
+}
+const ENCOUNTERS = {
+  pei:{
+    kicker:'TOP FLOOR · 只 有 一 盏 灯',
+    title:'整 层 楼 只 有 你 们',
+    story:'<p>整层楼只亮着一盏壁灯。裴烬站在窗前，手里没有酒。</p>' +
+      '<p>“睡不着？”他没有回头。</p>' +
+      '<p>“来看看你。”</p>' +
+      '<p>他终于转过身。袖口卷到小臂，那道旧疤在灯下很淡。</p>',
+    closeTitle:'一 秒',
+    close:'<p>你走到他面前。他没有退，只低头看你。</p>' +
+      '<p>“知道自己在做什么吗？”</p>' +
+      '<p>“知道。”</p>' +
+      '<p>他抬手，把你额前的头发拨到耳后。指尖停了一秒，才落下来。</p>' +
+      '<p class="whisper">那一秒，比整层楼的灯都亮。</p>'
+  },
+  shen:{
+    kicker:'NIGHT SHIFT · 值 班 室',
+    title:'白 色 的 灯',
+    story:'<p>值班室的灯是白的。沈砚白坐在桌前，冷掉的饭还剩一半。</p>' +
+      '<p>他看见你，先把听诊器摘下来。</p>' +
+      '<p>“哪里不舒服？”</p>' +
+      '<p>“没有。”你说，“就是想来看看你。”</p>' +
+      '<p>他握着笔的手停了一下。</p>',
+    closeTitle:'一 件 白 大 褂',
+    close:'<p>他站起来，椅子在地上划了一声。</p>' +
+      '<p>“这里是医院。”他说。</p>' +
+      '<p>“我知道。”</p>' +
+      '<p>他看了你很久，最后只是把白大褂脱下来，披在你肩上。</p>' +
+      '<p class="whisper">消毒水的味道里，有一点点他的体温。</p>'
+  },
+  lu:{
+    kicker:'LAST ORDER · 打 烊 前',
+    title:'最 里 面 那 桌',
+    story:'<p>打烊前十分钟。陆时野坐在最里面，帽檐压得很低。</p>' +
+      '<p>店里只剩你们两个人。他把口罩摘下来，冲你笑。</p>' +
+      '<p>“这么晚出来，孩子呢？”</p>' +
+      '<p>“有人看着。”</p>' +
+      '<p>“那我呢？”他问，“谁看着？”</p>',
+    closeTitle:'帽 檐',
+    close:'<p>他伸手，把你拉到卡座里面。</p>' +
+      '<p>帽子扣在你头上，帽檐遮住半张脸。</p>' +
+      '<p>“别让人看见。”他低声说。</p>' +
+      '<p>然后吻落在你嘴角，很轻。</p>' +
+      '<p class="whisper">玻璃门外，雨开始下了。</p>'
+  },
+  gu:{
+    kicker:'PRIVATE ROOM · 没 有 别 人',
+    title:'摘 下 眼 镜',
+    story:'<p>包厢里没有别人。顾停云把文件合上，眼镜摘下来放在一边。</p>' +
+      '<p>“你迟到了七分钟。”他说。</p>' +
+      '<p>“路上堵车。”</p>' +
+      '<p>“嗯。”他把对面的椅子拉开，“坐。”</p>' +
+      '<p>桌上没有酒，只有一杯温水。</p>',
+    closeTitle:'七 分 钟',
+    close:'<p>他没有动。你俯身过去，手撑在他椅背上。</p>' +
+      '<p>“顾律师，”你说，“你脸红了。”</p>' +
+      '<p>“没有。”</p>' +
+      '<p>你离他很近。近到能看见他喉结动了一下。</p>' +
+      '<p class="whisper">最后是他先移开视线，把眼镜重新戴上。</p>'
+  }
+};
+function openEncounter(id, place){
+  const E = ENCOUNTERS[id], s = G.leads[id];
+  openScene({
+    kicker:'ENCOUNTER · ' + E.kicker,
+    portrait:id,
+    title:E.title,
+    story:E.story,
+    choices:[
+      {label:'靠近他', hint:'好感 +6 · 黑化 +3 · 心绪 +7', risky:true, onPick:()=>{
+        applyEffect({fav:6, dark:3, mood:7}, id);
+        s.used.enc = G.week;
+        pushLog('你靠近了 ' + LEADS[id].name + '。有些界限，一旦跨过就回不去。','rose');
+        render();
+        openScene({kicker:'ENCOUNTER · ' + LEADS[id].en, portrait:id, title:E.closeTitle, story:E.close, nextLabel:'分 开'});
+      }},
+      {label:'坐下说话', hint:'好感 +3 · 心绪 +5', onPick:()=>{
+        applyEffect({fav:3, mood:5}, id);
+        s.used.enc = G.week;
+        pushLog('你和 ' + LEADS[id].name + ' 坐了一会儿。没有提孩子，也没有提那晚。','quiet');
+        render();
+        openScene({
+          kicker:'ENCOUNTER', portrait:id, title:'说 一 会 儿 话',
+          story:'<p>你们说了一会儿话。说天气，说工作，说一些无关紧要的事。</p>' +
+            '<p>谁也没有提孩子，谁也没有提那一晚。</p>' +
+            '<p>临走的时候，他替你拉开门。走廊的风灌进来。</p>' +
+            '<p class="whisper">你忽然觉得，这样也很好。</p>',
+          nextLabel:'离 开'
+        });
+      }},
+      {label:'转身走', hint:'好感 -1 · 黑化 +2 · 心绪 +1', onPick:()=>{
+        applyEffect({fav:-1, dark:2, mood:1}, id);
+        s.used.enc = G.week;
+        pushLog('你走到门口，又转身走了。','quiet');
+        render();
+        openScene({
+          kicker:'ENCOUNTER', title:'门 口',
+          story:'<p>你走到门口，手放在把手上，没有回头。</p>' +
+            '<p>身后没有脚步声。他也没有叫你。</p>' +
+            '<p class="whisper">有些靠近，只需要一个转身就能停住。</p>',
+          nextLabel:'离 开'
+        });
+      }}
+    ]
+  });
+}
+function hospitalActions(){
+  const list = [
+    A('检','产检','挂号、排队、躺下、听胎心。','存款 -200 · 胎宝 +3~8','躺在检查床上',
+      () => doCheckup()),
+    A('心','心理门诊','有些话不能跟朋友说，也不能跟家里说。','存款 -500 · 心绪 +12','在诊室坐了一小时',
+      () => { applyEffect({money:-500, mood:12}); pushLog('医生说：你不是矫情，你只是太久没被接住。','good'); }),
+    A('养','营养门诊','蛋白、铁、钙。孩子长得快，你得跟上。','存款 -600 · 胎宝 +5 · 体质 +2','拿了一袋营养剂',
+      () => { applyEffect({money:-600, fetal:5, health:2}); pushLog('营养师把你的食谱写在纸上，末尾画了一个笑脸。',''); }),
+    A('沈','找沈砚白','他的诊室在最里面，门总是关着。','交谈 / 试探','敲了敲诊室的门',
+      () => { G.leads.shen.met ? openLead('shen') : meetLead('shen'); }, {cond:() => G.week >= 10, lock:'第10周后'}),
+    A('灯','值班室的灯','凌晨两点，他还没走。','特殊偶遇 · 靠近他','在值班室门口停下',
+      () => openEncounter('shen', 'hospital'), {cond:() => G.leads.shen.met && G.leads.shen.used.enc !== G.week && G.week >= 14, lock:'未接触 / 本周已见'}),
+    A('生','入院待产','宫缩、备皮、签字。','进入生产流程 · 不耗行动点','拎起待产包出门',
+      () => startBirth(), {cond:() => G.week >= 37, lock:'第37周后', special:true, ap:0})
+  ];
+  return list;
+}
+function hotelActions(){
+  const cost = G.flags.headstart ? 0 : 800;
+  const list = [
+    A('房','重回顶层套房','2701。门卡还能用，因为那天没人退房。','存款 -800 · 可能发现物证','用房卡贴开了门',
+      () => {
+        if(G.flags.headstart){ G.flags.headstart = false; }
+        else applyEffect({money:-800});
+        applyEffect({mood:-2});
+        if(foundClueScene('hotel','2701 房间','窗帘还是那样，留着一道缝。你蹲下来，手指探进地毯边缘。')){
+          pushLog('你回到了那间房。空气里还有一点点不属于你的味道。','quiet');
+        } else {
+          pushLog('房间被打扫得很干净。干净得像有人特意来过。','quiet');
+        }
+      }, {cond:() => G.flags.headstart || G.money >= 800, lock:'存款不足'}),
+    A('监','调走廊监控','钱能买到的，不止是时间。','存款 -2,500 · 可能发现物证 · 名声风险','在监控室看了三个小时',
+      () => {
+        const c = investCost(2500);
+        applyEffect({money:-c, mood:-3});
+        if(Math.random() < 0.22){
+          applyEffect({rep:-4});
+          pushLog('保安多看了你一眼。你听见他打电话，提到了“记者”。','bad');
+        }
+        if(foundClueScene('camera','凌晨两点的走廊','屏幕上，电梯门开了。一个男人的背影走进 2701，左手腕上有一点反光。')){
+          pushLog('你把那一帧截了下来，存进手机相册最深处。','gold');
+        } else {
+          pushLog('录像缺了二十分钟。有人比你更早来过。','bad');
+        }
+      }, {cond:() => G.money >= investCost(2500), lock:'存款不足'}),
+    A('前','问前台','一个笑脸，一句“那晚值班的是谁”。','存款 -500 · 得到一点消息','把一盒糖推过去',
+      () => {
+        applyEffect({money:-500, mood:1});
+        pushLog('前台说，那晚 2701 的客人没有登记名字，只留了一个姓：' + ['裴','沈','陆','顾'][rand(0,3)] + '。','quiet');
+      }),
+    A('顶','顶层的灯','他没叫你坐，只把窗开了一条缝。','特殊偶遇 · 靠近他','上了顶层',
+      () => openEncounter('pei', 'hotel'), {cond:() => G.leads.pei.met && G.leads.pei.used.enc !== G.week, lock:'未接触 / 本周已见'}),
+    A('包','包厢里的文件','顾停云把眼镜摘了下来。','特殊偶遇 · 靠近他','在包厢门口站了一会儿',
+      () => openEncounter('gu', 'hotel'), {cond:() => G.leads.gu.met && G.leads.gu.used.enc !== G.week, lock:'未接触 / 本周已见'}),
+    A('风','在天台吹风','霓虹灯把整座城泡在酒里。','心绪 +7 · 体质 +1','在风里站了很久',
+      () => { applyEffect({mood:7, health:1}); pushLog('你忽然想，如果那晚没有推开那扇门，现在会在哪里。','quiet'); })
+  ];
+  return list;
+}
+function cafeActions(){
+  const list = [
+    A('约','约一个人','选一个人坐下。听他说，也看他不说什么。','选择交谈对象 · 消耗 1 点','给对方发了消息',
+      () => pickLeadToMeet(), {special:true}),
+    A('角','打烊前的角落','最里面那桌，帽檐压得很低。','特殊偶遇 · 靠近他','在卡座边停下',
+      () => openEncounter('lu', 'cafe'), {cond:() => G.leads.lu.met && G.leads.lu.used.enc !== G.week, lock:'未接触 / 本周已见'}),
+    A('坐','独自坐一会儿','靠窗的位置，能看见整条街。','心绪 +6','点了一杯热牛奶',
+      () => {
+        applyEffect({mood:6});
+        if(Math.random() < 0.35){
+          pushLog('隔壁桌有人在聊林栀：“她最近手头很宽。”','quiet');
+          G.bestie.wary = clamp(G.bestie.wary + 1, 0, 3);
+        } else {
+          pushLog('你把牛奶喝完了。街上的人都有地方去。','quiet');
+        }
+      }),
+    A('栀','约林栀出来','十年的朋友，总该坐下来聊聊。','进入林栀线','给林栀发了定位',
+      () => openBestieTalk(), {special:true})
+  ];
+  return list;
+}
+function mallActions(){
+  const list = [
+    A('补','买营养品','叶酸、铁剂、孕妇奶粉。','存款 -700 · 胎宝 +6 · 体质 +2','拎回两大袋',
+      () => { applyEffect({money:-700, fetal:6, health:2}); pushLog('收银员问你要不要办会员卡。你说下次。',''); }),
+    A('奶','囤婴儿用品','纸尿裤、奶瓶、包被。先囤一点。','存款 -1,000 · 奶粉储备 +1','推着车上了四楼',
+      () => {
+        applyEffect({money:-1000});
+        G.baby.stock = clamp(G.baby.stock + 1, 0, 4);
+        pushLog('你在两件小衣服之间选了很久，最后两件都买了。','rose');
+      }, {cond:() => G.baby.stock < 4, lock:'已经囤满'}),
+    A('裙','买一条裙子','不是为了谁。就是想照镜子的时候，别那么累。','存款 -900 · 心绪 +8 · 名声 +2','在试衣间站了很久',
+      () => { applyEffect({money:-900, mood:8, rep:2}); pushLog('裙子很宽松，能穿到生。你对着镜子笑了一下。','rose'); }),
+    A('香','去香水柜台','那晚的味道，也许你还能认出来。','存款 -300 · 可能发现物证','把试香纸凑近鼻子',
+      () => {
+        applyEffect({money:-300});
+        if(foundClueScene('perfume','一楼的香水柜台','柜姐问你想要什么调。你说：沉香，或者檀香，或者薄荷。')){
+          pushLog('你在一排小瓶子之间，忽然停住了。','gold');
+        } else {
+          applyEffect({mood:3});
+          pushLog('所有味道都像，又都不是。你空着手走了。','quiet');
+        }
+      })
+  ];
+  return list;
+}
+function bestieActions(){
+  const list = [
+    A('套','套她的话','她喝两口酒，就会开始说自己多不容易。','可能发现物证 · 林栀警觉 +1','陪她喝了半杯',
+      () => {
+        G.bestie.wary = clamp(G.bestie.wary + 1, 0, 3);
+        const c = findClue('bestie');
+        if(c){
+          openScene({
+            kicker:'LIN ZHI · 林栀',
+            title:'她说漏了嘴',
+            story:'<p>林栀把杯子转了两圈，忽然笑：“那天我还以为，进去的会是那个姓周的胖子。”</p>' +
+              '<p>“结果呢？”</p>' +
+              '<p>“结果你命好。”她抬眼看你，笑意没到眼底。</p>' +
+              '<p class="hl">' + c.name + '</p><p>' + c.desc + '</p>' +
+              '<p class="system">这条物证还需要确认。她已经开始提防你了。</p>'
+          });
+          pushLog('林栀说漏了那晚的一个细节。','rose');
+        } else {
+          openScene({
+            kicker:'LIN ZHI · 林栀',
+            title:'她的关心',
+            story:'<p>“你最近气色不好。”林栀把汤推过来，“我认识一个阿姨，专门做小月子餐，要不要介绍给你？”</p>' +
+              '<p>你看着她。她也看着你，眼神很稳。</p>' +
+              '<p class="whisper">“' + G.hero + '，你别多想。那晚我也是为你好。”</p>'
+          });
+          pushLog('林栀的每句话都像关心，又都像提醒。','quiet');
+        }
+      }, {special:true}),
+    A('摊','和她摊牌','十年的账，总要有一晚算清。','进入对峙 · 影响名声','把手机录音打开',
+      () => openBestieConfront(), {cond:() => G.bestie.wary >= 2 && !G.bestie.exposed, lock:'需要先套两次话', special:true}),
+    A('圈','翻她的朋友圈','她发了新包、新表、新做的指甲。','可能发现端倪','往下翻了很久',
+      () => {
+        applyEffect({mood:-3});
+        if(Math.random() < 0.5){
+          G.bestie.wary = clamp(G.bestie.wary + 1, 0, 3);
+          applyEffect({rep:-2});
+          pushLog('你在她半年前的照片里，看见了自己家的窗帘。她来过，没告诉你。','bad');
+        } else {
+          pushLog('她把你屏蔽了。只剩一条横线。','quiet');
+        }
+      }),
+    A('礼','送她一份礼','不是原谅。是让她放松一点。','存款 -500 · 林栀警觉 -1 · 心绪 -2','把礼盒递过去',
+      () => {
+        applyEffect({money:-500, mood:-2});
+        G.bestie.wary = clamp(G.bestie.wary - 1, 0, 3);
+        pushLog('她拆开礼盒，说“你还是这么客气”。你笑了笑。','quiet');
+      }, {cond:() => G.money >= 500, lock:'存款不足'})
+  ];
+  return list;
+}
+function peopleActions(){
+  const list = LEAD_IDS.map(id => {
+    const s = G.leads[id], L = LEADS[id];
+    return A(L.glyph, (s.met ? '找 ' : '约见 ') + L.name, L.title, s.met ? '交谈 · 送礼 · 查看黑化' : '第一次见面 · 消耗 1 点',
+      s.met ? '给' + L.name + '发了消息' : '去见' + L.name,
+      () => { s.met ? openLead(id) : meetLead(id); }, {special:s.dark >= 60});
+  });
+  list.push(A('栀','找林栀','有些朋友，越亲近越危险。','进入林栀线','去了林栀的公寓',
+    () => { G.place = 'bestie'; render(); }, {special:true}));
+  list.push(A('父','给父母打电话','“你自己的事，自己处理。”','可能心绪波动','按下了拨号键',
+    () => callParents(), {cond:() => G.week - (G.flags.lastFamily || 0) >= 4, lock:'上周刚打过'}));
+  return list;
+}
+
+/* ---------------- 具体行动 ---------------- */
+function callParents(){
+  G.flags.lastFamily = G.week;
+  openScene({
+    kicker:'FAMILY · 电话',
+    title:'家里',
+    story:'<p>电话响了很久，母亲才接。背景里是电视的声音，还有你弟在喊“妈，我袜子呢”。</p>' +
+      '<p>“' + G.hero + '啊。”她的声音先是热的，随即低下去，“你弟下个月订婚，家里最近手头紧……”</p>' +
+      '<p>你还没开口，她已经把话说完了一半。</p>',
+    choices:[
+      {label:'低声开口，借一点钱', hint:'心绪 -12 · 大概率被拒', risky:true, onPick:() => {
+        applyEffect({money:0, mood:-12});
+        openScene({
+          kicker:'FAMILY', title:'她说',
+          story:'<p>“不是妈不帮你。”她压低声音，“你一个女孩子，孩子父亲都不知道是谁，传出去你弟怎么做人？”</p>' +
+            '<p>“妈，”你说，“我只是想借三万。我会还。”</p>' +
+            '<p>电话那边沉默了几秒。然后她说：“你从小就要强。要强的人，自己能行。”</p>' +
+            '<p class="whisper">电话挂断的时候，你听见你弟在问：谁啊？</p>' +
+            '<p class="system">存款没有变化。你早该知道。</p>'
+        });
+        pushLog('你向家里开口了。电话挂断后，客厅很静。','bad');
+      }},
+      {label:'只告诉他们你怀孕了', hint:'心绪 -14 · 看清一件事', risky:true, onPick:() => {
+        applyEffect({mood:-14, health:1});
+        openScene({
+          kicker:'FAMILY', title:'两道杠',
+          story:'<p>“怀孕了？”母亲的声音尖了一下，随即又压回去，“……确定吗？医生怎么说？”</p>' +
+            '<p>“六周。有心跳。”</p>' +
+            '<p>她沉默了很久，久到你以为电话断了。然后她问：“那……要不，先别要？”</p>' +
+            '<p>你握着手机，忽然觉得肚子里的那一点心跳，比电话这头所有人都响。</p>' +
+            '<p class="whisper">“妈，我自己处理。”你替她把话说完。</p>'
+        });
+        pushLog('母亲的第一反应，是让你别要。','bad');
+      }},
+      {label:'报个平安，然后挂断', hint:'心绪 -4 · 体质 +1', onPick:() => {
+        applyEffect({mood:-4, health:1});
+        openScene({
+          kicker:'FAMILY', title:'平安',
+          story:'<p>“我挺好的。”你说，“就是跟你说一声。”</p>' +
+            '<p>“那就好，那就好。”母亲松了口气，像是完成了一件差事，“缺什么跟妈说。”</p>' +
+            '<p>“嗯。”</p>' +
+            '<p>你们都清楚，这句话不会兑现。但挂电话之前，她还是叮嘱你多穿点。</p>' +
+            '<p class="system">你把手机放在桌上，坐了很久。然后起身，给自己倒了一杯热水。</p>'
+        });
+        pushLog('你报了个平安。热水喝完，日子还得继续。','quiet');
+      }}
+    ]
+  });
+}
+function doCheckup(){
+  const cost = 200;
+  applyEffect({money:-cost});
+  const milestone = CHECK_WEEKS.includes(G.week) && !G.beats['check_' + G.week];
+  if(milestone){
+    G.beats['check_' + G.week] = true;
+    applyEffect({fetal:8, health:2});
+    if(G.week === 20 && !G.flags.knowSex){
+      G.flags.knowSex = true;
+      pushLog('医生把屏幕转过来：是个' + G.baby.sex + '。','rose');
+    }
+    openCheckupScene(G.week);
+  } else {
+    applyEffect({fetal:3, health:2});
+    pushLog('胎心 140 上下。医生说，很好。','good');
+    if(!G.leads.shen.met && G.week >= 12){
+      G.leads.shen.met = true;
+      pushLog('给你做检查的是沈砚白。他问了一句孩子父亲的血型，你说不知道。','quiet');
+    }
+  }
+}
+function openCheckupScene(week){
+  const sexLine = week >= 20 ? '<p>“是个' + G.baby.sex + '。”医生把屏幕转过来，“要看看吗？”</p><p>你看见一团模糊的黑白，像一颗漂浮的种子。</p>' : '';
+  const findings = G.fetal >= 70
+    ? '<p class="good">“各项指标都好。”医生说，“你把自己照顾得不错。”</p>'
+    : G.fetal >= 45
+      ? '<p>“偏小一点。”医生皱了皱眉，“最近是不是没休息好？多吃点，别硬撑。”</p>'
+      : '<p class="bad">“胎儿发育偏慢。”医生放下探头，“你需要卧床，至少两周。工作先放一放。”</p>';
+  openScene({
+    kicker:'CHECKUP · 第 ' + week + ' 周',
+    title:MILESTONES[week] ? MILESTONES[week].tag : '产检',
+    story:'<p>耦合剂是凉的。探头压下去的时候，你听见那匹小马又跑起来。</p>' +
+      '<p>一百四十。一百四十五。一百三十八。医生没说话，屏幕上的波形一上一下。</p>' + sexLine + findings +
+      '<p class="system">胎宝状态：' + G.fetal + ' / 100</p>',
+    nextLabel:'收好单子'
+  });
+  pushLog('第 ' + week + ' 周产检完成。胎心很快，医生说很好。','good');
+}
+function pickLeadToMeet(){
+  const html = '<div class="story"><p>你把手机翻过来，通讯录里躺着四个名字。有人先开口，有人只会等你先开口。</p></div>' +
+    '<div class="choices">' + LEAD_IDS.map(id => {
+      const s = G.leads[id], L = LEADS[id];
+      return '<button class="choice" data-pick="' + id + '"><span class="cl">' + L.name + (s.met ? '' : ' · 第一次见面') + '</span><span class="ch">' + L.title.split(' · ')[0] + '</span></button>';
+    }).join('') + '</div>';
+  openModal('<div class="kicker">WHO WILL YOU SEE</div><div class="modal-title">约 谁</div>', html);
+  $$('#modalBody .choice').forEach(btn => {
+    btn.onclick = () => {
+      const id = btn.getAttribute('data-pick');
+      closeModal();
+      setTimeout(() => { G.leads[id].met ? openLead(id) : meetLead(id); }, 80);
+    };
+  });
+}
+
+/* ---------------- 人物交谈 ---------------- */
+function meetLead(id){
+  const L = LEADS[id], s = G.leads[id];
+  if(s.met){ openLead(id); return; }
+  s.met = true;
+  s.visits++;
+  s.fav = clamp(s.fav + 2, 0, 100);
+  s.dark = clamp(s.dark + 1, 0, 100);
+  pushLog('你第一次真正坐在 ' + L.name + ' 对面。','gold');
+  openScene({
+    kicker:'FIRST MEETING · ' + L.en,
+    portrait:id,
+    title:'第一次见面',
+    story:'<p>' + L.first + '</p>',
+    choices:[
+      {label:'直接问那晚的事', hint:'好感 +3 · 黑化 +3', risky:true, onPick:() => {
+        applyEffect({fav:3, dark:3}, id);
+        openScene({
+          kicker:'TALK · ' + L.en, portrait:id, title:'那晚',
+          story:L.firstAsk || ('<p>他没有立刻回答。杯子里冰块碰了一下。</p><p>“你为什么觉得，那晚会和我有关？”</p>' +
+            '<p>你看着他。他也看着你，眼睛里没有一点躲闪。</p>' +
+            '<p class="whisper">“因为我记得你的味道。”你说。</p>'),
+          effects:{fav:3, dark:3},
+          nextLabel:'先到这里'
+        });
+        pushLog('你试探了 ' + L.name + '。','');
+      }},
+      {label:'先坐着，观察他', hint:'好感 +1 · 黑化 -1 · 心绪 +2', onPick:() => {
+        applyEffect({fav:1, dark:-1, mood:2}, id);
+        openScene({
+          kicker:'TALK · ' + L.en, portrait:id, title:'沉默',
+          story:L.firstWatch || ('<p>你什么都没问。</p><p>他也没催你。</p><p>窗外有车开过，灯光从你们之间扫过去。你注意到他的手指、他的表、他下意识摸向左手腕的动作。</p>' +
+            '<p class="system">有些答案，不在嘴里。</p>'),
+          effects:{fav:1, dark:-1, mood:2},
+          nextLabel:'起身'
+        });
+      }}
+    ]
+  });
+}
+function openLead(id){
+  const L = LEADS[id], s = G.leads[id];
+  if(!s.met){ meetLead(id); return; }
+  const note = L.darkNotes[Math.min(3, Math.floor(s.dark / 25))];
+  const topics = ['night','baby','bestie','quiet'];
+  let body = '<div class="talk-gauges">' +
+    '<div class="talk-gauge"><div class="l"><span>好感</span><b>' + s.fav + '</b></div><div class="bar"><i style="width:' + s.fav + '%"></i></div></div>' +
+    '<div class="talk-gauge dark"><div class="l"><span>黑化</span><b class="dark">' + s.dark + '</b></div><div class="bar"><i style="width:' + s.dark + '%"></i></div></div>' +
+    '</div>';
+  body += '<p class="story" style="font-size:12px;color:#c4a9aa;line-height:1.8">' + note + '</p>';
+  body += '<div class="topic-list">';
+  topics.forEach(k => {
+    const t = L.topics[k];
+    const used = s.used[k] === periodKey();
+    body += '<button class="topic" data-topic="' + k + '"' + (used ? ' disabled' : '') + '>' +
+      '<span class="g">' + t.q.substring(0,1) + '</span><span class="q">' + t.q + '</span>' +
+      '<span class="cost">' + (used ? (G.phase === 'baby' ? '本月已谈' : '本周已谈') : '1 行动') + '</span></button>';
+  });
+  body += '</div>';
+  body += '<div class="modal-actions">' +
+    '<button class="btn ghost" id="giveGift">送他' + L.gift.name + ' · ¥800</button>' +
+    '<button class="btn gold" id="leadClose">先到这里</button></div>' +
+    '<p class="system" style="font-size:10px;color:var(--dim);margin-top:10px">每次交谈消耗 1 点行动，' + (G.phase === 'baby' ? '每月' : '每周') + '每个话题一次。送礼' + (G.phase === 'baby' ? '每月' : '每周') + '一次。</p>';
+  openModal(
+    '<div class="kicker">TALK · ' + L.en + '</div>' +
+    '<div class="scene-portrait"><img loading="lazy" decoding="async" src="' + L.img + '" alt="' + L.name + '"><div class="pinfo"><div class="pname">' + L.name + '</div><div class="ptitle">' + L.title + '</div><div class="pquote">' + L.quote + '</div></div></div>',
+    body
+  );
+  $$('#modalBody .topic').forEach(btn => {
+    btn.onclick = () => openTalk(id, btn.getAttribute('data-topic'));
+  });
+  $('#giveGift').onclick = () => giveGift(id);
+  $('#leadClose').onclick = () => closeModal();
+}
+const TALK_BASE = {
+  night:{fav:2, dark:3},
+  baby:{fav:3, dark:3},
+  bestie:{fav:2, dark:2},
+  quiet:{fav:4, dark:-4, mood:4}
+};
+const TALK_REPLIES = {
+  night:[
+    {label:'继续追问，不让他躲', hint:'好感 +1 · 黑化 +3', eff:{fav:1, dark:3}},
+    {label:'把话岔开，留个余地', hint:'好感 +1 · 黑化 -2 · 心绪 +2', eff:{fav:1, dark:-2, mood:2}}
+  ],
+  baby:[
+    {label:'看着他的眼睛，不躲', hint:'好感 +2 · 黑化 +2', eff:{fav:2, dark:2}},
+    {label:'说“我自己也能养”', hint:'好感 +1 · 黑化 -1 · 心绪 +3', eff:{fav:1, dark:-1, mood:3}}
+  ],
+  bestie:[
+    {label:'顺着他的话往下问', hint:'好感 +2 · 黑化 +1', eff:{fav:2, dark:1}},
+    {label:'反问一句，看他的反应', hint:'好感 +1 · 黑化 +2 · 线索更快', eff:{fav:1, dark:2}}
+  ],
+  quiet:[
+    {label:'让他陪着，不说话', hint:'好感 +2 · 黑化 -2 · 心绪 +2', eff:{fav:2, dark:-2, mood:2}},
+    {label:'起身离开，留他一个人', hint:'好感 -1 · 黑化 +2 · 心绪 +1', eff:{fav:-1, dark:2, mood:1}}
+  ]
+};
+function openTalk(id, key){
+  const L = LEADS[id], s = G.leads[id], t = L.topics[key];
+  if(s.used[key] === periodKey()){ toast(G.phase === 'baby' ? '这个话题本月谈过了。' : '这个话题本周谈过了。'); return; }
+  if(G.ap < 1){ toast(G.phase === 'baby' ? '这个月没有行动点了。' : '这周没有行动点了。'); return; }
+  closeModal();
+  setTimeout(() => {
+    openScene({
+      kicker:'TALK · ' + L.en,
+      portrait:id,
+      title:t.q,
+      story:'<p>' + t.line + '</p>',
+      choices:TALK_REPLIES[key].map(r => ({
+        label:r.label, hint:r.hint, risky:r.eff.dark > 1,
+        onPick:() => resolveTalk(id, key, r)
+      }))
+    });
+  }, 90);
+}
+function resolveTalk(id, key, reply){
+  const L = LEADS[id], s = G.leads[id];
+  G.ap -= 1;
+  s.used[key] = periodKey();
+  s.visits++;
+  const base = TALK_BASE[key];
+  const eff = {
+    fav:(base.fav || 0) + (reply.eff.fav || 0) + talkFavBonus(),
+    dark:(base.dark || 0) + (reply.eff.dark || 0),
+    mood:(base.mood || 0) + (reply.eff.mood || 0)
+  };
+  applyEffect(eff, id);
+  let extra = '';
+  const c = unknownClue(id);
+  if(c){
+    identifyClue(c);
+    extra = '<p class="hl">「' + c.name + '」——他低头看了一眼，没有否认。</p><p class="system">这条物证已确认，指向 ' + L.name + '。</p>';
+  }
+  pushLog('你和 ' + L.name + ' 谈了「' + L.topics[key].q + '」。', '');
+  openScene({
+    kicker:'TALK · ' + L.en,
+    portrait:id,
+    title:'他没有说完',
+    story:'<p>' + L.topics[key].after + '</p>' + extra,
+    effects:eff,
+    nextLabel:'离开'
+  });
+  render();
+}
+function giveGift(id){
+  const L = LEADS[id], s = G.leads[id];
+  if(s.giftWeek === periodKey()){ toast(G.phase === 'baby' ? '这个月送过了。' : '这周送过了。'); return; }
+  if(G.ap < 1){ toast(G.phase === 'baby' ? '这个月没有行动点了。' : '这周没有行动点了。'); return; }
+  if(G.money < 800){ toast('存款不够。'); return; }
+  G.ap -= 1;
+  s.giftWeek = periodKey();
+  applyEffect({money:-800, fav:5, dark:-2}, id);
+  pushLog('你送了 ' + L.name + ' ' + L.gift.name + '。','gold');
+  openScene({
+    kicker:'GIFT · ' + L.en,
+    portrait:id,
+    title:L.gift.name,
+    story:'<p>' + L.gift.line + '</p>',
+    effects:{money:-800, fav:5, dark:-2},
+    nextLabel:'离开'
+  });
+  render();
+}
+
+/* ---------------- 林栀线 ---------------- */
+function openBestieTalk(){
+  openScene({
+    kicker:'LIN ZHI · 十年',
+    title:'她请你喝汤',
+    story:'<p>林栀约在你们常去的那家店。她来得比你早，替你点好了热的。</p>' +
+      '<p>“你瘦了好多。”她把汤推过来，“我最近认识一个阿姨，做小月子餐很好。等你生完，我让她来照顾你。”</p>' +
+      '<p>你看着汤面上那层油。那晚，她也是这样，把第四杯酒推到你面前。</p>',
+    choices:[
+      {label:'喝一口，看她的反应', hint:'心绪 -3 · 林栀警觉 +1', risky:true, onPick:() => {
+        applyEffect({mood:-3});
+        G.bestie.wary = clamp(G.bestie.wary + 1, 0, 3);
+        pushLog('你喝了那口汤。林栀笑了，手指却在桌下绞紧。','quiet');
+        openScene({kicker:'LIN ZHI', title:'她的笑', story:'<p>“好喝吗？”她问。</p><p>“有点咸。”你说。</p><p>她愣了一下，随即笑开：“我让阿姨少放盐。”</p><p>你们都笑。谁也没有说那晚。</p>'});
+      }},
+      {label:'把汤放下，直接问她', hint:'林栀警觉 +2 · 可能发现物证', risky:true, onPick:() => {
+        G.bestie.wary = clamp(G.bestie.wary + 2, 0, 3);
+        const c = findClue('bestie');
+        openScene({
+          kicker:'LIN ZHI', title:'第四杯',
+          story:'<p>“林栀，”你说，“那晚的第四杯酒，是谁递给我的？”</p>' +
+            '<p>她脸上的笑慢慢收起来。“你什么意思？”</p>' +
+            '<p>“你知道我什么意思。”</p>' +
+            '<p>她端起杯子喝了一口，避开你的眼睛：“你喝多了，我送你上楼。别的我不记得。”</p>' +
+            (c ? '<p class="hl">' + c.name + '</p><p>' + c.desc + '</p>' : '<p>她说完，把口红补了一遍，手很稳。</p>')
+        });
+        pushLog('你当面问了她。她的回答，像排练过。','rose');
+      }},
+      {label:'什么都不问，吃完这顿', hint:'心绪 +3 · 林栀警觉 -1', onPick:() => {
+        applyEffect({mood:3});
+        G.bestie.wary = clamp(G.bestie.wary - 1, 0, 3);
+        pushLog('你们聊了半小时的天气和包。走的时候，她还替你拉了拉外套。','quiet');
+        openScene({kicker:'LIN ZHI', title:'十年', story:'<p>她替你拦了车，弯腰对司机说地址。</p><p>“' + G.hero + '，”她隔着车窗看你，“我们是一边的，对吧？”</p><p>你笑了笑，没点头。</p>'});
+      }}
+    ]
+  });
+}
+function openBestieConfront(){
+  openScene({
+    kicker:'CONFRONTATION · 林栀',
+    title:'十年的账',
+    story:'<p>你把手机放在桌上，录音的红点亮着。</p>' +
+      '<p>“那晚，你原本要把谁送进 2701？”</p>' +
+      '<p>林栀看着那个红点，很久没说话。然后她笑了：“你终于问了。”</p>' +
+      '<p>“我做造型的时候认识了一个人。他给了我钱，让我把你带上去。我以为你会感激我。”</p>' +
+      '<p>“感激你？”</p>' +
+      '<p>“你一个没背景的人，攀上那样的人，不该感激我吗？”她的声音尖起来，“我有什么？我什么都没有！”</p>',
+    choices:[
+      {label:'把录音发出去', hint:'名声 +8 · 心绪 -8 · 与她彻底撕破脸', risky:true, onPick:() => {
+        applyEffect({rep:8, mood:-8});
+        G.bestie.exposed = true;
+        G.bestie.wary = 3;
+        pushLog('你把录音发进了共同群。十分钟后，林栀删了所有动态。','rose');
+        openScene({
+          kicker:'LIN ZHI', title:'撕破',
+          story:'<p>群里安静了很久。然后有人发了一个问号。</p><p>林栀没有回。她的头像暗下去，像一盏被关掉的灯。</p>' +
+            '<p>你坐在原地，手在抖。不是因为怕，是因为十年的东西，终于碎在了你手里。</p>'
+        });
+      }},
+      {label:'只问她：为什么是我', hint:'心绪 -5 · 名声 +3 · 撕破脸', onPick:() => {
+        applyEffect({mood:-5, rep:3});
+        G.bestie.exposed = true;
+        pushLog('你问了她为什么。她没有回答。','rose');
+        openScene({
+          kicker:'LIN ZHI', title:'为什么是我',
+          story:'<p>“为什么是我？”你问。</p><p>“因为你什么都不用做，就有人看你。”她说，“我做了那么多，他们都只看你。”</p>' +
+            '<p>她拿起包，走到门口，又停住：“' + G.hero + '，那天晚上，我其实在楼下等了一夜。”</p>' +
+            '<p>“等什么？”</p><p>“等一个我也能上去的机会。”</p>'
+        });
+      }},
+      {label:'先忍住，把话咽回去', hint:'心绪 -10 · 林栀警觉 +1', onPick:() => {
+        applyEffect({mood:-10});
+        G.bestie.wary = clamp(G.bestie.wary + 1, 0, 3);
+        pushLog('你把录音关了。她走后，你一个人坐到店里打烊。','quiet');
+        openScene({kicker:'LIN ZHI', title:'咽回去', story:'<p>你什么都没做。</p><p>她走后，服务员来收杯子。你听见自己说：“等一下，这杯还没喝完。”</p><p>汤已经凉了。</p>'});
+      }}
+    ]
+  });
+}
+function openAccuse(){
+  const known = G.clues.filter(c => c.known);
+  let summary = LEAD_IDS.map(id => {
+    const n = known.filter(c => c.owner === id).length;
+    return '<span class="effect-chip ' + (n >= 2 ? 'good' : '') + '">' + LEADS[id].name + ' · ' + n + ' 条</span>';
+  }).join('');
+  let body = '<div class="story"><p>你把五件物证摊在床上。灯很亮。</p>' +
+    '<p>现在，你要给一个人打电话，说：孩子是你的。</p>' +
+    '<p class="system">已确认的指向：</p><div style="margin-bottom:8px">' + summary + '</div>' +
+    (known.length < 3 ? '<p class="system">确认的线索不足三条。你可以赌。</p>' : '') +
+    '</div><div class="choices">' +
+    LEAD_IDS.map(id => '<button class="choice" data-acc="' + id + '"><span class="cl">指认 ' + LEADS[id].name + '</span><span class="ch">' + known.filter(c => c.owner === id).length + ' 条物证</span></button>').join('') +
+    '<button class="choice" data-acc="none"><span class="cl">不指认。这个孩子，我自己养</span><span class="ch">独立线</span></button>' +
+    '<button class="choice" data-acc="cancel"><span class="cl">再等等</span><span class="ch">暂不指认</span></button></div>';
+  openModal('<div class="kicker">THE NIGHT OF NAMING</div><div class="modal-title">指 认</div><div class="modal-sub">第 ' + G.week + ' 周 · 一旦说出口，就不能收回</div>', body);
+  $$('#modalBody .choice').forEach(btn => {
+    btn.onclick = () => {
+      const v = btn.getAttribute('data-acc');
+      if(v === 'cancel'){ closeModal(); return; }
+      closeModal();
+      setTimeout(() => makeAccusation(v), 80);
+    };
+  });
+}
+function makeAccusation(id){
+  G.accused = id;
+  if(id === 'none'){
+    pushLog('你决定不指认任何人。孩子会有母亲，这就够了。','rose');
+    openScene({
+      kicker:'DECISION', title:'不指认',
+      story:'<p>你把物证一件一件收进盒子，塞到衣柜最上层。</p>' +
+        '<p>有的人找了四十周，是为了一个答案。你忽然觉得，答案也许没那么重要。</p>' +
+        '<p>孩子会有母亲。你会学着做。</p>' +
+        '<p class="whisper">“没关系。”你对肚子说，“我们两个人，也算一个家。”</p>'
+    });
+    return;
+  }
+  const trueFather = G.father;
+  if(id === trueFather){
+    const L = LEADS[id], s = G.leads[id];
+    s.fav = clamp(s.fav + 12, 0, 100);
+    s.dark = clamp(s.dark + (s.dark >= 50 ? 8 : 2), 0, 100);
+    pushLog('你指认了 ' + L.name + '。他没有否认。','gold');
+    openScene({
+      kicker:'THE TRUTH · ' + L.en,
+      portrait:id,
+      title:'是你',
+      story:'<p>你把那件东西放在他面前。</p><p>他看着它，很久。然后抬手，松了松袖口。</p>' +
+        '<p>“是我。”他说。</p><p>你忽然听不见别的声音。窗外的车流、楼下的狗、冰箱的嗡鸣，都退得很远。</p>' +
+        '<p>“你为什么不早说？”</p><p>“因为我想看看，”他抬眼看你，“你会不会自己找到我。”</p>' +
+        '<p class="whisper">“现在你找到了。”</p>',
+      effects:{fav:12, dark:s.dark >= 50 ? 8 : 2},
+      nextLabel:'坐下来',
+      onNext:() => { if(!postTruthRivalry()) render(); }
+    });
+  } else {
+    const L = LEADS[id];
+    G.wrong = true;
+    const trueL = LEADS[trueFather];
+    G.leads[id].fav = clamp(G.leads[id].fav - 10, 0, 100);
+    G.leads[id].dark = clamp(G.leads[id].dark + 10, 0, 100);
+    G.leads[trueFather].dark = clamp(G.leads[trueFather].dark + 20, 0, 100);
+    G.leads[trueFather].met = true;
+    G.fetal = clamp(G.fetal - 3, 0, 100);
+    pushLog('你认错了人。真正的父亲，在门外。','bad');
+    openScene({
+      kicker:'WRONG NAME · ' + L.en,
+      portrait:id,
+      title:'不是他',
+      story:'<p>' + L.name + '看着你摆在桌上的东西，表情一点点冷下去。</p>' +
+        '<p>“你找错人了。”</p><p>你还没反应过来，门被推开。</p>' +
+        '<p>另一个人站在门口。他没有看 ' + L.name + '，只看着你。</p>' +
+        '<p>“那晚的人，”他说，“是我。”</p>' +
+        '<p class="whisper">你听见自己心跳的声音，比胎心还快。</p>',
+      effects:{fav:-10, dark:10},
+      nextLabel:'……'
+    });
+  }
+  render();
+}
+
+/* ---------------- 时间推进 ---------------- */
+function advanceWeek(skip){
+  if(!G || G.ended) return;
+  if(G.phase === 'preg'){
+    if(G.week >= 40){ startBirth(); return; }
+    G.week += 1;
+    const cost = 420 + (G.week >= 28 ? 120 : 0);
+    G.money -= cost;
+    if(skip){
+      statChange('health', 5); statChange('mood', 4); statChange('fetal', 1);
+    }
+    if(G.mood < 30){ statChange('health', -3); statChange('fetal', -2); }
+    if(G.money < 0){ statChange('mood', -6); statChange('health', -2); pushLog('存款见底。你把最后一盒营养品分成了两次吃。','bad'); }
+    if(G.health < 35){ statChange('fetal', -2); pushLog('医生提醒你：母体太虚，孩子也会跟着受累。','bad'); }
+    G.ap = (G.health < 35 || G.mood < 25) ? 3 : 4;
+    pushLog('第 ' + G.week + ' 周。' + (skip ? '你把这一周用来静养。' : '日子往前推了一格。'), 'quiet');
+    render(); save();
+    setTimeout(() => triggerWeek(), 260);
+  } else {
+    advanceMonth(skip);
+  }
+}
+function advanceMonth(skip){
+  if(G.baby.month >= 6){ finishGame(); return; }
+  G.baby.month += 1;
+  const cost = 1100 + G.baby.month * 100;
+  G.money -= cost;
+  if(G.baby.stock > 0){ G.baby.stock -= 1; }
+  else { G.baby.health = clamp(G.baby.health - 5, 0, 100); }
+  if(skip){ statChange('health', 3); statChange('mood', 2); }
+  if(G.money < 0){ statChange('mood', -7); G.baby.health = clamp(G.baby.health - 3, 0, 100); }
+  if(G.baby.bond < 30 && G.baby.health < 50){ pushLog('孩子夜里总醒。你抱着他在客厅走，走到天快亮。','bad'); }
+  if(G.flags.hired){
+    statChange('health', 4); statChange('mood', 3);
+    G.baby.health = clamp(G.baby.health + 2, 0, 100);
+  }
+  G.ap = G.flags.hired ? 5 : 4;
+  pushLog('育儿第 ' + G.baby.month + ' 个月。' + (G.flags.hired ? '月嫂把夜里那两顿接了过去，你终于睡了个整觉。' : (skip ? '你请了一个月的钟点工。' : '')), 'quiet');
+  render(); save();
+  setTimeout(() => triggerBabyMonth(), 260);
+}
+function skipWeek(){
+  if(!G) return;
+  if(G.phase === 'preg' && G.week >= 40){ startBirth(); return; }
+  if(G.phase === 'preg' && G.week >= 37){
+    G.place = 'hospital'; render();
+    toast('已经足月了，去医院吧。'); return;
+  }
+  advanceWeek(true);
+}
+function nextWeek(){
+  if(!G) return;
+  if(G.phase === 'preg' && G.week >= 40){ startBirth(); return; }
+  if(G.phase === 'preg' && G.week >= 37){
+    G.place = 'hospital';
+    render();
+    toast('已经足月。去「入院待产」。');
+    return;
+  }
+  advanceWeek(false);
+}
+
+/* ---------------- 育儿行动 ---------------- */
+function babyActions(){
+  if(G.place === 'home'){
+    const list = [
+      A('喂','喂奶','两小时一次。奶瓶温到手腕不烫。','奶粉 -1 · 宝宝健康 +4 · 亲密 +3 · 体质 -2','把他抱起来喂奶',
+        () => {
+          if(G.baby.stock > 0){ G.baby.stock -= 1; applyEffect({health:-2, mood:-2}); }
+          else { applyEffect({health:-2, mood:-4}); }
+          G.baby.health = clamp(G.baby.health + 4, 0, 100);
+          G.baby.bond = clamp(G.baby.bond + 3, 0, 100);
+          pushLog(G.baby.name + '喝到一半睡着了，奶嘴还含在嘴里。','rose');
+        }),
+      A('哄','哄睡，一起睡','抱着走，拍背。等他睡熟，你也别起来。','亲密 +4 · 心绪 +5 · 体质 +7','靠在床头睡着了',
+        () => {
+          G.baby.bond = clamp(G.baby.bond + 4, 0, 100);
+          applyEffect({mood:5, health:7});
+          pushLog('他趴在你肩上睡着，你没把他放回小床，就那样靠着床头睡了过去。','rose');
+        }),
+      A('教','早教','黑白卡、摇铃、你的脸。','存款 -200 · 天赋 +5 · 心绪 -2','把黑白卡举到他眼前',
+        () => {
+          applyEffect({money:-200, mood:-2});
+          G.baby.talent = clamp(G.baby.talent + 5, 0, 100);
+          pushLog('他盯着卡片看，忽然笑了。没有牙，像个小老头。','rose');
+        }),
+      A('晒','晒太阳','推到楼下，让风从他脸上过去。','宝宝健康 +3 · 亲密 +2 · 心绪 +4','推着车在小区里走',
+        () => {
+          G.baby.health = clamp(G.baby.health + 3, 0, 100);
+          G.baby.bond = clamp(G.baby.bond + 2, 0, 100);
+          applyEffect({mood:4});
+          pushLog('有个老太太停下来看，说：像你。','rose');
+        }),
+      A('工','居家办公','趁他睡着，把方案改完。','存款 +' + Math.round(JOBS[G.job].income * 0.8) + ' · 亲密 -2 · 心绪 -3','在婴儿床边打开电脑',
+        () => {
+          const m = incomeOf(0.8);
+          applyEffect({money:m, mood:-3, health:-3});
+          G.baby.bond = clamp(G.baby.bond - 2, 0, 100);
+          pushLog('你回完最后一封邮件，他已经醒了，正睁着眼睛看你。','quiet');
+        }),
+      A('嫂','请月嫂','专业的人做专业的事。钱能买来睡眠，也买来每月多一个行动点。','存款 -4,000 · 每月行动点 +1 · 体质 +8','把月嫂迎进门',
+        () => {
+          applyEffect({money:-4000, health:8, mood:5});
+          G.baby.health = clamp(G.baby.health + 5, 0, 100);
+          G.flags.hired = true;
+          G.ap += 1;
+          pushLog('月嫂接过孩子的那一刻，你差点在沙发上睡着。','good');
+        }, {cond:() => !G.flags.hired && G.money >= 4000, lock:'请过了 / 存款不足'}),
+      A('觉','补觉', G.flags.hired ? '月嫂在客厅看着他。你把卧室门关上，睡满两个小时。' : '趁他睡着，你贴着床边躺下。二十分钟也行。', G.flags.hired ? '体质 +10 · 心绪 +8 · 亲密 -1' : '体质 +8 · 心绪 +5','睡了一会儿',
+        () => {
+          if(G.flags.hired){
+            applyEffect({health:10, mood:8});
+            G.baby.bond = clamp(G.baby.bond - 1, 0, 100);
+            pushLog('你睡醒时，客厅很安静。月嫂说：他喝了奶，刚睡下。','good');
+          }else{
+            applyEffect({health:8, mood:5});
+            pushLog('你刚合眼，他就哭了。你把他抱到身边，两个人一起又睡过去。','quiet');
+          }
+        }),
+      A('见','让父亲来看看','他有权利来，也有权利不来。','推进父亲线 · 影响结局','给他发了孩子的照片',
+        () => { openFatherVisit(); }, {cond:() => G.accused && G.accused !== 'none' && G.baby.month >= 1, lock:'尚未指认'}),
+      A('桌','把人叫到一起','一张桌子，几副碗筷。结婚证只能有一张，家不一定。','决定家庭形态 · 影响结局','摆好了碗筷',
+        () => sceneFamilyTable(), {cond:() => G.baby.month >= 4 && !G.flags.familyPlan && familyCandidates().length >= 1, lock:'第4个月后 / 还没有人'})
+    ];
+    return list;
+  }
+  if(G.place === 'hospital'){
+    return [
+      A('诊','儿童保健','量身高、称体重、听心肺。','存款 -300 · 宝宝健康 +5','抱着他排队',
+        () => { applyEffect({money:-300}); G.baby.health = clamp(G.baby.health + 5, 0, 100); pushLog('医生说长得不错。你松了口气。','good'); }),
+      A('苗','打疫苗','他哭得脸通红。你也想哭。','存款 -500 · 宝宝健康 +4 · 亲密 +2','按着他的小胳膊',
+        () => {
+          applyEffect({money:-500});
+          G.baby.health = clamp(G.baby.health + 4, 0, 100);
+          G.baby.bond = clamp(G.baby.bond + 2, 0, 100);
+          applyEffect({mood:-2});
+          pushLog('针拔出来，他愣了一秒才哭。你把他抱紧。','rose');
+        })
+    ];
+  }
+  if(G.place === 'mall'){
+    return [
+      A('奶','买奶粉','一罐一罐往家搬。','存款 -700 · 奶粉储备 +1','在货架前比价',
+        () => { applyEffect({money:-700}); G.baby.stock = clamp(G.baby.stock + 1, 0, 4); pushLog('你挑了打折的那一罐。',''); }, {cond:() => G.baby.stock < 4, lock:'囤满了'}),
+      A('玩','买玩具','摇铃、布书、会响的小鸭子。','存款 -400 · 天赋 +3 · 心绪 +2','在玩具区站了很久',
+        () => { applyEffect({money:-400, mood:2}); G.baby.talent = clamp(G.baby.talent + 3, 0, 100); pushLog('你买了一个会响的小鸭子。他以后会喜欢吗？','rose'); })
+    ];
+  }
+  if(G.place === 'cafe'){
+    return [
+      A('见','见一个人', G.flags.hired ? '把孩子交给月嫂两小时。' : '把孩子托付给邻居阿姨两小时。','交谈 · 影响结局','推着婴儿车出门',
+        () => pickLeadToMeet(), {special:true}),
+      A('坐','推着他坐一会儿','他在车里睡，你喝一杯热的。','心绪 +6 · 亲密 +2','在窗边坐下',
+        () => { applyEffect({mood:6}); G.baby.bond = clamp(G.baby.bond + 2, 0, 100); pushLog('有人夸他好看。你说谢谢，像所有普通的母亲。','good'); })
+    ];
+  }
+  if(G.place === 'hotel'){
+    return babyHotelActions();
+  }
+  if(G.place === 'people'){
+    return peopleActions().filter(a => !a.name.includes('找林栀'));
+  }
+  return [];
+}
+function babyHotelActions(){
+  return [
+    A('夜','约他来云顶','把他叫到顶层。今晚不谈孩子。','选择一个人 · 存款 -1,000 · 1 行动','把房号发出去',
+      () => { applyEffect({money:-1000}); pickNightLead(); }, {special:true, cond:() => G.flags.hired && G.money >= 1000 && LEAD_IDS.some(id => G.leads[id].met), lock:'请月嫂后 / 存款不足 / 还没有人'}),
+    A('廊','在走廊吹风','整层楼只剩你的脚步声。','心绪 +5','在窗边站了一会儿',
+      () => { applyEffect({mood:5}); pushLog('风从领口灌进去。你很久没有一个人在夜里站着。','quiet'); })
+  ];
+}
+function pickNightLead(){
+  const ids = LEAD_IDS.filter(id => G.leads[id].met);
+  if(!ids.length){ toast('还没有可以约的人。'); return; }
+  const html = '<div class="story"><p>孩子有月嫂看着。你换了一条裙子，把头发放下来。</p>' +
+    '<p>手机里有几个名字。今晚，你只想做回自己。</p></div>' +
+    '<div class="choices">' + ids.map(id => {
+      const L = LEADS[id], s = G.leads[id];
+      return '<button class="choice" data-night="' + id + '"><span class="cl">' + L.name + '</span>' +
+        '<span class="ch">' + L.title.split(' · ')[0] + ' · 好感 ' + s.fav + ' / 黑化 ' + s.dark + '</span></button>';
+    }).join('') + '</div>';
+  openModal('<div class="kicker">NIGHT · 云顶</div><div class="modal-title">今 晚 约 谁</div>', html);
+  $$('#modalBody .choice[data-night]').forEach(btn => {
+    btn.onclick = () => {
+      const id = btn.getAttribute('data-night');
+      closeModal();
+      setTimeout(() => openNightScene(id), 90);
+    };
+  });
+}
+function openNightScene(id){
+  const L = LEADS[id];
+  openScene({
+    kicker:'NIGHT · ' + L.en,
+    portrait:id,
+    title:'顶 层 套 房',
+    story:'<p>电梯停在顶层。走廊尽头，门虚掩着。</p>' +
+      '<p>他站在窗边，衬衫领口松了两颗扣，香槟已经开了。冰块在杯子里轻轻碰。</p>' +
+      '<p>“孩子呢？”他问。</p>' +
+      '<p>“月嫂看着。”</p>' +
+      '<p>他笑了一下，把杯子递给你。指尖碰到你的指尖，没有退开。</p>' +
+      '<p class="whisper">窗外整座城亮着。窗帘没有拉。</p>',
+    choices:[
+      {label:'留下来过夜', hint:'好感 +10 · 黑化 +3 · 心绪 +12 · 体质 -2', risky:true, onPick:()=>{
+        applyEffect({fav:10, dark:3, mood:12, health:-2}, id);
+        G.flags.nights[id] = (G.flags.nights[id] || 0) + 1;
+        G.flags.nightPartners[id] = true;
+        if(id !== G.father) G.flags.affairCount++;
+        pushLog('你把孩子交给了月嫂，把自己交给了 ' + L.name + '。','rose');
+        render();
+        openScene({
+          kicker:'NIGHT · ' + L.en,
+          portrait:id,
+          title:'天 亮 之 前',
+          story:'<p>香槟只喝了一半。</p>' +
+            '<p>他的袖扣硌在你腰侧，你听见自己笑了一声，又很快被他吻住。</p>' +
+            '<p>灯没有关。你看见窗玻璃上映出两个人的影子，交叠、散开，又靠近。</p>' +
+            '<p>他的手停在你后颈，低声问：“想清楚了？”</p>' +
+            '<p>“今晚不想。”你说。</p>' +
+            '<p class="whisper">那一夜，你没有想孩子。也没有想明天。</p>',
+          nextLabel:'回 家',
+          onNext:() => afterNight(id, true)
+        });
+      }},
+      {label:'让他再靠近一点，但不过夜', hint:'好感 +7 · 黑化 +4 · 心绪 +10 · 体质 -1', risky:true, onPick:()=>{
+        applyEffect({fav:7, dark:4, mood:10, health:-1}, id);
+        render();
+        openScene({
+          kicker:'NIGHT · ' + L.en,
+          portrait:id,
+          title:'到 这 儿',
+          story:'<p>他把你抵在落地窗上，吻落在耳后。你攥着他的衬衫，指节发白。</p>' +
+            '<p>手机在包里震了一下，是月嫂发来的照片。</p>' +
+            '<p>你忽然清醒，推开他，喘着气笑：“今晚到这儿。”</p>' +
+            '<p>他低头看你，喉结动了一下：“行。下次呢？”</p>' +
+            '<p class="whisper">你没有回答。电梯门关上时，你的腿还是软的。</p>',
+          nextLabel:'回 家',
+          onNext:() => afterNight(id, false)
+        });
+      }},
+      {label:'只喝一杯，聊到深夜', hint:'好感 +5 · 心绪 +6', onPick:()=>{
+        applyEffect({fav:5, mood:6}, id);
+        pushLog('你和 ' + L.name + ' 在顶层喝了一杯。什么也没有发生。','quiet');
+        render();
+        openScene({
+          kicker:'NIGHT · ' + L.en,
+          portrait:id,
+          title:'一 杯 酒',
+          story:'<p>你们隔着半张桌子坐着。他问你孩子像谁，你说不知道。</p>' +
+            '<p>“那就当他像你。”他说。</p>' +
+            '<p>杯子空了。你站起来，他替你拿外套。</p>' +
+            '<p class="whisper">电梯往下走的时候，你忽然有点后悔。</p>',
+          nextLabel:'回 家',
+          onNext:() => afterNight(id, false)
+        });
+      }}
+    ]
+  });
+}
+function afterNight(id, overnight){
+  if(overnight && !G.flags.againAsked && G.baby.month <= 4){ secondBabyGuess(id); return; }
+  if(G.flags.affairCount >= 2 && !G.flags.nightRival && Object.keys(G.flags.nightPartners).length >= 2){ nightRivalry(); return; }
+  render();
+}
+function secondBabyGuess(id){
+  G.flags.againAsked = true;
+  openScene({
+    kicker:'BABY · 四 周 后',
+    title:'又 是 两 道 杠',
+    story:'<p>月嫂说，你这个月好像胖了一点。</p>' +
+      '<p>你算了算日子，去药店买了一支验孕棒。</p>' +
+      '<p>卫生间的灯很白。两道杠慢慢显出来，和第二个月那次一模一样。</p>' +
+      '<p>门外，孩子在哭。' + LEADS[id].name + '的未接来电停在屏幕上，三个。</p>',
+    choices:[
+      {label:'留下这个孩子', hint:'心绪 -2 · 存款 -1,000 · 往后是四口人', onPick:()=>{
+        G.flags.secondBaby = true;
+        G.flags.secondFather = id;
+        applyEffect({mood:-2, money:-1000});
+        pushLog('你又怀上了。这次，你决定留下。','rose');
+        render();
+        openScene({
+          kicker:'FAMILY', portrait:id, title:'两 个',
+          story:'<p>你把验孕棒放在桌上。他看了很久，没有问“是谁的”。</p>' +
+            '<p>“生下来。”他说，“我养。”</p>' +
+            '<p>“我已经有一个了。”</p>' +
+            '<p>“那就一起。”</p>' +
+            '<p class="whisper">你忽然想笑。原来家是可以这样，一点一点变大的。</p>',
+          nextLabel:'把 他 送 走',
+          onNext:() => { if(!nightRivalry()) render(); }
+        });
+      }},
+      {label:'这个孩子不能要', hint:'体质 -4 · 心绪 -8', risky:true, onPick:()=>{
+        G.flags.secondBaby = false;
+        applyEffect({health:-4, mood:-8});
+        pushLog('你去了一趟医院。回来的时候，天已经黑了。','bad');
+        render();
+        openScene({
+          kicker:'HOSPITAL', title:'空 出 来',
+          story:'<p>诊室很冷。医生问了你两遍“确定吗”。</p>' +
+            '<p>你点头。然后闭上眼睛。</p>' +
+            '<p>回家的时候，月嫂抱着孩子在门口等你。孩子伸手要你。</p>' +
+            '<p class="whisper">你抱住他，忽然哭得说不出话。</p>',
+          nextLabel:'抱 紧 他',
+          onNext:() => { if(!nightRivalry()) render(); }
+        });
+      }},
+      {label:'把验孕棒扔了，当作没发生', hint:'心绪 -6 · 体质 -2 · 身体会记得', risky:true, onPick:()=>{
+        G.flags.secondBaby = true;
+        G.flags.secondFather = id;
+        applyEffect({mood:-6, health:-2});
+        pushLog('你把验孕棒扔进了楼下的垃圾桶。','quiet');
+        render();
+        openScene({
+          kicker:'NIGHT', title:'没 有 发 生',
+          story:'<p>你洗了手，补了口红，回去哄孩子睡觉。</p>' +
+            '<p>镜子里的人看起来很正常。</p>' +
+            '<p class="whisper">但身体知道。它已经开始替你做另一个决定。</p>',
+          nextLabel:'睡 吧',
+          onNext:() => { if(!nightRivalry()) render(); }
+        });
+      }}
+    ]
+  });
+}
+function nightRivalry(){
+  const ids = Object.keys(G.flags.nightPartners).filter(id => G.leads[id] && G.leads[id].met);
+  if(ids.length < 2 || G.flags.nightRival) return false;
+  ids.sort((x,y) => G.leads[y].fav - G.leads[x].fav);
+  const a = ids[0], b = ids[1], LA = LEADS[a], LB = LEADS[b];
+  G.flags.nightRival = true;
+  openScene({
+    kicker:'RIVALRY · 门 铃',
+    title:'两 个 人 一 起 来 了',
+    story:'<p>门铃响的时候，月嫂正抱着孩子在客厅踱步。</p>' +
+      '<p>你打开门。' + LA.name + '站在左边，' + LB.name + '站在右边。两个人手里都提着东西。</p>' +
+      '<p>“他说他昨晚在这里。”' + LB.name + '说。</p>' +
+      '<p>“她昨晚在我那里。”' + LA.name + '说。</p>' +
+      '<p>孩子忽然哭了一声。三个人同时安静下来。</p>' +
+      '<p class="whisper">月嫂抱着孩子退进了卧室，把门带上。</p>',
+    choices:[
+      {label:'让两个人都进来，把规矩定下', hint:'两人好感 +4 · 黑化 -3 · 心绪 -3 · 关系可控', onPick:()=>{
+        applyEffect({fav:4, dark:-3, mood:-3}, a);
+        applyEffect({fav:4, dark:-3, mood:-3}, b);
+        G.flags.managed = true;
+        pushLog('你让两个人都进了门。那晚，你们定下了规矩。','rose');
+        render();
+        openScene({
+          kicker:'RIVALRY', title:'规 矩',
+          story:'<p>“周一到周四，孩子跟我。”你说。</p>' +
+            '<p>“周末我可以来。”' + LA.name + '说。</p>' +
+            '<p>“周末是我。”' + LB.name + '说。</p>' +
+            '<p>“那就一人一天。”</p>' +
+            '<p>他们互相看了一眼，谁也没有再争。</p>' +
+            '<p class="whisper">你忽然发现，最难的从来不是爱谁，是把日子排开。</p>',
+          nextLabel:'送 他 们 走'
+        });
+      }},
+      {label:'当场选一个，让另一个走', hint:'留下者 好感 +8 / 黑化 +4 · 另一位 -5 / 黑化 +10', risky:true, onPick:()=>{
+        applyEffect({fav:8, dark:4, mood:-2}, a);
+        applyEffect({fav:-5, dark:10}, b);
+        G.flags.familyTension = true;
+        pushLog('你选了 ' + LA.name + '。' + LB.name + '没有吵，只是把东西放在门口。','bad');
+        render();
+        openScene({
+          kicker:'RIVALRY', portrait:b, title:'门 口 的 东 西',
+          story:'<p>' + LB.name + '把袋子放下。里面是给孩子买的玩具，标签还没有拆。</p>' +
+            '<p>“我先走了。”他说。</p>' +
+            '<p>他走进电梯，没有回头。</p>' +
+            '<p class="whisper">' + LA.name + '站在你身后，手放在你腰上。你却没有觉得安全。</p>',
+          nextLabel:'关 门'
+        });
+      }},
+      {label:'谁也不见，抱着孩子回房', hint:'两人好感 -4 · 黑化 +5 · 心绪 +2', onPick:()=>{
+        applyEffect({fav:-4, dark:5, mood:2}, a);
+        applyEffect({fav:-4, dark:5}, b);
+        pushLog('你把门关上，抱着孩子回了卧室。','quiet');
+        render();
+        openScene({
+          kicker:'RIVALRY', title:'门 外',
+          story:'<p>门铃又响了两下，然后停了。</p>' +
+            '<p>你抱着孩子坐在床边，听见电梯上上下下的声音。</p>' +
+            '<p>孩子在你怀里睡着了。你却一夜没睡。</p>' +
+            '<p class="whisper">有些门，关一次，就再也开不回去了。</p>',
+          nextLabel:'天 亮'
+        });
+      }}
+    ]
+  });
+  return true;
+}
+
+function familyCandidates(){
+  const ids = LEAD_IDS.filter(id => G.leads[id].met && G.leads[id].fav >= 45);
+  if(G.accused && G.accused !== 'none' && G.leads[G.accused] && !ids.includes(G.accused)) ids.unshift(G.accused);
+  return ids.sort((a,b) => G.leads[b].fav - G.leads[a].fav);
+}
+function sceneFamilyTable(){
+  const ids = familyCandidates();
+  const A = LEADS[ids[0]], B = ids[1] ? LEADS[ids[1]] : null;
+  const names = ids.map(id => LEADS[id].name).join('、');
+  const extra = '<div style="display:grid;grid-template-columns:repeat(' + Math.min(ids.length,3) + ',1fr);gap:8px;margin-top:14px">' +
+    ids.slice(0,3).map(id => '<figure style="margin:0"><img loading="lazy" decoding="async" src="' + LEADS[id].img + '" alt="' + LEADS[id].name + '" style="width:100%;aspect-ratio:1/1.18;object-fit:cover;object-position:center top;filter:grayscale(.12)">' +
+      '<figcaption style="font-size:10px;letter-spacing:.1em;color:var(--gold);padding:5px 0;text-align:center">' + LEADS[id].name + ' · 好感 ' + G.leads[id].fav + ' / 黑化 ' + G.leads[id].dark + '</figcaption></figure>').join('') + '</div>';
+  const choices = [];
+  if(ids.length >= 2){
+    choices.push({label:'和 ' + A.name + ' 领证，其他人也留下', hint:'多人家庭 · 一张结婚证 · 其余人共同抚养', onPick:()=>settleFamily(ids[0], ids, 'multi')});
+    choices.push({label:'和 ' + B.name + ' 领证，其他人也留下', hint:'多人家庭 · 换一个人签字 · 其余人共同抚养', onPick:()=>settleFamily(ids[1], ids, 'multi')});
+    choices.push({label:'不领证，几个人一起把孩子养大', hint:'无婚姻 · 共同抚养 · 关系更难维持', onPick:()=>settleFamily(null, ids, 'multi_none')});
+  }
+  choices.push({label:'只和 ' + A.name + ' 领证，其他人退出', hint:'单一家庭 · 其他人好感下降 · 黑化上升', risky:true, onPick:()=>settleFamily(ids[0], [ids[0]], 'single')});
+  choices.push({label:'谁都不选，自己带孩子', hint:'独抚 · 所有人好感下降', risky:true, onPick:()=>settleFamily(null, [], 'alone')});
+  openScene({
+    kicker:'FAMILY · 一 张 桌 子',
+    title:'往 后 怎 么 过',
+    story:'<p>' + names + (ids.length > 1 ? ' 都来了。' : '来了。') + '</p>' +
+      '<p>孩子被月嫂抱在里屋，桌上摆着几副碗筷，谁也没有先动。</p>' +
+      '<p>“今天不谈过去。”你说，“谈以后。”</p>' +
+      '<p class="whisper">你忽然发现，这比指认那一晚还难。</p>',
+    extra:extra,
+    choices:choices
+  });
+}
+function settleFamily(cert, all, mode){
+  const participants = familyCandidates();
+  G.flags.familyPlan = mode;
+  G.flags.certMan = cert;
+  G.flags.coParents = all.filter(id => id !== cert);
+  const chosen = all.slice();
+  G.flags.familyTension = false;
+  chosen.forEach(id => {
+    applyEffect({fav: mode.indexOf('multi') === 0 ? 4 : 5, dark: mode.indexOf('multi') === 0 ? -4 : 2, mood: 0}, id);
+    if(G.leads[id].dark >= 72) G.flags.familyTension = true;
+  });
+  if(mode === 'single' || mode === 'alone'){
+    participants.forEach(id => { if(!chosen.includes(id)) applyEffect({fav:-8, dark:9}, id); });
+  }
+  if(mode.indexOf('multi') === 0 && !G.flags.familyTension) G.flags.managed = true;
+  render();
+  let st = '', nx = '就 这 样';
+  if(mode === 'multi'){
+    const C = LEADS[cert];
+    const others = G.flags.coParents.map(id => LEADS[id].name).join('、');
+    st = '<p>结婚证放在抽屉最上面。户口本上，孩子姓 ' + C.name.slice(0,1) + '。</p>' +
+      '<p>' + (others || '他') + '也有这个家的钥匙。孩子半夜哭，有时候是他先起身。</p>' +
+      '<p>你们定了几条规矩：谁接送、谁开家长会、谁值夜。写得像一份合同。</p>' +
+      '<p>“这样算什么？”有一次他问。</p>' +
+      '<p>“算我们都没走。”你说。</p>';
+  }else if(mode === 'multi_none'){
+    st = '<p>没有结婚证。门口却摆着几双拖鞋。</p>' +
+      '<p>孩子的满月照上，人很多。摄影师问：“爸爸站哪边？”</p>' +
+      '<p>你说：“都站后面。”</p>' +
+      '<p class="whisper">没有名分，只有每天谁来、谁走、谁记得买奶粉。</p>';
+  }else if(mode === 'single'){
+    st = '<p>你选了 ' + LEADS[G.flags.certMan].name + '。</p>' +
+      '<p>其他人把钥匙放在桌上，没有吵。门关上的时候，你听见电梯响了很久。</p>' +
+      '<p>“以后只有我们了。”身边的人说。</p>' +
+      '<p class="whisper">你点头。却不知道为什么，心里空了一块。</p>';
+  }else{
+    st = '<p>你谁也没有选。</p>' +
+      '<p>满月照上只有你和孩子。月嫂站在旁边，替你把毯子拉好。</p>' +
+      '<p>“以后怎么办？”她问。</p>' +
+      '<p>“先把他养大。”你说。</p>';
+  }
+  openScene({
+    kicker:'FAMILY', title:mode === 'multi' || mode === 'multi_none' ? '一 张 桌 子' : '一 个 人',
+    story:st,
+    nextLabel:nx
+  });
+}
+
+function openFatherVisit(){
+  const id = G.accused;
+  if(!id || id === 'none') return;
+  const L = LEADS[id], s = G.leads[id];
+  const visit = s.dark >= 60
+    ? '<p>他没有提前说，直接站在门口。手里拎着纸袋，眼睛却先扫过玄关的鞋柜。</p><p>“就你一个人在家？”</p>'
+    : s.fav >= 50
+      ? '<p>他来得很早，衬衫上还有清晨的凉气。孩子在睡，他把声音压得很低。</p><p>“我可以抱抱他吗？”</p>'
+      : '<p>他来了，坐了十分钟，手机响了三次。孩子哭的时候，他站起来，又坐下。</p>';
+  openScene({
+    kicker:'FATHER · ' + L.en, portrait:id, title:'他来看孩子',
+    story:visit,
+    choices:[
+      {label:'把孩子递给他', hint:'好感 +5 · 亲密 +4 · 黑化 -2', onPick:() => {
+        applyEffect({fav:5, dark:-2}, id);
+        G.baby.bond = clamp(G.baby.bond + 4, 0, 100);
+        pushLog(L.name + '抱了孩子。他的动作比想象中稳。','rose');
+        openScene({kicker:'FATHER', portrait:id, title:'很轻', story:'<p>他接过孩子，手臂僵了一下，随即托稳。</p><p>“他好轻。”他说。</p><p>“刚生下来都这样。”</p><p>他低头看了很久。你看见他喉结动了一下。</p>', nextLabel:'把门关上'});
+      }},
+      {label:'让他坐在门口说', hint:'好感 -2 · 黑化 +3 · 心绪 +2', onPick:() => {
+        applyEffect({fav:-2, dark:3, mood:2}, id);
+        pushLog('你没有让他进门。他站在门口，把纸袋放在鞋柜上。','quiet');
+        openScene({kicker:'FATHER', portrait:id, title:'门口', story:'<p>“我下次再来。”他说。</p><p>“嗯。”</p><p>他走了两步，又回头：“' + G.hero + '，你一个人，真的可以？”</p><p>“可以。”你说。</p><p>门关上。纸袋里是奶粉和一叠现金。</p>', nextLabel:'收好'});
+      }},
+      {label:'问他以后打算', hint:'好感 +2 · 黑化 +4', risky:true, onPick:() => {
+        applyEffect({fav:2, dark:4}, id);
+        pushLog('你问了他以后。他的回答很短。','');
+        openScene({kicker:'FATHER', portrait:id, title:'以后', story:'<p>“以后？”他看着婴儿床，“你们搬过来。”</p><p>“我住惯了这里。”</p><p>“那就我搬过来。”</p><p>他说得很平，像已经安排好了。你忽然意识到，他不是在商量。</p>', effects:{fav:2, dark:4}, nextLabel:'再说'});
+      }}
+    ]
+  });
+}
+
+/* =========================================================
+   周事件 · 修罗场 · 黑化 · 结局
+   ========================================================= */
+function triggerWeek(){
+  if(!G || G.ended || G.phase !== 'preg') return;
+  if(G.week >= 40){ toast('预产期到了。去「仁和医院」入院待产。'); return; }
+  if(weekBeat()) return;
+  if(rivalryScene()) return;
+  if(darkScene()) return;
+  if(Math.random() < 0.42) randomWeekEvent();
+}
+function weekBeat(){
+  const w = G.week;
+  if(w === 9 && !G.beats.w9){ G.beats.w9 = true; sceneSoup(); return true; }
+  if(w === 13 && !G.beats.w13){ G.beats.w13 = true; sceneKick(); return true; }
+  if(w === 17 && !G.beats.w17){ G.beats.w17 = true; sceneFamilyMoney(); return true; }
+  if(w === 21 && !G.beats.w21){ G.beats.w21 = true; sceneRumor(); return true; }
+  if(w === 26 && !G.beats.w26){ G.beats.w26 = true; sceneAccuseHint(); return true; }
+  if(w === 30 && !G.beats.w30){ G.beats.w30 = true; sceneHospitalPick(); return true; }
+  if(w === 34 && !G.beats.w34){ G.beats.w34 = true; sceneNursery(); return true; }
+  if(w === 38 && !G.beats.w38){ G.beats.w38 = true; sceneFalseAlarm(); return true; }
+  return false;
+}
+
+/* ---------------- 关键周剧情 ---------------- */
+function sceneSoup(){
+  openScene({
+    kicker:'LIN ZHI · 第 9 周',
+    title:'她送来一锅汤',
+    story:'<p>林栀提着保温桶站在门口，头发挽得很整齐，像什么都没发生过。</p>' +
+      '<p>“我让阿姨炖了一下午。”她说，“活血化瘀的，对你现在最好。”</p>' +
+      '<p>你接过汤，汤面浮着一层很亮的油。你忽然想起那晚的第四杯酒，也是这样，漂亮，温热，推到你面前。</p>',
+    choices:[
+      {label:'当着她的面喝一半', hint:'胎宝 -6 · 心绪 -4 · 她会记住', risky:true, onPick:()=>{
+        applyEffect({fetal:-6, mood:-4});
+        pushLog('你喝了那半碗汤。林栀看着你的喉咙，笑得很温柔。','bad');
+        openScene({
+          kicker:'LIN ZHI', title:'她的眼睛',
+          story:'<p>“好喝吗？”她问。</p><p>“太补了。”你说。</p><p>她伸手替你擦掉嘴角的油，动作亲昵得像十年前。你却没有躲。</p>' +
+            '<p class="whisper">有些毒，是笑着喂进来的。</p>',
+          nextLabel:'把碗放下'
+        });
+      }},
+      {label:'端进厨房，偷偷倒掉', hint:'心绪 -2 · 林栀警觉 +1', onPick:()=>{
+        applyEffect({mood:-2});
+        G.bestie.wary = clamp(G.bestie.wary + 1, 0, 3);
+        pushLog('你把汤倒进水池。骨头卡在滤网上，像一根刺。','quiet');
+        openScene({
+          kicker:'LIN ZHI', title:'水池',
+          story:'<p>你在厨房站了很久，直到水声把客厅的电视盖过去。</p><p>“好喝吗？”她在外面问。</p><p>“好喝。”你说，“我全喝完了。”</p><p class="system">她走的时候，在门口停了一下，低头看了看垃圾袋。</p>'
+        });
+      }},
+      {label:'把碗递给她：你先尝一口', hint:'心绪 +3 · 林栀警觉 +2', risky:true, onPick:()=>{
+        applyEffect({mood:3});
+        G.bestie.wary = clamp(G.bestie.wary + 2, 0, 3);
+        pushLog('你把碗推回她面前。她愣了一下，说自己最近在减肥。','rose');
+        openScene({
+          kicker:'LIN ZHI', title:'一口',
+          story:'<p>“你先尝一口。”你说。</p><p>她的笑僵了半秒，很快又接上：“我减肥呢，你喝。”</p>' +
+            '<p>你把碗放在桌上，没有再动。</p><p>她坐了十分钟，起身说还有事。</p>' +
+            '<p class="whisper">门关上之后，你把那锅汤整锅倒了。</p>'
+        });
+      }}
+    ]
+  });
+}
+function sceneKick(){
+  applyEffect({mood:8, fetal:4});
+  render();
+  pushLog('第 13 周。你第一次感觉到他在动。','rose');
+  openScene({
+    kicker:'WEEK 13 · 第一次胎动',
+    title:'像 鱼',
+    story:'<p>你正在改一份方案，忽然停住。</p>' +
+      '<p>肚子里有什么东西，很轻地翻了一下。像一条鱼，甩了一下尾巴。</p>' +
+      '<p>你把手放上去。他不动了。</p>' +
+      '<p>过了很久，又一下。</p>' +
+      '<p class="whisper">“你在啊。”你说。</p>',
+    nextLabel:'把手放下'
+  });
+}
+function sceneFamilyMoney(){
+  openScene({
+    kicker:'FAMILY · 第 17 周',
+    title:'家里的电话',
+    story:'<p>母亲打来的时候，你正在给自己煮面。</p>' +
+      '<p>“你爸说，老房子要卖了，给你弟付首付。”她顿了顿，“你那边……要是紧，就自己先撑一撑。”</p>' +
+      '<p>你听见父亲在背景里咳嗽了一声，没有接过电话。</p>',
+    choices:[
+      {label:'说自己需要钱', hint:'心绪 -10 · 他们不会给', risky:true, onPick:()=>{
+        applyEffect({mood:-10});
+        pushLog('你向家里开口了。母亲说：你弟那边更要紧。','bad');
+        openScene({
+          kicker:'FAMILY', title:'更要紧',
+          story:'<p>“你弟那边，是正事。”母亲说，“你一个人，少花点就是了。”</p>' +
+            '<p>“我怀孕了。”你说。</p>' +
+            '<p>电话那头静了几秒。“……那更不能乱花钱了。”</p>' +
+            '<p class="whisper">你忽然明白，这个电话，本来就不该打。</p>',
+          nextLabel:'挂断'
+        });
+      }},
+      {label:'说自己够用', hint:'心绪 -4 · 名声 +2', onPick:()=>{
+        applyEffect({mood:-4, rep:2});
+        pushLog('你说够用。挂断后，你把购物车里的营养品删了。','quiet');
+        openScene({
+          kicker:'FAMILY', title:'够用',
+          story:'<p>“够用。”你说，“你们别操心。”</p>' +
+            '<p>母亲松了口气，又叮嘱了几句，才挂断。</p>' +
+            '<p>你回到厨房，面已经坨了。你还是坐下来，一口一口吃完了。</p>'
+        });
+      }},
+      {label:'问她：你当年是怎么过来的', hint:'心绪 +5 · 体质 +2', onPick:()=>{
+        applyEffect({mood:5, health:2});
+        pushLog('你问了母亲一句。她沉默很久，说：熬。','rose');
+        openScene({
+          kicker:'FAMILY', title:'熬',
+          story:'<p>“妈，你当年一个人，是怎么过来的？”</p>' +
+            '<p>她沉默了很久，久到你以为她不会回答。</p>' +
+            '<p>“熬。”她说，“熬着熬着，就过来了。”</p>' +
+            '<p>然后她压低声音：“别告诉你爸，我柜子里还留着两百块，你回来拿。”</p>' +
+            '<p class="whisper">两百块。你忽然想哭，又想笑。</p>'
+        });
+      }}
+    ]
+  });
+}
+function sceneRumor(){
+  openScene({
+    kicker:'THE OFFICE · 第 21 周',
+    title:'茶 水 间',
+    story:'<p>你去接水，听见自己的名字从隔板后面漏出来。</p>' +
+      '<p>“她连孩子父亲是谁都不说。”</p>' +
+      '<p>“谁知道那孩子怎么来的。”</p>' +
+      '<p>杯子里的水满了，溢出来，烫到你的手。</p>',
+    choices:[
+      {label:'当作没听见，转身走', hint:'名声 -2 · 心绪 -3', onPick:()=>{
+        applyEffect({rep:-2, mood:-3});
+        pushLog('你端着水走了。背后安静了一瞬，又响起来。','quiet');
+        openScene({kicker:'THE OFFICE', title:'背后', story:'<p>你回到工位，把水放在桌上，手还在抖。</p><p>屏幕上的方案一个字也看不进去。</p><p class="whisper">有些声音，比胎动更清楚。</p>'});
+      }},
+      {label:'把杯子放下，问她们说完了吗', hint:'名声 +5 · 心绪 -2', risky:true, onPick:()=>{
+        applyEffect({rep:5, mood:-2});
+        pushLog('你问了她们一句。茶水间安静了。','rose');
+        openScene({kicker:'THE OFFICE', title:'说完', story:'<p>“说完了吗？”你问。</p><p>两个人端着杯子，谁也没接话。</p><p>“没说完，就当着我说。”</p><p>你等了三秒，转身走了。那天下午，没有人再在你背后说话。</p>'});
+      }},
+      {label:'请半天假，回家躺着', hint:'心绪 +3 · 存款 -400', onPick:()=>{
+        applyEffect({mood:3, money:-400});
+        pushLog('你请了半天假。回家的路上，天很蓝。','quiet');
+        openScene({kicker:'THE OFFICE', title:'半天', story:'<p>你躺在床上，把手放在肚子上。</p><p>他动了一下，很轻。</p><p>“他们说你，”你小声说，“我才不管。”</p>'});
+      }}
+    ]
+  });
+}
+function sceneAccuseHint(){
+  openScene({
+    kicker:'WEEK 26 · 可以开口了',
+    title:'该 给 他 一 个 名 字',
+    story:'<p>医生说，孩子已经能听见外面的声音。</p>' +
+      '<p>你回家，把五件物证摊在床上。灯很亮，每一件东西都投出很短的影子。</p>' +
+      '<p>从今天起，你可以在「家」里选择「指认生父」。</p>' +
+      '<p class="system">认对，他会出现在产房外。认错，真正的父亲会记住这笔账。也可以不指认，自己养。</p>',
+    nextLabel:'我知道了'
+  });
+}
+function sceneHospitalPick(){
+  const hasBag = G.flags.bag;
+  openScene({
+    kicker:'WEEK 30 · 待 产',
+    title:'产 房',
+    story:'<p>护士把一张表推过来：定点医院、陪产人、费用预估。</p>' +
+      (hasBag
+        ? '<p class="good">待产包已经收好，放在玄关。你每天出门都会看一眼。</p>'
+        : '<p class="bad">待产包还没收拾。你说不急，其实是不敢开始。</p>') +
+      '<p>“家属呢？”护士问。</p><p>你握着笔，停了一下。</p>',
+    choices:[
+      {label:'预约私立医院的单间', hint:'存款 -3,000 · 生产更稳', onPick:()=>{
+        applyEffect({money:-3000});
+        G.flags.hospital = 'private';
+        pushLog('你订了私立医院的单间。贵，但安静。','gold');
+        render();
+        openScene({
+          kicker:'HOSPITAL', title:'单间',
+          story:'<p>房间朝南，有一扇很大的窗。护士说，可以留一个人陪夜。</p>' +
+            '<p>你在“陪夜人”那一栏停了很久，最后空着交了回去。</p>' +
+            '<p class="system">生产时更从容，风险降低。</p>'
+        });
+      }},
+      {label:'就在仁和，排普通产房', hint:'存款 -800 · 医生熟', onPick:()=>{
+        applyEffect({money:-800});
+        G.flags.hospital = 'public';
+        pushLog('你在仁和排了普通产房。走廊很长，灯很白。','quiet');
+        render();
+        openScene({
+          kicker:'HOSPITAL', title:'走廊',
+          story:'<p>走廊里坐满了人。有人扶着腰，有人抱着保温桶。</p>' +
+            '<p>你找了个靠墙的位置坐下，忽然觉得安心。</p>' +
+            '<p>这里的每一个人，看起来都和你一样，只能靠自己。</p>'
+        });
+      }},
+      {label:'再等等，先把钱留着', hint:'心绪 -3 · 生产风险不降', onPick:()=>{
+        applyEffect({mood:-3});
+        G.flags.hospital = 'none';
+        pushLog('你把表收进包里，没有填。','quiet');
+        openScene({
+          kicker:'HOSPITAL', title:'再等等',
+          story:'<p>你把表折好，放进包的最里层。</p><p>“想好了再来。”护士说。</p><p>你点头。走出医院的时候，天已经黑了。</p>' +
+            '<p class="whisper">有些决定，拖到最后，就变成了没有决定。</p>'
+        });
+      }}
+    ]
+  });
+}
+function sceneNursery(){
+  const choices = [
+    {label:'一个人把它装完', hint:'心绪 +5 · 胎宝 +2', onPick:()=>{
+      applyEffect({mood:5, fetal:2});
+      pushLog('你一个人装好了婴儿床。螺丝多出来两颗。','rose');
+      openScene({kicker:'WEEK 34', title:'装好了', story:'<p>你把小床推到墙边，铺上洗过三次的床单。</p><p>房间很小，但刚好放得下。</p><p class="whisper">“你有地方睡了。”你对着肚子说。</p>'});
+    }},
+    {label:'给那个人发一条消息', hint:'好感 +2 · 黑化 +2 · 心绪 -2', onPick:()=>{
+      const id = (G.accused && G.accused !== 'none') ? G.accused : G.father;
+      applyEffect({fav:2, dark:2, mood:-2}, id);
+      pushLog('你给 ' + LEADS[id].name + ' 发了一张婴儿床的照片。','quiet');
+      openScene({
+        kicker:'MESSAGE · ' + LEADS[id].en, portrait:id,
+        title:'已 读',
+        story:'<p>消息发出去，显示“已读”。</p><p>过了十分钟，他回了一个字：“嗯。”</p>' +
+          '<p>又过了半小时，第二条消息进来：“地址。”</p>' +
+          '<p>你看着那两个字，没有回。</p>'
+      });
+    }}
+  ];
+  openScene({
+    kicker:'WEEK 34 · 婴儿床',
+    title:'一 个 角 落',
+    story:'<p>你腾出阳台的一角，支起一张二手婴儿床。说明书是英文的，螺丝少了三颗。</p>' +
+      '<p>装到一半，你坐在地上，忽然不知道自己在为谁装。</p>',
+    choices:choices
+  });
+}
+function sceneFalseAlarm(){
+  openScene({
+    kicker:'WEEK 38 · 凌 晨',
+    title:'一 点 血',
+    story:'<p>凌晨四点，你起床上厕所，看见纸上有一点红。</p>' +
+      '<p>很淡，像谁不小心蹭上去的。</p>' +
+      '<p>你站在原地，听见自己的心跳。</p>',
+    choices:[
+      {label:'立刻去医院', hint:'存款 -500 · 胎宝 +4 · 心绪 -2', onPick:()=>{
+        applyEffect({money:-500, fetal:4, mood:-2});
+        pushLog('你半夜去了医院。医生说，虚惊一场。','good');
+        render();
+        openScene({
+          kicker:'HOSPITAL', title:'虚惊',
+          story:'<p>值班医生看完，说只是宫颈的一点小变化，不用紧张。</p>' +
+            '<p>“第一胎都这样。”她打了个哈欠，“回去睡吧。”</p>' +
+            '<p>你在医院门口的台阶上坐了一会儿。天快亮了。</p>'
+        });
+      }},
+      {label:'再等等，数一数宫缩', hint:'体质 -3 · 心绪 -4 · 有风险', risky:true, onPick:()=>{
+        applyEffect({health:-3, mood:-4});
+        if(Math.random() < 0.35){
+          applyEffect({fetal:-6});
+          pushLog('宫缩越来越密。天亮时，你还是去了医院。','bad');
+          openScene({kicker:'HOSPITAL', title:'还是去了', story:'<p>你数到第七次宫缩，终于拿起电话。</p><p>到医院时，医生说：来得太晚了，先住院观察。</p><p class="whisper">有些侥幸，是要还的。</p>'});
+        } else {
+          pushLog('你数到天亮，宫缩慢慢停了。虚惊一场。','quiet');
+          openScene({kicker:'WEEK 38', title:'天亮', story:'<p>你靠在床头，数着窗外一辆一辆过去的车。</p><p>肚子安静下来。</p><p>你把手放上去，他动了一下，像是在说：还在。</p>'});
+        }
+      }}
+    ]
+  });
+}
+
+/* ---------------- 随机周事件 ---------------- */
+const RANDOM_WEEK = [
+  {kicker:'NEIGHBOR', title:'电梯里', story:'<p>电梯里有个阿姨一直看你的肚子，终于问：“孩子爸爸呢？”</p><p>“出差。”你说。</p><p>“哦。”她点点头，眼神却没走。</p>', effects:{mood:-4}, log:'电梯里的问题，你答得很熟练了。'},
+  {kicker:'OFFER', title:'一单私活', story:'<p>前同事发来消息：有个急单，价钱不错，就是要熬夜。</p><p>你看着账户余额，又看了看日历。</p>', choices:[
+    {label:'接', hint:'存款 +1,200 · 体质 -4 · 心绪 -2', onPick:()=>{ applyEffect({money:1200, health:-4, mood:-2}); pushLog('你接了那单私活，熬到凌晨两点。','gold'); render(); }},
+    {label:'推掉，先保住自己', hint:'心绪 +3 · 体质 +1', onPick:()=>{ applyEffect({mood:3, health:1}); pushLog('你推掉了那单。对方回了个“可惜”。','quiet'); render(); }}
+  ]},
+  {kicker:'MOTHER', title:'一箱土鸡蛋', story:'<p>快递送来一箱土鸡蛋，是母亲寄的。箱子上用记号笔写着：别省着吃。</p><p>你数了数，正好三十个。</p>', effects:{mood:5, health:2}, log:'母亲寄来一箱鸡蛋。她没说钱，也没说别的。'},
+  {kicker:'PACKAGE', title:'匿名快递', story:'<p>门口放着一个没有寄件人的纸盒。</p><p>里面是两件新生儿的小衣服，洗过，叠得很整齐。</p><p>标签被剪掉了。</p>', effects:{mood:3}, log:'你收到一个匿名快递。衣服的尺码，刚好是 newborn。'},
+  {kicker:'CRAMP', title:'半夜抽筋', story:'<p>凌晨，小腿忽然抽紧。你疼得坐起来，抱着腿，等它慢慢松开。</p><p>身边没有人可以推醒。</p>', effects:{health:-4, mood:-2}, log:'半夜腿抽筋。你自己揉了很久。'},
+  {kicker:'SCREEN', title:'商场大屏', story:'<p>你路过商场，大屏上正在放他的采访。</p><p>主持人问：最近有什么好事？</p><p>他对着镜头笑了一下，说：睡得很好。</p>', effects:{mood:2}, log:'你在商场大屏上看见了他。他说他睡得很好。'},
+  {kicker:'RENT', title:'房东的电话', story:'<p>房东打来，说下个月起房租涨六百。</p><p>“现在什么都涨。”他说，“你要是不租，我马上能租出去。”</p>', effects:{money:-600, mood:-4}, log:'房租涨了六百。你没有力气还价。'},
+  {kicker:'RAIN', title:'停电的夜', story:'<p>暴雨，整栋楼停电。你点了两根蜡烛，坐在沙发上听雨。</p><p>肚子里的他动得很厉害，像也听见了。</p>', effects:{mood:-2, health:-1}, log:'雨夜停电。你和肚子里的他，一起等天亮。'}
+];
+function randomWeekEvent(){
+  const pool = RANDOM_WEEK.map((e,i) => ({e:e, i:i})).filter(x => !G.beats['re' + x.i]);
+  if(!pool.length) return;
+  const chosen = pick(pool);
+  G.beats['re' + chosen.i] = true;
+  const e = chosen.e;
+  if(e.effects) applyEffect(e.effects);
+  if(e.log) pushLog(e.log, e.cls || '');
+  render();
+  openScene({
+    kicker:e.kicker + ' · 第 ' + G.week + ' 周',
+    title:e.title,
+    story:e.story,
+    effects:e.effects,
+    choices:e.choices,
+    nextLabel:'过去了'
+  });
+}
+
+/* ---------------- 黑化事件 ---------------- */
+const DARK_SCENES = {
+  pei:{title:'门 锁', story:'<p>你回家时，门开着。客厅灯亮着，玄关多了一双皮鞋。</p><p>“锁换了。”裴烬坐在沙发上，手里拿着新钥匙，“旧的，不安全。”</p><p>“你怎么知道我旧钥匙不安全？”</p><p>他没有回答，把钥匙放在桌上，推向你。</p>'},
+  shen:{title:'退 回 的 申 请', story:'<p>你的转院申请被退回来了，理由是“档案不全”。</p><p>沈砚白把那份申请放在你面前，指尖压着纸角。</p><p>“在这里，我能保证你所有的检查都不出问题。”他说，“别的地方，我不敢保证。”</p>'},
+  lu:{title:'窗 外 的 镜 头', story:'<p>你刷到陆时野的新 vlog。他对着镜头说：“最近住在一个很安静的地方。”</p><p>背景里，有一扇和你家一模一样的窗。</p><p>你放大画面，看见窗台上那盆快死的绿萝。</p>'},
+  gu:{title:'共 同 居 住 协 议', story:'<p>顾停云发来一份文件，标题是《共同居住及监护安排协议》。</p><p>“先看看。”他说，“条款都可以谈。”</p><p>你翻到最后一页，看见一行很小的字：乙方不得单方面终止居住安排。</p>'}
+};
+function darkScene(){
+  if(G.week < 14) return false;
+  const ids = LEAD_IDS.filter(id => G.leads[id].met && G.leads[id].dark >= 55 && G.week - G.leads[id].eventWeek >= 3);
+  if(!ids.length) return false;
+  if(Math.random() > 0.45) return false;
+  ids.sort((a,b) => G.leads[b].dark - G.leads[a].dark);
+  const id = ids[0], L = LEADS[id], s = G.leads[id], ds = DARK_SCENES[id];
+  s.eventWeek = G.week;
+  const note = L.darkNotes[Math.min(3, Math.floor(s.dark / 25))];
+  openScene({
+    kicker:'DARKNESS · ' + L.en,
+    portrait:id,
+    title:ds.title,
+    story:ds.story + '<p class="whisper">' + note + '</p>',
+    choices:[
+      {label:'顺着他，先把这一晚过去', hint:'好感 +4 · 黑化 +6 · 心绪 -3', onPick:()=>{
+        applyEffect({fav:4, dark:6, mood:-3}, id);
+        pushLog('你没有反抗。他满意了，也更近了。','bad');
+        openScene({
+          kicker:'DARKNESS · ' + L.en, portrait:id, title:'更近',
+          story:'<p>他替你把门带上，动作很轻。</p><p>“早点睡。”他说。</p><p>你站在原地，听见钥匙在门外转了一圈。</p>' +
+            '<p class="whisper">' + L.darkNotes[Math.min(3, Math.floor(G.leads[id].dark / 25))] + '</p>'
+        });
+      }},
+      {label:'把话说清楚：这是我的生活', hint:'好感 -2 · 黑化 +3 · 心绪 +2', risky:true, onPick:()=>{
+        applyEffect({fav:-2, dark:3, mood:2}, id);
+        pushLog('你划清了一次界限。他记住了。','rose');
+        openScene({
+          kicker:'DARKNESS · ' + L.en, portrait:id, title:'界 限',
+          story:'<p>“这是我的生活。”你说。</p><p>他没有生气，只是看着你，很久。</p><p>“我知道。”他说，“所以我才在这里。”</p>' +
+            '<p class="whisper">有些人不撞墙。他们只是把墙，一寸一寸挪近。</p>'
+        });
+      }},
+      {label:'什么都不说，看着他', hint:'黑化 +4 · 心绪 -2', onPick:()=>{
+        applyEffect({dark:4, mood:-2}, id);
+        pushLog('你什么都没说。沉默本身，也是一种回答。','quiet');
+        openScene({
+          kicker:'DARKNESS · ' + L.en, portrait:id, title:'沉 默',
+          story:'<p>你们隔着几步远，谁也没有先动。</p><p>最后是他先开口：“你累了。”</p><p>“嗯。”</p><p>“那就睡吧。”他站起来，走到门口，又回头，“我明天再来。”</p>'
+        });
+      }}
+    ]
+  });
+  return true;
+}
+
+/* ---------------- 修罗场 ---------------- */
+function rivalryScene(){
+  if(G.week < 22) return false;
+  const cands = LEAD_IDS.filter(id => G.leads[id].met && G.leads[id].fav >= 40 && (G.leads[id].dark >= 30 || G.leads[id].fav >= 65));
+  if(cands.length < 2) return false;
+  if(Math.random() > 0.55) return false;
+  let pair = null, key = '';
+  for(let i=0;i<cands.length && !pair;i++){
+    for(let j=i+1;j<cands.length;j++){
+      const k = 'rival_' + cands[i] + '_' + cands[j];
+      if(!G.beats[k]){ pair = [cands[i], cands[j]]; key = k; break; }
+    }
+  }
+  if(!pair) return false;
+  G.beats[key] = true;
+  const a = pair[0], b = pair[1], LA = LEADS[a], LB = LEADS[b];
+  const extra = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px">' +
+    [a,b].map(id => '<figure style="margin:0"><img loading="lazy" decoding="async" src="' + LEADS[id].img + '" alt="' + LEADS[id].name + '" style="width:100%;aspect-ratio:1/1.18;object-fit:cover;object-position:center top;filter:grayscale(.15)">' +
+      '<figcaption style="font-size:10px;letter-spacing:.12em;color:var(--gold);padding:5px 0;text-align:center">' + LEADS[id].name + ' · 好感 ' + G.leads[id].fav + ' / 黑化 ' + G.leads[id].dark + '</figcaption></figure>').join('') + '</div>';
+  openScene({
+    kicker:'RIVALRY · 第 ' + G.week + ' 周',
+    title:'两 个 人',
+    story:'<p>你推开门的时候，他们已经都在了。</p>' +
+      '<p>一个坐在靠窗的位置，另一个站在门口，谁也没有先开口。</p>' +
+      '<p>“她约的是我。”' + LA.name + '说。</p>' +
+      '<p>“她手机里最后一条消息，是我。”' + LB.name + '说。</p>' +
+      '<p>咖啡还热着。你站在两个人中间，忽然发现自己没有位置。</p>',
+    extra:extra,
+    choices:[
+      {label:'站到 ' + LA.name + ' 那边', hint:'好感 +6 · 黑化 +6 · 另一位 -4', onPick:()=>{
+        applyEffect({fav:6, dark:6}, a);
+        applyEffect({fav:-4, dark:5}, b);
+        pushLog('你站到了 ' + LA.name + ' 身后。' + LB.name + '看了你很久，起身走了。','rose');
+        render();
+        openScene({
+          kicker:'RIVALRY', portrait:a, title:'留下的人',
+          story:'<p>' + LA.rivalry + '</p><p>他说完，替你把椅子拉开。</p><p>门外，另一个人没有回头。</p>',
+          nextLabel:'坐下'
+        });
+      }},
+      {label:'站到 ' + LB.name + ' 那边', hint:'好感 +6 · 黑化 +6 · 另一位 -4', onPick:()=>{
+        applyEffect({fav:6, dark:6}, b);
+        applyEffect({fav:-4, dark:5}, a);
+        pushLog('你站到了 ' + LB.name + ' 身后。' + LA.name + '把杯子放下，走了。','rose');
+        render();
+        openScene({
+          kicker:'RIVALRY', portrait:b, title:'留下的人',
+          story:'<p>' + LB.rivalry + '</p><p>他说完，把自己的外套披在你肩上。</p><p>桌上另一杯咖啡，从头到尾没有人碰。</p>',
+          nextLabel:'坐下'
+        });
+      }},
+      {label:'谁都不站，让他们自己谈', hint:'两人好感 -2 · 两人黑化 +3 · 心绪 -3', onPick:()=>{
+        applyEffect({fav:-2, dark:3, mood:-3}, a);
+        applyEffect({fav:-2, dark:3}, b);
+        pushLog('你退到门外，把门带上。里面很久没有声音。','quiet');
+        render();
+        openScene({
+          kicker:'RIVALRY', title:'门 外',
+          story:'<p>你靠在走廊的墙上，听见里面椅子挪动的声音。</p><p>没有人提高嗓门。</p>' +
+            '<p>十分钟后，门开了。两个人一前一后出来，谁也没有看你。</p>' +
+            '<p class="whisper">你忽然明白，有些选择，不做也是一种选择。</p>'
+        });
+      }}
+    ]
+  });
+  return true;
+}
+
+function postTruthRivalry(){
+  if(!G || G.beats.truthRival) return false;
+  if(!G.accused || G.accused === 'none' || G.accused !== G.father) return false;
+  const others = LEAD_IDS.filter(id => id !== G.father && G.leads[id].met && G.leads[id].fav >= 45);
+  if(!others.length) return false;
+  others.sort((x,y) => G.leads[y].fav - G.leads[x].fav);
+  const a = G.father, b = others[0], LA = LEADS[a], LB = LEADS[b];
+  G.beats.truthRival = true;
+  const extra = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px">' +
+    [a,b].map(id => '<figure style="margin:0"><img loading="lazy" decoding="async" src="' + LEADS[id].img + '" alt="' + LEADS[id].name + '" style="width:100%;aspect-ratio:1/1.18;object-fit:cover;object-position:center top;filter:grayscale(.15)">' +
+      '<figcaption style="font-size:10px;letter-spacing:.12em;color:var(--gold);padding:5px 0;text-align:center">' + LEADS[id].name + ' · 好感 ' + G.leads[id].fav + ' / 黑化 ' + G.leads[id].dark + '</figcaption></figure>').join('') + '</div>';
+  openScene({
+    kicker:'RIVALRY · 门 外',
+    title:'他 也 来 了',
+    story:'<p>门没有关严。你刚说出那个名字，走廊里就传来脚步声。</p>' +
+      '<p>' + LB.name + '站在门口，手里还提着给你的汤。他看了一眼 ' + LA.name + '，又看向你的肚子。</p>' +
+      '<p>“所以，”他说，“你找到他了。”</p>' +
+      '<p>' + LA.name + '没有起身。他只把袖口扣好，像在等一个答案。</p>' +
+      '<p class="whisper">你忽然明白，今晚要选的不只是一个名字。</p>',
+    extra:extra,
+    choices:[
+      {label:'让两个人都进来，把话说清', hint:'两人好感 +5 · 黑化 +6 · 心绪 -4', risky:true, onPick:()=>{
+        applyEffect({fav:5, dark:6, mood:-4}, a);
+        applyEffect({fav:5, dark:6, mood:-4}, b);
+        G.flags.managed = true;
+        pushLog('你让两个人都进了门。那壶汤最后谁也没有喝。','rose');
+        render();
+        openScene({
+          kicker:'RIVALRY', title:'三 个 人',
+          story:'<p>“孩子是我的。”' + LA.name + '说。</p>' +
+            '<p>“我知道。”' + LB.name + '把汤放在桌上，“我来，不是为了抢。”</p>' +
+            '<p>“那你来做什么？”</p>' +
+            '<p>他看着你，很久，才说：“来看看她过得好不好。”</p>' +
+            '<p class="whisper">那天晚上，你们三个人坐到很晚。谁也没有赢。谁也没有走。</p>',
+          nextLabel:'送 他 们 出 门',
+          onNext:() => render()
+        });
+      }},
+      {label:'挡在门口，让 ' + LB.name + ' 走', hint:'好感 +6 · 黑化 +3 · 另一位 好感 -6 / 黑化 +8', risky:true, onPick:()=>{
+        applyEffect({fav:6, dark:3}, a);
+        applyEffect({fav:-6, dark:8}, b);
+        pushLog('你把 ' + LB.name + ' 挡在门外。他没有争，只把汤放在地上。','bad');
+        render();
+        openScene({
+          kicker:'RIVALRY', portrait:b, title:'门 关 上 了',
+          story:'<p>“汤趁热。”他说。</p><p>门合上之前，他看了你一眼。那一眼里没有恨，只有一种很慢的、收回去的东西。</p>' +
+            '<p class="whisper">你靠着门站了很久。汤在门外，慢慢凉了。</p>',
+          nextLabel:'回 屋'
+        });
+      }},
+      {label:'退到走廊，让他们自己说', hint:'两人好感 -2 · 黑化 +4 · 心绪 +2', onPick:()=>{
+        applyEffect({fav:-2, dark:4, mood:2}, a);
+        applyEffect({fav:-2, dark:4}, b);
+        pushLog('你退到走廊，把门留给他们。','quiet');
+        render();
+        openScene({
+          kicker:'RIVALRY', title:'走 廊',
+          story:'<p>你坐在走廊的长椅上，听见里面很低地说了几句。</p>' +
+            '<p>没有摔东西，也没有提高嗓门。</p>' +
+            '<p>二十分钟后，' + LB.name + '先出来。他经过你身边，停了一下：“进去吧。他在等你。”</p>' +
+            '<p class="whisper">你忽然不想知道他们说了什么。</p>',
+          nextLabel:'进 去'
+        });
+      }}
+    ]
+  });
+  return true;
+}
+
+/* ---------------- 育儿月事件 ---------------- */
+function triggerBabyMonth(){
+  if(!G || G.ended || G.phase !== 'baby') return;
+  const m = G.baby.month;
+  if(m === 1 && !G.beats.bm1){ G.beats.bm1 = true; return sceneFirstMonth(); }
+  if(m === 2 && !G.beats.bm2){ G.beats.bm2 = true; return sceneMoneyCrunch(); }
+  if(m === 3 && !G.beats.bm3){ G.beats.bm3 = true; return sceneFever(); }
+  if(m === 4 && !G.beats.bm4){ G.beats.bm4 = true; return sceneBestieBaby(); }
+  if(m === 5 && !G.beats.bm5){ G.beats.bm5 = true; return sceneCustody(); }
+  if(m >= 6 && !G.beats.bm6){ G.beats.bm6 = true; return sceneLastMonth(); }
+  if(Math.random() < 0.5) babyRandom();
+}
+function sceneFirstMonth(){
+  const id = (G.accused && G.accused !== 'none') ? G.accused : null;
+  const choices = [
+    {label:'所有事都自己扛', hint:'体质 -5 · 亲密 +5 · 心绪 -3', onPick:()=>{
+      applyEffect({health:-5, mood:-3});
+      G.baby.bond = clamp(G.baby.bond + 5, 0, 100);
+      pushLog('第一个月，你学会了一只手抱孩子，一只手烧水。','rose');
+      render();
+      openScene({kicker:'BABY · M01', title:'一只手', story:'<p>他哭，你就抱。他睡，你就洗奶瓶。</p><p>有一天你发现，自己已经能一只手抱他，一只手给自己煮面。</p><p class="whisper">原来人真的可以被逼着，长出第三只手。</p>'});
+    }},
+    {label:'请一个月嫂', hint:'存款 -4,000 · 每月行动点 +1 · 体质 +6 · 宝宝健康 +4', disabled:G.money < 4000, onPick:()=>{
+      applyEffect({money:-4000, health:6, mood:4});
+      G.baby.health = clamp(G.baby.health + 4, 0, 100);
+      G.flags.hired = true;
+      G.ap += 1;
+      pushLog('月嫂进门那天，你在沙发上睡了四个小时。','good');
+      render();
+      openScene({kicker:'BABY · M01', title:'四个小时', story:'<p>月嫂接过孩子，说：“你去睡吧。”</p><p>你躺下，却先哭了。</p><p>不是因为难过。是因为终于有人替你抱了一会儿。</p>'});
+    }},
+    id
+      ? {label:'让 ' + LEADS[id].name + ' 来搭把手', hint:'好感 +3 · 黑化 +2 · 亲密 +3', onPick:()=>{
+          applyEffect({fav:3, dark:2, mood:4}, id);
+          G.baby.bond = clamp(G.baby.bond + 3, 0, 100);
+          pushLog(LEADS[id].name + ' 来抱了孩子。他的动作比想象中稳。','rose');
+          render();
+          openScene({kicker:'FATHER · ' + LEADS[id].en, portrait:id, title:'他很轻', story:'<p>他接过孩子，手臂僵了一下，随即托稳。</p><p>“他好轻。”他说。</p><p>“刚生下来都这样。”</p><p>他低头看了很久。你看见他喉结动了一下。</p>'});
+        }}
+      : {label:'给朋友打电话', hint:'心绪 +3 · 名声 -1', onPick:()=>{
+          applyEffect({mood:3, rep:-1});
+          pushLog('你给一个老朋友打了电话。她第二天就来了。','good');
+          render();
+          openScene({kicker:'BABY · M01', title:'她来了', story:'<p>朋友提着两袋菜站在门口，二话不说进了厨房。</p><p>“你别说话。”她说，“先去睡。”</p><p>你站在厨房门口，忽然鼻子一酸。</p>'});
+        }}
+  ];
+  openScene({
+    kicker:'BABY · M01',
+    title:'第 一 个 月',
+    story:'<p>第一个月，你没有睡过一个整觉。</p><p>他两小时醒一次，哭声又细又急。你抱着他在客厅走，走到窗外发白。</p>' +
+      (id ? '<p>' + LEADS[id].name + ' 让人送来两箱奶粉，没有留字条。</p>' : '<p>没有人来。手机安静得像坏掉了。</p>'),
+    choices:choices
+  });
+}
+function sceneMoneyCrunch(){
+  const id = (G.accused && G.accused !== 'none') ? G.accused : null;
+  const choices = [
+    {label:'多接两单，熬夜做完', hint:'存款 +1,800 · 体质 -6 · 亲密 -3', onPick:()=>{
+      applyEffect({money:1800, health:-6, mood:-2});
+      G.baby.bond = clamp(G.baby.bond - 3, 0, 100);
+      pushLog('你熬了两个通宵。孩子在隔壁哭，你戴着耳机。','bad');
+      render();
+      openScene({kicker:'BABY · M02', title:'耳机', story:'<p>你戴着耳机改方案，把哭声隔在外面。</p><p>做完最后一页，你摘下耳机，发现已经安静了。</p><p>你走过去，他睡着了，脸上还有泪，胸口一起一伏。</p><p class="whisper">你挣钱是为了他。可他哭到睡着，你一声都没听见。</p>'});
+    }},
+    {label:'换成便宜一点的奶粉', hint:'宝宝健康 -5 · 心绪 -2', onPick:()=>{
+      applyEffect({money:-200, mood:-2});
+      G.baby.health = clamp(G.baby.health - 5, 0, 100);
+      pushLog('你换了便宜奶粉。他喝了，吐了一点。','quiet');
+      render();
+      openScene({kicker:'BABY · M02', title:'奶粉', story:'<p>新奶粉冲开，有一股很淡的豆味。</p><p>他喝了两口，扭开头，又被他自己的哭声呛住。</p><p>你抱着他，一边拍背，一边算这个月还剩多少。</p>'});
+    }},
+    id
+      ? {label:'向 ' + LEADS[id].name + ' 开口', hint:'存款 +3,000 · 好感 -3 · 黑化 +5', risky:true, onPick:()=>{
+          applyEffect({money:3000, fav:-3, dark:5, mood:-4}, id);
+          pushLog('你向他开了口。钱到得很快，他记性也很好。','bad');
+          render();
+          openScene({kicker:'MONEY · ' + LEADS[id].en, portrait:id, title:'到 账', story:'<p>转账提示音响了。</p><p>“不够再说。”他说。</p><p>“我会还。”</p><p>“不用还。”他停了停，“你只要别让我找不到你。”</p><p class="whisper">你把手机扣在桌上，很久没有翻过来。</p>'});
+        }}
+      : {label:'向朋友借', hint:'存款 +1,500 · 名声 -3 · 心绪 -2', onPick:()=>{
+          applyEffect({money:1500, rep:-3, mood:-2});
+          pushLog('你向朋友借了钱。她很爽快，你却记了很久。','quiet');
+          render();
+          openScene({kicker:'BABY · M02', title:'借 条', story:'<p>朋友转来钱，说不用写借条。</p><p>你还是写了，拍给她。</p><p>“你这个人。”她回。</p><p>“我怕忘。”你说。</p>'});
+        }}
+  ];
+  openScene({
+    kicker:'BABY · M02',
+    title:'钱 不 够 了',
+    story:'<p>月底，你把账单摊在桌上：房租、水电、奶粉、疫苗。</p><p>存款还剩 ' + fmt(G.money) + '。</p><p>孩子在你怀里睡着了，呼吸很轻。</p>',
+    choices:choices
+  });
+}
+function sceneFever(){
+  const id = (G.accused && G.accused !== 'none') ? G.accused : null;
+  G.baby.health = clamp(G.baby.health - 6, 0, 100);
+  const choices = [
+    {label:'半夜送急诊', hint:'存款 -1,200 · 宝宝健康 +10 · 亲密 +3', onPick:()=>{
+      applyEffect({money:-1200, mood:-4});
+      G.baby.health = clamp(G.baby.health + 10, 0, 100);
+      G.baby.bond = clamp(G.baby.bond + 3, 0, 100);
+      pushLog('你半夜抱着孩子去了急诊。他烧到三十八度九。','good');
+      render();
+      openScene({kicker:'BABY · M03', title:'三十八度九', story:'<p>急诊室人很多。你抱着他，坐在塑料椅上等叫号。</p><p>他烧得脸通红，小手抓着你的衣领。</p><p>天亮时，烧退了。你抱着他走出医院，觉得腿不是自己的。</p>'});
+    }},
+    {label:'物理降温，守到天亮', hint:'有风险 · 亲密 +5 · 体质 -3', risky:true, onPick:()=>{
+      applyEffect({health:-3});
+      G.baby.bond = clamp(G.baby.bond + 5, 0, 100);
+      if(G.baby.health < 45){
+        G.baby.health = clamp(G.baby.health - 8, 0, 100);
+        pushLog('烧一直不退。天亮时，他还是去了医院。','bad');
+      } else {
+        G.baby.health = clamp(G.baby.health + 3, 0, 100);
+        pushLog('你用温水擦了一夜。天亮时，烧退了。','good');
+      }
+      render();
+      openScene({kicker:'BABY · M03', title:'一夜', story:'<p>你坐在床边，每隔半小时换一次毛巾。</p><p>他哼哼唧唧，偶尔睁眼看你一下，又闭上。</p><p class="whisper">“妈妈在。”你一直说。说到自己都信了。</p>'});
+    }},
+    id
+      ? {label:'给 ' + LEADS[id].name + ' 打电话', hint:'宝宝健康 +6 · 黑化 +3', onPick:()=>{
+          applyEffect({dark:3, mood:2}, id);
+          G.baby.health = clamp(G.baby.health + 6, 0, 100);
+          pushLog('你给他打了电话。他来得比救护车还快。','rose');
+          render();
+          openScene({kicker:'BABY · M03', portrait:id, title:'半 夜', story:'<p>他进门的时候还穿着睡袍，头发是乱的。</p><p>他接过孩子，手背贴了贴额头，声音很低：“去医院。”</p><p>车已经在楼下等着了。</p><p class="whisper">那一刻你忽然想，如果这不是爱，那也算一种可靠。</p>'});
+        }}
+      : {label:'自己守着，物理降温', hint:'亲密 +5 · 体质 -3', onPick:()=>{
+          applyEffect({health:-3});
+          G.baby.bond = clamp(G.baby.bond + 5, 0, 100);
+          pushLog('你一个人守了一夜。天亮时，烧退了。','good');
+          render();
+          openScene({kicker:'BABY · M03', title:'一个人', story:'<p>你用温水给他擦身，一遍一遍。</p><p>窗外有早班车经过。他忽然睁开眼，看了你一会儿，笑了。</p><p>你也笑了。眼泪掉在他脸上。</p>'});
+        }}
+  ];
+  openScene({
+    kicker:'BABY · M03',
+    title:'他 发 烧 了',
+    story:'<p>凌晨两点，你摸到他额头很烫。</p><p>体温计显示三十八度九。</p><p>他哭得没有力气，声音像小猫。</p>',
+    choices:choices
+  });
+}
+function sceneBestieBaby(){
+  const exposed = G.bestie.exposed;
+  const choices = exposed
+    ? [
+        {label:'不开门', hint:'心绪 +2 · 与她彻底断掉', onPick:()=>{
+          applyEffect({mood:2});
+          pushLog('她敲了十分钟门。你没有开。','quiet');
+          render();
+          openScene({kicker:'LIN ZHI · M04', title:'门 外', story:'<p>敲门声停了。你从猫眼里看出去，她站在楼道里，手里提着一个纸袋。</p><p>她把纸袋放在门口，走了。</p><p>你等她进电梯，才开门。里面是两件小毛衣。</p>'});
+        }},
+        {label:'开门，听她说完', hint:'心绪 -6 · 名声 +3', onPick:()=>{
+          applyEffect({mood:-6, rep:3});
+          pushLog('你开了门。她说了很多，你只记住一句：对不起。','rose');
+          render();
+          openScene({kicker:'LIN ZHI · M04', title:'对 不 起', story:'<p>“我不是来求你原谅的。”她说，“我就是想看看孩子。”</p><p>“看完了？”</p><p>“看完了。”</p><p>她站起来，走到门口，又回头：“' + G.hero + '，那晚之后，我也没睡好过。”</p><p class="whisper">你没有回答。门关上了。</p>'});
+        }},
+        {label:'让她抱一下孩子', hint:'心绪 -3 · 林栀警觉 -1', onPick:()=>{
+          applyEffect({mood:-3});
+          G.bestie.wary = clamp(G.bestie.wary - 1, 0, 3);
+          pushLog('她抱了孩子。手很稳，像抱过很多次。','quiet');
+          render();
+          openScene({kicker:'LIN ZHI · M04', title:'她的手', story:'<p>她抱着孩子，低头看了很久。</p><p>“他像你。”她说。</p><p>“嗯。”</p><p>她把孩子还给你，动作很轻，像怕弄碎什么。</p>'});
+        }}
+      ]
+    : [
+        {label:'让她进门，看她想做什么', hint:'林栀警觉 +1 · 心绪 -4', risky:true, onPick:()=>{
+          applyEffect({mood:-4});
+          G.bestie.wary = clamp(G.bestie.wary + 1, 0, 3);
+          pushLog('林栀提着礼物来了。她在婴儿床边站了很久。','quiet');
+          render();
+          openScene({kicker:'LIN ZHI · M04', title:'礼 物', story:'<p>她带来的纸袋里，是一套很贵的小衣服。</p><p>“我挑了很久。”她说。</p><p>“谢谢。”</p><p>她伸手想抱孩子，你下意识地侧了一下身。她的手停在半空，慢慢收了回去。</p>'});
+        }},
+        {label:'只让她在门口看一眼', hint:'心绪 +2 · 林栀警觉 +1', onPick:()=>{
+          applyEffect({mood:2});
+          G.bestie.wary = clamp(G.bestie.wary + 1, 0, 3);
+          pushLog('你抱着孩子站在门口。她看了一眼，说：像你。','quiet');
+          render();
+          openScene({kicker:'LIN ZHI · M04', title:'门 口', story:'<p>“就一眼。”你说。</p><p>她点点头，弯下腰看孩子。</p><p>“像你。”她说。</p><p>“嗯。”</p><p>门关上之前，她忽然说：“' + G.hero + '，你还在查那晚吗？”</p><p>你没有回答。</p>'});
+        }},
+        {label:'说你累了，改天', hint:'心绪 +3 · 林栀警觉 +1', onPick:()=>{
+          applyEffect({mood:3});
+          G.bestie.wary = clamp(G.bestie.wary + 1, 0, 3);
+          pushLog('你没有让她进来。她在门口站了一会儿。','quiet');
+          render();
+          openScene({kicker:'LIN ZHI · M04', title:'改 天', story:'<p>“改天吧。”你说。</p><p>“好。”她笑了笑，“你好好休息。”</p><p>她走后，你在门口站了很久。猫眼里，楼道灯灭了一次，又亮起来。</p>'});
+        }}
+      ];
+  openScene({
+    kicker:'BABY · M04',
+    title:'她 来 了',
+    story:'<p>门铃响的时候，你正在冲奶粉。</p><p>猫眼里是林栀。她提着一个纸袋，头发剪短了。</p>' +
+      (exposed ? '<p>你们已经很久没有联系。她站在门外，没有按第二次铃。</p>' : '<p>她像什么都没发生过，冲你笑。</p>'),
+    choices:choices
+  });
+}
+function sceneCustody(){
+  const id = (G.accused && G.accused !== 'none') ? G.accused : null;
+  if(id && id === G.father && G.leads[id].dark >= 55){
+    openScene({
+      kicker:'CUSTODY · ' + LEADS[id].en,
+      portrait:id,
+      title:'搬 过 来',
+      story:'<p>他带来一份文件，还有一把新钥匙。</p>' +
+        '<p>“搬过来。”他说，“房子大，有保姆，离医院近。”</p>' +
+        '<p>“如果我不搬呢？”</p>' +
+        '<p>他看了你一会儿：“那我搬过来。”</p>',
+      choices:[
+        {label:'同意搬过去', hint:'存款 +5,000 · 黑化 +8 · 心绪 -5', onPick:()=>{
+          applyEffect({money:5000, dark:8, mood:-5}, id);
+          pushLog('你搬进了他的房子。房间很大，门禁很严。','bad');
+          render();
+          openScene({kicker:'CUSTODY · ' + LEADS[id].en, portrait:id, title:'新 家', story:'<p>婴儿房是他提前布置的，颜色、家具、窗帘，都是你喜欢的。</p><p>“你怎么知道我喜欢这些？”</p><p>“我看过你的收藏。”他说得很自然。</p><p class="whisper">你站在那间完美的房间里，忽然觉得冷。</p>'});
+        }},
+        {label:'不搬，留在自己的房子', hint:'好感 -4 · 黑化 +8 · 心绪 +3', risky:true, onPick:()=>{
+          applyEffect({fav:-4, dark:8, mood:3}, id);
+          pushLog('你拒绝了他。他没有再劝。','rose');
+          render();
+          openScene({kicker:'CUSTODY · ' + LEADS[id].en, portrait:id, title:'拒 绝', story:'<p>“我住惯了这里。”你说。</p><p>他把文件收起来，动作很慢。</p><p>“好。”他说，“那我每天来。”</p><p>“不用每天。”</p><p>“那就隔一天。”</p><p class="whisper">你发现，他根本没有在问。</p>'});
+        }},
+        {label:'谈条件：可以来，但不住', hint:'好感 +3 · 黑化 +3 · 存款 +2,000', onPick:()=>{
+          applyEffect({fav:3, dark:3, money:2000}, id);
+          pushLog('你和他谈了一个条件。他居然签了。','gold');
+          render();
+          openScene({kicker:'CUSTODY · ' + LEADS[id].en, portrait:id, title:'条 件', story:'<p>“你可以每天来，但不能过夜。”你说。</p><p>他想了想，拿起笔。</p><p>“还有吗？”</p><p>“孩子的抚养，我说了算。”</p><p>他签完字，把笔帽扣上：“你比我想的难缠。”</p><p>“你也是。”</p>'});
+        }}
+      ]
+    });
+  } else if(id && id === G.father){
+    openScene({
+      kicker:'FATHER · ' + LEADS[id].en,
+      portrait:id,
+      title:'户 口',
+      story:'<p>他把一本户口本放在桌上。</p><p>“孩子跟我姓。”他说，“我来办。”</p><p>你看着那本薄薄的本子，忽然想起自己一个人去派出所的那天。</p>',
+      choices:[
+        {label:'同意，让孩子跟他姓', hint:'存款 +3,000 · 好感 +5 · 心绪 -3', onPick:()=>{
+          applyEffect({money:3000, fav:5, mood:-3}, id);
+          pushLog('孩子跟了他的姓。手续办得很快。','gold');
+          render();
+          openScene({kicker:'FATHER · ' + LEADS[id].en, portrait:id, title:'姓', story:'<p>从派出所出来，他抱着孩子，站在台阶上。</p><p>“谢谢你。”他说。</p><p>“谢我什么？”</p><p>“谢谢你把他说出来。”</p><p class="whisper">你忽然发现，自己并没有想象中那么介意。</p>'});
+        }},
+        {label:'让孩子随你的姓', hint:'好感 -3 · 心绪 +5 · 名声 +2', onPick:()=>{
+          applyEffect({fav:-3, mood:5, rep:2}, id);
+          pushLog('你拒绝了。孩子随你的姓。','rose');
+          render();
+          openScene({kicker:'FATHER · ' + LEADS[id].en, portrait:id, title:'你的姓', story:'<p>“他跟我姓。”你说。</p><p>他看着你，没有立刻接话。</p><p>“好。”</p><p>就一个字。你反倒愣了一下。</p><p>“你不生气？”</p><p>“我为什么要生气？”他把户口本收起来，“他是你生的。”</p>'});
+        }}
+      ]
+    });
+  } else {
+    openScene({
+      kicker:'BABY · M05',
+      title:'房 东 要 卖 房',
+      story:'<p>房东打来电话，说房子卖了，让你两个月内搬走。</p><p>你抱着孩子，站在阳台上量尺寸。</p><p>婴儿床、衣柜、推车，还有那些没拆封的纸箱。</p>',
+      choices:[
+        {label:'搬到更远、更便宜的地方', hint:'存款 -1,500 · 心绪 -3 · 体质 -2', onPick:()=>{
+          applyEffect({money:-1500, mood:-3, health:-2});
+          pushLog('你搬到了城郊。通勤更远，房租便宜了一半。','quiet');
+          render();
+          openScene({kicker:'HOME', title:'新 房', story:'<p>新房子很小，但朝南。</p><p>你花了三天才把婴儿床装好。孩子躺在里面，看着窗外的树。</p><p>“以后这里就是家了。”你说。</p>'});
+        }},
+        {label:'求房东宽限几个月', hint:'存款 -2,000 · 心绪 -2', onPick:()=>{
+          applyEffect({money:-2000, mood:-2});
+          pushLog('你求房东宽限。他答应了，加了房租。','quiet');
+          render();
+          openScene({kicker:'HOME', title:'宽 限', story:'<p>“再住三个月。”你说，“孩子太小，搬不动。”</p><p>房东沉默了一会儿：“行，一个月加六百。”</p><p>“好。”</p><p>挂断电话，你算了算存款，又把这个月的预算划掉了一半。</p>'});
+        }},
+        {label:'带着孩子先回娘家住几天', hint:'心绪 -6 · 存款 +1,000', risky:true, onPick:()=>{
+          applyEffect({mood:-6, money:1000});
+          pushLog('你回了娘家。住了三天，母亲开始叹气。','bad');
+          render();
+          openScene({kicker:'FAMILY', title:'三 天', story:'<p>第一天，母亲炖了汤。</p><p>第二天，父亲在饭桌上说：“你弟下个月要订婚。”</p><p>第三天，母亲问你：“你打算什么时候走？”</p><p class="whisper">你抱着孩子，在房间里坐到天亮。</p>'});
+        }}
+      ]
+    });
+  }
+}
+function sceneLastMonth(){
+  const b = G.baby;
+  openScene({
+    kicker:'BABY · M06 · 最 后',
+    title:'六 个 月',
+    story:'<p>六个月。他学会了翻身，会坐，会抓你的手指不放。</p>' +
+      '<p>他笑起来的时候，眼睛会弯成一条缝。</p>' +
+      '<p>你把他抱到窗前，外面正在下雨。</p>' +
+      '<p class="system">宝宝健康 ' + b.health + ' · 亲密 ' + b.bond + ' · 天赋 ' + b.talent + '</p>' +
+      '<p class="whisper">四十周，加六个月。你把一个没有名字的夜晚，过成了一个家。</p>',
+    nextLabel:'看 结 局',
+    onNext:() => finishGame()
+  });
+}
+const BABY_RANDOM = [
+  {kicker:'BABY', title:'他 会 笑 了', story:'<p>你对着他做鬼脸，他忽然咧开嘴，笑了。</p><p>没有牙，像个小老头。</p>', bond:4, mood:5, log:'他第一次对你笑。你笑了一整天。'},
+  {kicker:'BABY', title:'长 牙', story:'<p>他半夜哭醒，口水把枕头弄湿了一片。</p><p>你摸到牙龈上一点硬硬的白。</p>', health:-2, mood:-3, log:'他长牙了。你一夜没睡。'},
+  {kicker:'BABY', title:'邻 居 阿 姨', story:'<p>楼下的阿姨敲开门，送来一碗辅食，说听见孩子哭。</p><p>你接过碗，忽然有点想哭。</p>', bond:2, mood:4, log:'楼下的阿姨送来一碗辅食。'},
+  {kicker:'BABY', title:'快 递', story:'<p>门口放着一个大纸箱。里面是会响的摇铃、布书，还有一辆能推的小车。</p><p>没有卡片。</p>', mood:3, log:'有人寄来一整箱玩具，没有留名字。'}
+];
+function babyRandom(){
+  const e = pick(BABY_RANDOM);
+  if(e.health) G.baby.health = clamp(G.baby.health + e.health, 0, 100);
+  if(e.bond) G.baby.bond = clamp(G.baby.bond + e.bond, 0, 100);
+  if(e.mood) applyEffect({mood:e.mood});
+  pushLog(e.log, e.mood > 0 ? 'rose' : 'quiet');
+  render();
+  openScene({kicker:e.kicker, title:e.title, story:e.story});
+}
+
+/* ---------------- 结局 ---------------- */
+function finishGame(){
+  if(!G) return;
+  const endingEl = $('#ending');
+  if(G.ended && endingEl && !endingEl.hidden) return;
+  const wasEnded = !!G.ended;
+  const id = G.accused;
+  const b = G.baby;
+  const trueId = G.father;
+  let key = 'alone_mid', title = '不 指 认', sub = 'INDEPENDENT';
+  const epi = [];
+  let familyHandled = false;
+  const famIds = Array.from(new Set((G.flags.coParents || []).concat(G.flags.certMan ? [G.flags.certMan] : [])));
+  const famDark = famIds.length ? Math.max.apply(null, famIds.map(x => G.leads[x].dark)) : 0;
+
+  if(G.flags.familyPlan && famIds.length >= 1 && (famDark >= 75 || G.flags.familyTension)){
+    familyHandled = true;
+    key = 'family_dark';
+    sub = 'DARK FAMILY · ' + (famIds.length + 1) + ' 人';
+    const actor = famIds.slice().sort((x,y) => G.leads[y].dark - G.leads[x].dark)[0];
+    const worst = famDark >= 92 && (G.flags.secondBaby || G.money < 0);
+    title = worst ? '全 都 没 有 了' : (actor === 'pei' ? '金 丝 笼' : actor === 'shen' ? '监 护 人' : actor === 'lu' ? '消 失 的 人' : '负 债 人');
+    epi.push('<p>你把几个人留在了同一张桌子上。你以为说清楚就够了。</p>');
+    epi.push('<p>可有些东西，一旦摆到桌面上，就再也收不回去。</p>');
+    if(worst){
+      epi.push('<p>后来，事情不再受任何人控制。</p>');
+      epi.push('<p>那个人的车在城外的高架上出了事。新闻只有一行字：“单车事故”，没有照片。</p>');
+      epi.push('<p>你死在另一个夜晚。警方通知家属的时候，孩子还在月嫂怀里哭。</p>');
+      epi.push('<p>孩子被抱走了。监护文件上盖着章，你母亲连探视都被拒绝。后来，孩子再也没有消息。</p>');
+      epi.push('<p>同一个月，你弟出了车祸，你父亲在医院的走廊里倒下。你家的房子被拍卖。</p>');
+      epi.push('<p class="whisper">这不是哪一个男人做的。这是所有人都不肯退一步的结果。</p>');
+    } else if(actor === 'pei'){
+      epi.push('<p>先是那个人的公司出了问题。然后是另一个。再后来，没有人再按你的门铃。</p>');
+      epi.push('<p>裴烬把顶层的一间房改成了婴儿房。门禁还是只认两张脸——你的，和他的。</p>');
+      epi.push('<p>“外面不安全。”他说。你抱着孩子站在落地窗前，看见楼下停着两辆车。</p>');
+      epi.push('<p class="whisper">你没有再问那两辆车是谁的。</p>');
+    } else if(actor === 'shen'){
+      epi.push('<p>沈砚白给你做了一次“评估”。评估结果写在纸上：产后情绪不稳，不宜独立抚养。</p>');
+      epi.push('<p>孩子被转到了他安排的医院。你每天可以探视一小时，隔着玻璃。</p>');
+      epi.push('<p>“我是为你们好。”他说。白大褂很干净，眼睛里没有别的。</p>');
+      epi.push('<p class="whisper">你数着探视的分钟，像数着还剩多少日子。</p>');
+    } else if(actor === 'lu'){
+      epi.push('<p>热搜上出现了另一个名字。照片、聊天记录、转账截图，一样一样放出来。</p>');
+      epi.push('<p>那个人先关了账号，后来关了公司，再后来，连住址都查不到。</p>');
+      epi.push('<p>陆时野在采访里说：“有些人不配当父亲。”你看着电视，孩子在旁边睡着了。</p>');
+      epi.push('<p class="whisper">镜头前的人替你出了气。镜头后，你连门都不敢出。</p>');
+    } else {
+      epi.push('<p>顾停云没有吵。他寄来一叠文件：监护权申请、财产保全、限制出境。</p>');
+      epi.push('<p>你签过的每一张纸，都被他变成了证据。</p>');
+      epi.push('<p>存款被冻结那天，你抱着孩子在银行门口站了很久。玻璃门里，他的车停在对面。</p>');
+      epi.push('<p class="whisper">你终于明白，有些官司从第一页就写好了结局。</p>');
+    }
+    if(G.bestie.exposed && !worst){
+      epi.push('<p>林栀的公寓空了。猫在门口叫了三天，后来被邻居抱走。</p>');
+    }
+  } else if(G.flags.familyPlan && (G.flags.familyPlan === 'multi' || G.flags.familyPlan === 'multi_none') && famDark < 75){
+    familyHandled = true;
+    const C = G.flags.certMan ? LEADS[G.flags.certMan] : null;
+    const co = (G.flags.coParents || []).map(x => LEADS[x].name);
+    key = 'family_multi';
+    title = C ? '一 张 证，两 个 家' : '没 有 证 的 家';
+    sub = 'CHOSEN FAMILY · ' + (famIds.length + 1) + ' 人';
+    if(C){
+      epi.push('<p>结婚证上是你和 ' + C.name + '。红底照片里，两个人都没有笑。</p>');
+      epi.push('<p>' + (co.join('、') || '他') + '也有这个家的钥匙。孩子半夜哭，有时候是他先起身。</p>');
+      epi.push('<p>你们定了几条规矩：谁接送、谁开家长会、谁值夜。写在冰箱上，像一份合同。</p>');
+      epi.push('<p>孩子学会叫爸爸的时候，先叫的是 ' + (co[0] || C.name) + '。' + C.name + '愣了一下，把孩子接过去，什么也没说。</p>');
+      epi.push('<p>不是没有过争执。有一次，两个人同时站在门口，谁也不肯先走。</p>');
+      epi.push('<p>你把孩子交给月嫂，把碗放下：“要么按规矩来，要么都走。”</p>');
+      epi.push('<p class="whisper">你们没有变成一家人。你们只是学会了在同一张桌子上吃饭。</p>');
+    } else {
+      epi.push('<p>没有结婚证。户口本上，父亲那一栏空着。</p>');
+      epi.push('<p>但门口总有三双鞋。孩子半夜哭，谁先醒谁去抱。</p>');
+      epi.push('<p>有人在的时候，饭桌上多一副碗筷；没有人来的时候，你也不问。</p>');
+      epi.push('<p class="whisper">没有名分。只有每天谁来、谁走、谁记得买奶粉。</p>');
+    }
+    epi.push('<p>你学会了排班，也学会了不在孩子面前吵架。黑化值没有消失，只是被压在了桌子底下。</p>');
+  } else if(G.flags.familyPlan === 'single' && G.flags.certMan && famDark < 75){
+    familyHandled = true;
+    const C = LEADS[G.flags.certMan];
+    key = 'family_single';
+    title = '一 张 证';
+    sub = 'MARRIED · ' + C.en;
+    epi.push('<p>结婚证上是你和 ' + C.name + '。只有你们两个人，孩子，和一间重新布置过的屋子。</p>');
+    epi.push('<p>其他人把钥匙放在桌上。有人来取过一次东西，站在门口没有进来。</p>');
+    epi.push('<p>你们学着过日子：谁做饭，谁值夜，谁在孩子哭的时候先起身。</p>');
+    epi.push('<p>有一天你整理抽屉，翻出一张旧房卡。你看了一会儿，把它扔了。</p>');
+    epi.push('<p class="whisper">不是所有的人都留下来了。但你留下了。</p>');
+    if(G.flags.familyTension){
+      epi.push('<p class="bad">楼下偶尔还会停一辆不属于这个家的车。你拉上窗帘，没有告诉 ' + C.name + '。</p>');
+    }
+  }
+
+  if(!familyHandled && G.wrong && id && id !== 'none' && id !== trueId){
+    key = 'wrong';
+    title = '认 错 了 人';
+    sub = 'THE WRONG NAME';
+    epi.push('<p>你叫错了名字。</p>');
+    epi.push('<p>' + LEADS[id].name + ' 在那之后没有再联系你。真正的父亲来过一次，站在门口，没有进来。</p>');
+    epi.push('<p>“那晚的人，”他说，“是我。”</p>');
+    epi.push('<p>你没有让他进门。他也没有坚持。</p>');
+    epi.push('<p>孩子姓了你的姓。你搬了家，换了手机号。</p>');
+    if(G.leads[trueId].dark >= 70){
+      epi.push('<p>但每个月的十五号，楼下都会停一辆车。没有人上来。</p>');
+    }
+    epi.push('<p class="whisper">有些人，认错一次，要用一辈子来还。</p>');
+  } else if(!familyHandled && id && id !== 'none' && id === trueId){
+    const L = LEADS[id], s = G.leads[id];
+    const top = s.dark >= 70;
+    const mid = !top && s.fav >= 45;
+    const map = {
+      pei:{top:'金 笼', mid:'合 约 之 外', low:'一 笔 交 易'},
+      shen:{top:'白 墙', mid:'听 诊 器 之 外', low:'挂 号'},
+      lu:{top:'镁 光 灯 下', mid:'他 的 观 众', low:'片 场 外'},
+      gu:{top:'条 款', mid:'我 替 你 打', low:'律 师 费'}
+    };
+    title = top ? map[id].top : (mid ? map[id].mid : map[id].low);
+    sub = (top ? 'POSSESSIVE' : mid ? 'THE FATHER' : 'A DEAL') + ' · ' + L.en;
+    key = id + (top ? '_top' : mid ? '_mid' : '_low');
+    if(id === 'pei'){
+      if(top){
+        epi.push('<p>孩子满月那天，你搬进了裴氏顶层。落地窗能看到整座城，门禁只认两张脸。</p>');
+        epi.push('<p>奶粉是进口的，月嫂是三个里挑的。他每天回来得很晚，回来第一件事是看孩子，第二件事是看你的手机。</p>');
+        epi.push('<p>“你要什么，都可以说。”他说。</p>');
+        epi.push('<p>“我想带孩子下楼走走。”</p>');
+        epi.push('<p>他沉默了一会儿：“让司机跟着。”</p>');
+        epi.push('<p class="whisper">你拥有了一整层楼。也只剩下这一层楼。</p>');
+      } else if(mid){
+        epi.push('<p>他没有提结婚。但孩子的信托文件上，受益人写得很清楚。</p>');
+        epi.push('<p>他还是不太会抱孩子。你教了三次，他学会了。</p>');
+        epi.push('<p>有一天你在他西装口袋里摸到一张便签，上面是你的名字，和一个被划掉的“价”。</p>');
+        epi.push('<p class="whisper">他从来没说过爱。但他把能给的，都写进了文件里。</p>');
+      } else {
+        epi.push('<p>他付清了所有的账单，包括那间产房。</p>');
+        epi.push('<p>孩子出生那天，他在开会。律师送来一份文件，让你签字。</p>');
+        epi.push('<p>你签了。钱到账很快，像一笔干净利落的了结。</p>');
+        epi.push('<p class="whisper">你没有再见过他。除每月十五号，账户里准时多出的一笔钱。</p>');
+      }
+    } else if(id === 'shen'){
+      if(top){
+        epi.push('<p>你的产检档案最后只剩下一个名字：沈砚白。</p>');
+        epi.push('<p>他替你安排好了月子中心、儿科医生、疫苗时间。你几乎不用开口。</p>');
+        epi.push('<p>出院那天，他替你签了字，也替你选了住处——离医院步行七分钟。</p>');
+        epi.push('<p>“为什么是七分钟？”你问。</p>');
+        epi.push('<p>“这样我随时能到。”</p>');
+        epi.push('<p class="whisper">你分不清这是照顾，还是收留。</p>');
+      } else if(mid){
+        epi.push('<p>他值完夜班，会在你家楼下坐一会儿。</p>');
+        epi.push('<p>孩子半夜哭，他比你先醒。你从没见过一个医生抱孩子抱得那么小心。</p>');
+        epi.push('<p>“沈医生。”你叫他。</p>');
+        epi.push('<p>“在家，别这么叫。”他说，耳朵红了。</p>');
+        epi.push('<p class="whisper">他治好了很多人的病。你希望，也包括他自己。</p>');
+      } else {
+        epi.push('<p>他给孩子建了档，约好每一次复诊。</p>');
+        epi.push('<p>除此之外，他什么也没说。</p>');
+        epi.push('<p>你在诊室外面排队，听见他叫下一个号。声音很稳。</p>');
+        epi.push('<p class="whisper">有些关系，最后只剩下病历上的一行字。</p>');
+      }
+    } else if(id === 'lu'){
+      if(top){
+        epi.push('<p>热搜挂了三天：#陆时野隐婚#。孩子没有露脸，你的名字被写成“圈外女友”。</p>');
+        epi.push('<p>他推掉两部戏，在家陪了两个月。然后经纪人来了，带着一份声明。</p>');
+        epi.push('<p>“签了，对你们都好。”经纪人说。</p>');
+        epi.push('<p>他把声明撕了。</p>');
+        epi.push('<p>“我答应过她。”他说。</p>');
+        epi.push('<p class="whisper">你成了他的故事里，唯一没有彩排的部分。</p>');
+      } else if(mid){
+        epi.push('<p>孩子满月，他抱着在阳台上晒太阳，被拍到了。</p>');
+        epi.push('<p>他干脆发了张照片：一只手，一只小脚。配文只有两个字：我的。</p>');
+        epi.push('<p>评论炸了。你关掉手机，他在旁边笑。</p>');
+        epi.push('<p class="whisper">全世界都知道了。你忽然发现，自己也没那么怕。</p>');
+      } else {
+        epi.push('<p>他给孩子寄来一整箱玩具，签收人写的是你。</p>');
+        epi.push('<p>他在采访里说，最近在学做父亲。</p>');
+        epi.push('<p>你看着电视，孩子在你怀里睡着了。他没有来过。</p>');
+        epi.push('<p class="whisper">镜头前的人，总是比镜头后更会爱人。</p>');
+      }
+    } else if(id === 'gu'){
+      if(top){
+        epi.push('<p>协议有二十页。监护权、共同财产、居住权、孩子的教育。</p>');
+        epi.push('<p>最后一条：未经对方书面同意，不得带孩子离开本市。</p>');
+        epi.push('<p>“这是保护。”他说。</p>');
+        epi.push('<p>“保护谁？”</p>');
+        epi.push('<p>“你们。”他推了推眼镜，没有躲。</p>');
+        epi.push('<p class="whisper">你签了字。笔尖在纸上停了一下。</p>');
+      } else if(mid){
+        epi.push('<p>林栀的官司，他真的替你打了。</p>');
+        epi.push('<p>开庭那天，他站在你旁边，语速不快，每一句都落在点上。</p>');
+        epi.push('<p>散庭后，他把一叠文件递给你：“这是孩子以后的保障。”</p>');
+        epi.push('<p>“为什么？”</p>');
+        epi.push('<p>“因为我从没输过。”他顿了顿，“也因为是你。”</p>');
+        epi.push('<p class="whisper">他把每件事都算得很清楚。唯独这一句，像没算过。</p>');
+      } else {
+        epi.push('<p>他替你打赢了官司，也寄来了账单。</p>');
+        epi.push('<p>账单最后一行写着：可以分期。</p>');
+        epi.push('<p>你按月付。付到第三个月，他约你吃了一顿饭，什么也没提。</p>');
+        epi.push('<p class="whisper">那顿饭之后，账单没有再寄来。</p>');
+      }
+    }
+  } else if(!familyHandled){
+    const warm = b.bond >= 65 && b.health >= 55 && G.money >= 0;
+    const hard = b.health < 45 || G.money < -2000 || b.bond < 40;
+    if(warm){
+      key = 'alone_warm';
+      title = '两 个 人 的 家';
+      sub = 'INDEPENDENT · 你找到的';
+      epi.push('<p>孩子六个月的时候，会坐了。你在地板上铺了一块毯子，他坐在中间，抓你的手指。</p>');
+      epi.push('<p>没有人来帮你。但你也真的把他养到了这么大。</p>');
+      epi.push('<p>父母偶尔打电话来，问一句“还好吗”。你说还好。</p>');
+      epi.push('<p>是真的还好。</p>');
+      epi.push('<p class="whisper">你没有找到那个人。但你找到了自己。</p>');
+    } else if(hard){
+      key = 'alone_hard';
+      title = '一 个 人 的 冬 天';
+      sub = 'INDEPENDENT · 熬';
+      epi.push('<p>最难的那个月，你把奶粉分成两半，自己吃白粥。</p>');
+      epi.push('<p>孩子瘦了一点，你抱着他在夜里走了很多圈。</p>');
+      epi.push('<p>天亮了，他还是笑了。</p>');
+      epi.push('<p>你也笑了。</p>');
+      epi.push('<p class="whisper">日子没有变好。只是你变得能扛了。</p>');
+    } else {
+      key = 'alone_mid';
+      title = '不 指 认';
+      sub = 'INDEPENDENT';
+      epi.push('<p>你没有给那个夜晚一个名字。</p>');
+      epi.push('<p>孩子随你姓。户口本上，父亲那一栏是空的。</p>');
+      epi.push('<p>有人说你自私。你懒得解释。</p>');
+      epi.push('<p>“你有妈妈。”你对他说，“这就够了。”</p>');
+      epi.push('<p class="whisper">不是所有的空缺，都需要被填满。</p>');
+    }
+    if(id === 'none'){
+      epi.push('<p>那五件物证，你收进了一个盒子，放在衣柜最上层。也许有一天，你会拿出来。</p>');
+    } else {
+      epi.push('<p>你一直没有指认任何人。那个人也许还在某个地方，过着他自己的日子。</p>');
+    }
+  }
+
+  if(b.health < 45){
+    epi.push('<p class="bad">孩子出生时进了保温箱。你在 NICU 外面坐了七天，隔着玻璃看他。</p>');
+  }
+  if(b.talent >= 75){
+    epi.push('<p>他学东西很快。医生说，这孩子聪明。</p>');
+  }
+  if(G.money < 0){
+    epi.push('<p class="bad">你的存款是负数。账单叠在桌上，像另一座山。</p>');
+  }
+  if(G.flags.secondBaby && key !== 'family_dark'){
+    const sf = G.flags.secondFather && LEADS[G.flags.secondFather] ? LEADS[G.flags.secondFather].name : '那个人';
+    epi.push('<p>第六个月，你又验出两道杠。' + sf + '把 B 超单折好，放进钱包。</p>');
+    epi.push('<p>你抱着一个，肚子里还有一个。镜子里的自己，比四十周前更瘦，也更硬。</p>');
+  }
+  const nightIds = Object.keys(G.flags.nightPartners || {});
+  if(nightIds.length >= 2 && key.indexOf('family') !== 0){
+    epi.push('<p>那些夜晚没有名字。后来，有人在楼下碰见，互相点一下头，谁也没有提。</p>');
+    epi.push('<p>你把他们的联系方式分在不同的分组里。孩子睡着了，你才一条一条回。</p>');
+  }
+  if(G.flags.familyTension && key.indexOf('family') !== 0){
+    epi.push('<p class="bad">有一个人始终没有真的退出去。他没有闹，只是在你楼下停很久的车。</p>');
+  }
+
+  const stats = [
+    ['存 款', '¥' + fmt(G.money)],
+    ['心 绪', G.mood],
+    ['体 质', G.health],
+    ['名 声', G.rep],
+    ['宝宝健康', b.health],
+    ['亲 密', b.bond],
+    ['天 赋', b.talent],
+    ['孩 子', G.flags.secondBaby ? '两 个' : '一 个'],
+    ['指 认', G.accused ? (G.accused === 'none' ? '放弃' : LEADS[G.accused].name) : '没有']
+  ];
+  if(G.flags.familyPlan){
+    stats.push(['家 庭', famIds.length ? (famIds.length + 1) + ' 人' : '独 自']);
+  }
+  G.ending = {key:key, title:title, sub:sub};
+  const html = '<div class="ending-wrap">' +
+    '<div class="ending-meta">ENDING · ' + esc(sub) + '</div>' +
+    '<h1>' + title + '</h1>' +
+    '<div class="sub">' + G.hero + ' · ' + (b.name || '孩子') + ' · 四十周 + 六个月</div>' +
+    '<div class="epilogue">' + epi.join('') + '</div>' +
+    '<div class="stats">' + stats.map(s => '<div class="stat-chip">' + s[0] + '<b>' + s[1] + '</b></div>').join('') + '</div>' +
+    '<div class="ending-cta"><button class="btn gold" id="endRestart">重 开 一 局</button>' +
+    '<button class="btn ghost" id="endExport">导出这一局</button></div>' +
+    '<div class="ending-note">本局结局由「生父指认 · 好感 / 黑化 · 育儿数值 · 家庭形态」共同决定。<br>同一局可以走出很多种结局。再去试一次。</div>' +
+    '</div>';
+  const el = $('#ending');
+  el.innerHTML = html;
+  el.hidden = false;
+  el.classList.add('show');
+  $('#ending').scrollTop = 0;
+  G.ended = true;
+  $('#endRestart').onclick = () => {
+    try{ localStorage.removeItem(SAVE_KEY); }catch(e){}
+    location.reload();
+  };
+  $('#endExport').onclick = () => exportSave();
+  if(!wasEnded) pushLog('结局：' + title, 'gold');
+  save();
+  render();
+}
+
+/* =========================================================
+   生产 · 育儿开局
+   ========================================================= */
+function startBirth(noBag){
+  if(!G || G.ended || G.phase !== 'preg') return;
+  const bag = !!G.flags.bag && !noBag;
+  const privateRoom = G.flags.hospital === 'private';
+  openScene({
+    kicker:'LABOR · W' + pad2(G.week),
+    title:'开 始 了',
+    sub:'宫缩像一只手，从里面攥紧，又松开。',
+    story:'<p>凌晨三点，你被一阵疼醒。</p>' +
+      '<p>疼过去之后，你坐起来，先数了数宫缩的间隔，然后去洗了个澡。</p>' +
+      '<p>镜子里的人眼睛肿着，头发乱着。你对着她看了很久，说：“走吧。”</p>' +
+      (bag
+        ? '<p class="good">待产包在玄关。证件、产褥垫、孩子的小衣服，一样不少。</p>'
+        : '<p class="bad">待产包还没收拾。你抓着手机和医保卡就出了门。</p>') +
+      '<p class="system">体质 ' + G.health + ' · 胎宝 ' + G.fetal + ' · 存款 ¥' + fmt(G.money) + (privateRoom ? ' · 已订私立单间' : '') + '</p>',
+    choices:[
+      {label:'顺 产', hint:'约 ¥3,500 · 恢复快 · 更考验体力', onPick:()=>resolveBirth('natural', bag)},
+      {label:'剖 宫 产', hint:'约 ¥9,000 · 更可控 · 恢复慢', onPick:()=>resolveBirth('csection', bag)},
+      {label:'无 痛 分 娩', hint:'约 ¥6,500 · 少受罪 · 需要麻醉评估', onPick:()=>resolveBirth('epidural', bag)}
+    ]
+  });
+}
+function resolveBirth(type, bag){
+  const cost = type === 'csection' ? 9000 : (type === 'epidural' ? 6500 : 3500);
+  const names = {natural:'顺 产', csection:'剖 宫 产', epidural:'无 痛 分 娩'};
+  moneyChange(-cost);
+  let score = G.health * 0.45 + G.fetal * 0.45 + rand(-8, 8);
+  if(bag) score += 12;
+  if(G.flags.hospital === 'private') score += 8;
+  else if(G.flags.hospital === 'public') score += 2;
+  if(type === 'csection') score += 8;
+  if(type === 'epidural') score += 4;
+  if(G.accused && G.accused === G.father && G.leads[G.father].fav >= 40) score += 8;
+  if(G.health < 35) score -= 8;
+  const nicu = score < 48;
+  let babyHealth = G.baby.health + (score >= 65 ? 4 : (score >= 48 ? -5 : -14));
+  if(nicu) babyHealth = Math.min(babyHealth, 46);
+  G.baby.health = clamp(babyHealth, 20, 100);
+  G.baby.born = true;
+  G.baby.month = 1;
+  G.baby.nicu = nicu;
+  G.phase = 'baby';
+  G.week = 40;
+  G.ap = 4;
+  G.place = 'home';
+  G.flags.birthType = type;
+  applyEffect({health:type === 'csection' ? -14 : (type === 'epidural' ? -7 : -11), mood:6});
+  const jin = (2.7 + Math.random() * 1.1).toFixed(1);
+  pushLog('你生下了他。' + jin + ' 斤。' + (nicu ? '他进了保温箱。' : '他哭得很响。'), nicu ? 'bad' : 'gold');
+  const fatherLine = birthFatherLine();
+  const methodLine = type === 'natural'
+    ? '<p>你疼了十一个小时。最后那一下，助产士说：“再来一次。”</p><p>你听见自己叫了一声，然后听见他哭。</p>'
+    : type === 'csection'
+      ? '<p>麻药从脊柱打进去，下半身慢慢变成一块不属于你的木头。</p><p>你能感觉到有人在推、在拉，却不觉得疼。然后是一声哭。</p>'
+      : '<p>麻醉师让你蜷起来，像一只虾。针进去的时候，你数着自己的呼吸。</p><p>疼被拿走了大半，剩下的那一点，刚好够你保持清醒。</p>';
+  const outLine = nicu
+    ? '<p class="bad">他没有立刻哭。护士把他抱到一边，你听见仪器响了一声，又一声。</p><p class="bad">“早产一点，肺还没长好。”医生说，“先送保温箱。”</p>'
+    : '<p>他哭了一声，很响。你忽然也哭了，哭得比他还大声。</p><p>护士把他擦干净，抱到你胸口。他的脸皱成一团，眼睛只睁开一条缝。</p>';
+  render();
+  save();
+  openScene({
+    kicker:'BIRTH · 第 40 周',
+    title:names[type],
+    story:methodLine + outLine + fatherLine +
+      '<p class="system">宝宝健康 ' + G.baby.health + ' · 体重 ' + jin + ' 斤 · 生产方式：' + names[type] + '</p>',
+    effects:{health:type === 'csection' ? -14 : (type === 'epidural' ? -7 : -11), mood:6},
+    nextLabel:'抱 一 抱 他',
+    onNext:() => nameBaby()
+  });
+}
+function birthFatherLine(){
+  const id = G.accused;
+  if(id && id !== 'none' && id === G.father){
+    const s = G.leads[id];
+    if(s.dark >= 70){
+      return '<p>走廊尽头站着一个人。他没有过来，也没有走。</p><p>护士说，所有单子都是他签的，字很稳。</p>';
+    }
+    if(s.fav >= 40){
+      return '<p>走廊尽头有人站了一夜。你被推出来的时候，他站直了。</p><p>“我在。”他说。声音有点哑。</p>';
+    }
+    return '<p>他没有进来。护士说，费用已经结清了。</p>';
+  }
+  if(id === 'none'){
+    return '<p>外面没有人。护士问你要不要帮忙，你说不用。</p><p>你抱着孩子，一个人被推回病房。</p>';
+  }
+  if(G.wrong){
+    return '<p>消防通道里站着一个人，穿着深色外套。他没有靠近，只是看着护士把孩子推走。</p>';
+  }
+  return '<p>产房外面没有人。你早就知道会这样，所以也没有太难过。</p>';
+}
+function nameBaby(){
+  if(G.baby.name){ afterName(); return; }
+  const def = '小满';
+  openModal(
+    '<div class="kicker">NAME · M01</div><div class="modal-title">给 他 一 个 名 字</div><div class="modal-sub">出生第 1 天 · ' + G.baby.sex + '</div>',
+    '<div class="story"><p>护士把出生证明放在你手边。</p><p>“想好了吗？”她问。</p><p>“想好了。”</p>' +
+      '<p class="system">父亲那一栏，你可以空着，也可以写一个名字。名字一旦写下，就不能改了。</p></div>' +
+      '<input class="field" id="babyName" maxlength="8" value="' + def + '" placeholder="孩子的名字">' +
+      '<div class="modal-actions"><button class="btn gold" id="babyNameOk">就 叫 这 个 名 字</button></div>'
+  );
+  const input = $('#babyName');
+  if(input){ input.focus(); input.select(); }
+  $('#babyNameOk').onclick = () => {
+    const v = (($('#babyName') || {}).value || '').trim().slice(0, 8);
+    G.baby.name = v || def;
+    closeModal();
+    pushLog('你给他取名：' + G.baby.name + '。','rose');
+    render(); save();
+    setTimeout(afterName, 120);
+  };
+}
+function afterName(){
+  openScene({
+    kicker:'GO HOME · M01',
+    title:'回 家',
+    story:'<p>出院那天，你抱着他站在医院门口，等了很久的车。</p>' +
+      '<p>风有点大，你把他的帽子往下拉了拉。</p>' +
+      '<p>“我们回家了。”你说。</p>' +
+      '<p class="whisper">从此以后，这个城市里，有两个人在等你回去。</p>',
+    nextLabel:'开 始 育 儿',
+    onNext:() => {
+      render();
+      toast('育儿期 · 每月四点行动');
+      setTimeout(() => triggerBabyMonth(), 320);
+    }
+  });
+}
+
+/* =========================================================
+   开局 · 花瓣 · 事件绑定
+   ========================================================= */
+function bootOff(){
+  const b = $('#boot');
+  if(b){
+    b.classList.add('off');
+    setTimeout(() => { b.style.display = 'none'; }, 820);
+  }
+  const g = $('#game');
+  if(g) g.hidden = false;
+  spawnPetals();
+}
+function spawnPetals(){
+  makePetals($('#petals'), 18, 5, 11);
+  makePetals($('#bootPetals'), 14, 6, 13);
+}
+function makePetals(host, n, min, max){
+  if(!host || host.childElementCount) return;
+  for(let i=0;i<n;i++){
+    const s = document.createElement('i');
+    const size = rand(min, max);
+    s.style.width = size + 'px';
+    s.style.height = (size * 0.72).toFixed(1) + 'px';
+    s.style.left = rand(0, 100) + '%';
+    s.style.animationDuration = (rand(90, 220) / 10) + 's';
+    s.style.animationDelay = '-' + (rand(0, 220) / 10) + 's';
+    s.style.opacity = (rand(25, 55) / 100).toFixed(2);
+    host.appendChild(s);
+  }
+}
+function startFlow(){
+  const jobs = Object.keys(JOBS).map(k => {
+    const j = JOBS[k];
+    return '<button class="choice" data-job="' + k + '"><span class="cl">' + j.name + '</span>' +
+      '<span class="ch">' + j.sub + ' · 起始 ¥' + fmt(j.money) + ' · ' + j.perk + '</span></button>';
+  }).join('');
+  openModal(
+    '<div class="kicker">PROLOGUE · 一个月前</div><div class="modal-title">她 叫 什 么</div><div class="modal-sub">名字可以改。往后四十周，没人替你过。</div>',
+    '<div class="story"><p>你在一场聚会上醒来，记忆停在第 四 杯酒。</p>' +
+      '<p>两个月后，验孕棒上是两道杠。你不知道孩子的父亲是谁，只知道那晚，林栀笑得比谁都甜。</p>' +
+      '<p class="system">父母不会兜底。存款、身体、名声，全都要你自己撑。</p></div>' +
+      '<input class="field" id="heroName" maxlength="10" value="苏知意" placeholder="她的名字">' +
+      '<p class="hl" style="margin-top:16px">她靠什么活着</p>' +
+      '<div class="choices">' + jobs + '</div>'
+  );
+  const input = $('#heroName');
+  if(input){ input.focus(); input.select(); }
+  $$('#modalBody .choice[data-job]').forEach(btn => {
+    btn.onclick = () => {
+      const name = (($('#heroName') || {}).value || '').trim().slice(0, 10) || '苏知意';
+      const job = btn.getAttribute('data-job');
+      closeModal();
+      setTimeout(() => beginRun(name, job), 140);
+    };
+  });
+}
+function beginRun(hero, jobKey){
+  newGame(hero, jobKey);
+  bootOff();
+  render();
+  setTimeout(prologueScene, 420);
+}
+function prologueScene(){
+  openScene({
+    kicker:'PROLOGUE · 云顶会所 2701',
+    title:'第 四 杯',
+    story:'<p>林栀说，只是一个局，都是熟人。</p>' +
+      '<p>香槟开了三瓶。你记得自己笑了很多次，记得有人替你挡过一次酒，也记得她一直在你手边。</p>' +
+      '<p>第四杯递过来的时候，杯沿有一点点口红。</p>' +
+      '<p>“就一口。”她说。</p>' +
+      '<p class="system">后面的事，你只记得电梯里很亮的灯，和一层又一层的红。</p>',
+    choices:[
+      {label:'接过那杯酒', hint:'心绪 -3 · 你记住了杯沿的颜色', onPick:()=>{
+        applyEffect({mood:-3});
+        G.flags.observed = 'lip';
+        prologueMorning();
+      }},
+      {label:'把杯子换到左手', hint:'心绪 -1 · 你记住了她换手的动作', onPick:()=>{
+        applyEffect({mood:-1});
+        G.flags.observed = 'hand';
+        prologueMorning();
+      }},
+      {label:'说要去洗手间', hint:'体质 -2 · 回来时杯子又满了', onPick:()=>{
+        applyEffect({health:-2});
+        G.flags.observed = 'bath';
+        prologueMorning();
+      }}
+    ]
+  });
+}
+function prologueMorning(){
+  openScene({
+    kicker:'MORNING · 2701',
+    title:'第 二 天',
+    story:'<p>你在一张不认识的床上醒来。窗帘拉着，只漏进一条很细的光。</p>' +
+      '<p>床的另一半是凉的。</p>' +
+      '<p>地毯上有一只袖扣，一枚耳钉，或者什么都没有。你没有看清，也没有捡。</p>' +
+      '<p>你记得一只手从背后绕过来，替你拨开头发。记得有人低声问：“可以吗？”</p>' +
+      '<p>你记得自己点了头。或者没有。灯是红的，他的袖口蹭过你的锁骨，很凉。</p>' +
+      '<p>再往后，只剩床单的褶皱，和窗外一直没有停的雨。</p>' +
+      '<p>你只记得那味道：沉香、消毒水、薄荷，还是檀香？</p>' +
+      '<p class="whisper">一个月后，两道杠。医生说：六周，有心跳。</p>',
+    nextLabel:'开 始 第 六 周',
+    onNext:()=>{
+      G.flags.tutorial = true;
+      render();
+      showHowto(true);
+    }
+  });
+}
+function bootScreen(){
+  const art = $('#bootArt');
+  if(art) art.style.backgroundImage = 'url("' + IMG.boot + '")';
+  const cont = $('#btnContinue');
+  if(cont) cont.hidden = !hasSave();
+  spawnPetals();
+  $('#btnStart').onclick = () => startFlow();
+  $('#btnContinue').onclick = () => loadGame();
+  $('#btnHow').onclick = () => showHowto();
+  $('#btnArchive').onclick = () => { if(G) showArchive(); else toast('还没有档案。'); };
+  $('#btnMenu').onclick = () => { if(G) showMenu(); };
+  $('#btnSkip').onclick = () => skipWeek();
+  $('#btnNext').onclick = () => nextWeek();
+  $('#modalClose').onclick = () => closeModal();
+  $('#layer').onclick = e => { if(e.target === $('#layer')) closeModal(); };
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape') closeModal();
+  });
+  window.addEventListener('beforeunload', () => {
+    if(G){ try{ save(); }catch(e){} }
+  });
+}
+bootScreen();
+</script>
+</body>
+</html>
